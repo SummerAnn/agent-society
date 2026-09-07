@@ -1,0 +1,1401 @@
+{
+  "schemaVersion": 1,
+  "adapterId": "scitat_numeric_v1",
+  "generatedAt": "2026-09-05T00:36:40.876Z",
+  "items": {
+    "1210.8343v1-q1": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "Full-context accuracy 0.000 is below 0.800.",
+            "One-piece control paragraph has no valid final response or has parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalResponsesValid": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalResponsesValid": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalResponsesValid": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalResponsesValid": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        },
+        "memory": {
+          "approved": false,
+          "reasons": [
+            "Full-context accuracy 0.000 is below 0.800.",
+            "One-piece control paragraph has no valid final response or has parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalResponsesValid": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalResponsesValid": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalResponsesValid": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalResponsesValid": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "1505.03365v1-q2": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context accuracy 0.000 is below 0.800.",
+            "One-piece control table_1 has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "1511.02919v1-q2": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context accuracy 0.000 is below 0.800.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks.",
+            "One-piece control table_1 has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "1511.04136v4-q1": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks.",
+            "One-piece control table_1 accuracy 1.000 reaches 0.600."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 1,
+                "finalChoicesComplete": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 1,
+              "finalChoicesComplete": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "1512.01642v1-q2": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks.",
+            "One-piece control table_1 has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 1,
+              "finalChoicesComplete": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "1601.07336v1-q1": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context accuracy 0.000 is below 0.800.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "1602.03570v3-q1": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context control has incomplete final choices or parser fallbacks.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks.",
+            "One-piece control table_1 has incomplete final choices or parser fallbacks.",
+            "One-piece control table_2 has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_2": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_3": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            }
+          }
+        }
+      }
+    },
+    "1602.05314v1-q1": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context accuracy 0.000 is below 0.800.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "1609.06252v1-q1": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context control has incomplete final choices or parser fallbacks.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks.",
+            "One-piece control table_1 has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            }
+          }
+        }
+      }
+    },
+    "1703.01055v3-q1": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context control has incomplete final choices or parser fallbacks.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks.",
+            "One-piece control table_1 has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            }
+          }
+        }
+      }
+    },
+    "1711.05098v1-q2": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "One-piece control paragraph accuracy 1.000 reaches 0.600."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 1,
+                "finalChoicesComplete": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 1,
+              "finalChoicesComplete": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "1712.05111v1-q2": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context accuracy 0.000 is below 0.800.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks.",
+            "One-piece control table_1 has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "1808.02092v2-q2": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context accuracy 0.000 is below 0.800.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks.",
+            "One-piece control table_1 has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "1809.04093v1-q2": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context control has incomplete final choices or parser fallbacks.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks.",
+            "One-piece control table_1 has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            }
+          }
+        }
+      }
+    },
+    "1907.12901v1-q1": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context accuracy 0.000 is below 0.800.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks.",
+            "One-piece control table_1 accuracy 1.000 reaches 0.600."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 1,
+                "finalChoicesComplete": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "2004.09418v1-q2": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "One-piece control paragraph accuracy 1.000 reaches 0.600.",
+            "One-piece control table_1 has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 1,
+                "finalChoicesComplete": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 1,
+              "finalChoicesComplete": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "2112.14013v2-q1": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context accuracy 0.000 is below 0.800.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "2201.08077v1-q2": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context control has incomplete final choices or parser fallbacks.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks.",
+            "One-piece control table_1 has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            }
+          }
+        }
+      }
+    },
+    "2204.00292v1-q2": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context control has incomplete final choices or parser fallbacks.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks.",
+            "One-piece control table_1 accuracy 1.000 reaches 0.600."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 1,
+                "finalChoicesComplete": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            }
+          }
+        }
+      }
+    },
+    "2207.12990v1-q1": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context accuracy 0.000 is below 0.800.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks.",
+            "One-piece control table_1 has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "2212.02000v1-q2": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context accuracy 0.000 is below 0.800.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "2301.07831v2-q1": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks.",
+            "One-piece control table_1 accuracy 1.000 reaches 0.600."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 1,
+                "finalChoicesComplete": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 1,
+              "finalChoicesComplete": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "2302.13709v1-q1": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks.",
+            "One-piece control table_1 accuracy 1.000 reaches 0.600."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 1,
+                "finalChoicesComplete": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 1,
+              "finalChoicesComplete": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "2305.18874v2-q2": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "One-piece control paragraph accuracy 1.000 reaches 0.600.",
+            "One-piece control table_1 has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 1,
+                "finalChoicesComplete": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 1,
+              "finalChoicesComplete": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "2311.08320v1-q1": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks.",
+            "One-piece control table_1 accuracy 1.000 reaches 0.600."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 1,
+                "finalChoicesComplete": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 1,
+              "finalChoicesComplete": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "2402.00657v1-q1": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context accuracy 0.000 is below 0.800.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "2402.08355v2-q1": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context control has incomplete final choices or parser fallbacks.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks.",
+            "One-piece control table_1 has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            }
+          }
+        }
+      }
+    },
+    "2404.05389v1-q1": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context control has incomplete final choices or parser fallbacks.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks.",
+            "One-piece control table_1 has incomplete final choices or parser fallbacks.",
+            "One-piece control table_2 has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_2": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            }
+          }
+        }
+      }
+    },
+    "2408.08794v1-q1": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context accuracy 0.000 is below 0.800.",
+            "One-piece control table_1 has incomplete final choices or parser fallbacks."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": true,
+              "parserFallbackEntries": 0,
+              "technicalPass": true
+            }
+          }
+        }
+      }
+    },
+    "math_0012242v1-q2": {
+      "modes": {
+        "chat": {
+          "approved": false,
+          "reasons": [
+            "No-context control has incomplete final choices or parser fallbacks.",
+            "Full-context control has incomplete final choices or parser fallbacks.",
+            "One-piece control paragraph has incomplete final choices or parser fallbacks.",
+            "One-piece control table_1 accuracy 1.000 reaches 0.600."
+          ],
+          "phases": {
+            "noContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            },
+            "onePiece": {
+              "paragraph": {
+                "runs": 1,
+                "correctRate": 0,
+                "finalChoicesComplete": false,
+                "parserFallbackEntries": 0,
+                "technicalPass": false
+              },
+              "table_1": {
+                "runs": 1,
+                "correctRate": 1,
+                "finalChoicesComplete": true,
+                "parserFallbackEntries": 0,
+                "technicalPass": true
+              }
+            },
+            "fullContext": {
+              "runs": 1,
+              "correctRate": 0,
+              "finalChoicesComplete": false,
+              "parserFallbackEntries": 0,
+              "technicalPass": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

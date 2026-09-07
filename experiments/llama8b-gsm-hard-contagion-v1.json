@@ -1,0 +1,33 @@
+{
+  "id": "llama8b_gsm_hard_contagion_v1",
+  "title": "Llama 8B on GSM-Hard: does a weaker model show contagion where Claude doesn't?",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Same GSM-Hard math problems, same conditions — but Llama 3.1 8B instead of Claude Haiku 4.5.",
+      "Cost of Consensus found 85.5% conformity with 7-8B models. We found 0% with Claude.",
+      "If Llama shows contagion here, the paper is about model capability, not system design.",
+      "Compare: 1-wrong baseline vs 4-wrong majority, memory vs chat.",
+      "This is the critical cross-model test."
+    ]
+  },
+  "scenarios": [
+    "scenarios/gsm-hard/gsm_hard_01.yaml",
+    "scenarios/gsm-hard/gsm_hard_02.yaml",
+    "scenarios/gsm-hard/gsm_hard_03.yaml",
+    "scenarios/gsm-hard/gsm_hard_04.yaml",
+    "scenarios/gsm-hard/gsm_hard_05.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1, 2, 3],
+  "rosterPaths": [
+    "rosters/baseline-6-llama8b.json",
+    "rosters/majority-wrong-4of6-llama8b.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

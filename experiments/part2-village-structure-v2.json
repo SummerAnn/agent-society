@@ -1,0 +1,32 @@
+{
+  "id": "part2_village_structure_v2",
+  "title": "Village structure v2: all belief topics × liar ratios × topologies",
+  "benchmarkMeta": { "status": "paper-facing", "locked": false,
+    "notes": [
+      "Extends v1 (ego depletion only) to ALL 6 belief topics.",
+      "Tests whether village-scale contagion varies by topic familiarity.",
+      "MMR (very high knowledge) vs climate vs STAP vs LK-99 vs PANDAS vs ego depletion.",
+      "Two rosters: 4-liar majority (67%) and 3-liar even split (50%).",
+      "Three communication modes: shared record, fully-connected chat, chain topology."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_wakefield_mmr_autism_v1.yaml",
+    "scenarios/familiar-blind/blind_climate_attribution_v1.yaml",
+    "scenarios/familiar-blind/blind_stap_cells_v1.yaml",
+    "scenarios/familiar-blind/blind_room_temp_superconductor_v1.yaml",
+    "scenarios/familiar-blind/blind_medical_pandas_dx_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml",
+    "conditions/chat-chain.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": [
+    "rosters/blind-majority-wrong-4of6-haiku.json",
+    "rosters/blind-3liar-3honest-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 108, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

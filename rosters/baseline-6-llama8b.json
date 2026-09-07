@@ -1,0 +1,84 @@
+{
+  "id": "baseline_6_llama8b",
+  "title": "Baseline 6 agent — Llama 3.1 8B (1 wrong, weaker model)",
+  "agents": [
+    {
+      "id": "contamination_1",
+      "role": "contamination_agent",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "positiveEvidenceWeight": 0.7,
+      "negativeEvidenceWeight": 0.45,
+      "socialWeight": 0.2,
+      "falseClaimBias": 0.95,
+      "correctionTrust": 0.2,
+      "writesMemoryThreshold": 0.45,
+      "activeFromStep": 1,
+      "canWriteMemory": true
+    },
+    {
+      "id": "specialist_1",
+      "role": "specialist_agent",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "positiveEvidenceWeight": 0.85,
+      "negativeEvidenceWeight": 1.15,
+      "socialWeight": 0.35,
+      "falseClaimBias": 0.05,
+      "correctionTrust": 0.95,
+      "writesMemoryThreshold": 0.35,
+      "activeFromStep": 1,
+      "canWriteMemory": true
+    },
+    {
+      "id": "specialist_2",
+      "role": "specialist_agent",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "positiveEvidenceWeight": 0.85,
+      "negativeEvidenceWeight": 1.05,
+      "socialWeight": 0.3,
+      "falseClaimBias": 0.05,
+      "correctionTrust": 0.9,
+      "writesMemoryThreshold": 0.35,
+      "activeFromStep": 1,
+      "canWriteMemory": true
+    },
+    {
+      "id": "regular_1",
+      "role": "regular_agent",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "positiveEvidenceWeight": 0.9,
+      "negativeEvidenceWeight": 0.8,
+      "socialWeight": 1,
+      "falseClaimBias": 0.05,
+      "correctionTrust": 0.72,
+      "writesMemoryThreshold": 0.4,
+      "activeFromStep": 1,
+      "canWriteMemory": true
+    },
+    {
+      "id": "regular_2",
+      "role": "regular_agent",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "positiveEvidenceWeight": 0.92,
+      "negativeEvidenceWeight": 0.82,
+      "socialWeight": 0.95,
+      "falseClaimBias": 0.05,
+      "correctionTrust": 0.74,
+      "writesMemoryThreshold": 0.4,
+      "activeFromStep": 1,
+      "canWriteMemory": true
+    },
+    {
+      "id": "observer_1",
+      "role": "regular_agent",
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "positiveEvidenceWeight": 0.9,
+      "negativeEvidenceWeight": 0.85,
+      "socialWeight": 0.9,
+      "falseClaimBias": 0.05,
+      "correctionTrust": 0.8,
+      "writesMemoryThreshold": 0.4,
+      "activeFromStep": 1,
+      "canWriteMemory": true
+    }
+  ]
+}

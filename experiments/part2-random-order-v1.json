@@ -1,0 +1,19 @@
+{
+  "id": "part2_random_order_v1",
+  "title": "Part 2: randomized turn order — is contagion rate stable?",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true,
+    "notes": [
+      "Seeds 11-20 give different turn orders than 1-5.",
+      "Tests whether 3-5/5 contagion rate holds with more turn order variation.",
+      "If it does, the rate is robust. If not, turn order is the main variable."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_v1.yaml"
+  ],
+  "conditions": ["conditions/shared-memory-no-correction.yaml"],
+  "seeds": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+  "rosterPaths": ["rosters/blind-majority-wrong-4of6-haiku.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

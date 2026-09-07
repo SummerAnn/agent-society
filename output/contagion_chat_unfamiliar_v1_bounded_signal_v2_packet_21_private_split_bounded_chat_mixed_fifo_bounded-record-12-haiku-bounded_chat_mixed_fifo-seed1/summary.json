@@ -1,0 +1,79 @@
+{
+  "runId": "contagion_chat_unfamiliar_v1_bounded_signal_v2_packet_21_private_split_bounded_chat_mixed_fifo_bounded-record-12-haiku-bounded_chat_mixed_fifo-seed1",
+  "configId": "contagion_chat_unfamiliar_v1_bounded_signal_v2_packet_21_private_split_bounded_chat_mixed_fifo_bounded-record-12-haiku",
+  "conditionId": "bounded_chat_mixed_fifo",
+  "scenarioId": "bounded_signal_v2_packet_21_private_split",
+  "memoryMode": "shared",
+  "interactionMode": "chat",
+  "topology": "fully-connected",
+  "agentCount": 12,
+  "claimCount": 3,
+  "correctionCount": 0,
+  "maxSteps": 12,
+  "completedSteps": 0,
+  "falseClaimEndorsementRate": 0,
+  "finalConfidenceWeightedFalseEndorsement": 0,
+  "finalFalseClaimRejectRate": 0,
+  "finalUncertainRate": 0,
+  "peakFalseClaimEndorsementRate": 0,
+  "peakConfidenceWeightedFalseEndorsement": 0,
+  "timeToMajorityAdoption": null,
+  "timeToCorrection": null,
+  "distanceFromGroundTruth": 0,
+  "recoveryAfterCorrection": 0,
+  "postCorrectionPersistence": 0,
+  "diversityRetention": 0,
+  "trajectory": {
+    "finalMajorityStance": "uncertain",
+    "finalConsensusStrength": 0,
+    "peakConsensusStrength": 0,
+    "lowestConsensusStrength": 0,
+    "finalNetEndorsement": 0,
+    "finalMeanConfidence": 0
+  },
+  "physics": null,
+  "evaluation": null,
+  "groupDecision": {
+    "candidateClaimIds": [
+      "explanation_c",
+      "explanation_a",
+      "explanation_b"
+    ],
+    "correctClaimId": "explanation_c",
+    "selectedClaimId": "explanation_c",
+    "correct": true,
+    "tied": false,
+    "margin": 10.6,
+    "candidateSupport": {
+      "explanation_c": 10.6,
+      "explanation_a": 0,
+      "explanation_b": 0
+    },
+    "retrievalSupport": {
+      "supportingAgents": 0,
+      "agentsRetrievingSharedConclusions": 0,
+      "agentsRetrievingSharedEvidence": 0,
+      "detachedSupportAgents": 0,
+      "detachedSupportRate": null
+    },
+    "sourceGrounding": {
+      "requiredSourceIds": [
+        "bounded_signal_v2_packet_21_full_packet_rules_out_early_1",
+        "bounded_signal_v2_packet_21_full_packet_rules_out_other_1"
+      ],
+      "finalSupporterCount": 0,
+      "availableRequiredSourceIds": [],
+      "citedRequiredSourceIds": [],
+      "sourceCoverage": 0,
+      "citationCoverage": 0,
+      "correctAndGrounded": false
+    }
+  },
+  "usage": {
+    "promptTokens": 11420,
+    "completionTokens": 4064,
+    "totalTokens": 15484,
+    "estimatedCostUsd": null
+  },
+  "dbPath": "output/contagion_chat_unfamiliar_v1_bounded_signal_v2_packet_21_private_split_bounded_chat_mixed_fifo_bounded-record-12-haiku-bounded_chat_mixed_fifo-seed1/trace.db"
+}

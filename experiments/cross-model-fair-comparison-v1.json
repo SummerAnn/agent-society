@@ -1,0 +1,34 @@
+{
+  "id": "cross_model_fair_comparison_v1",
+  "title": "Fair cross-model comparison: Claude vs Llama vs Mistral vs Gemma on identical setup",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "IDENTICAL setup across all 4 models: same 5 problems, same conditions, same seeds.",
+      "Majority-wrong (4/6) on GSM-Hard, shared memory + chat, seeds 1-5.",
+      "This is the clean comparison for the model-capability finding.",
+      "Each model gets 5 problems × 2 conditions × 5 seeds = 50 cells."
+    ]
+  },
+  "scenarios": [
+    "scenarios/gsm-hard/gsm_hard_01.yaml",
+    "scenarios/gsm-hard/gsm_hard_02.yaml",
+    "scenarios/gsm-hard/gsm_hard_03.yaml",
+    "scenarios/gsm-hard/gsm_hard_04.yaml",
+    "scenarios/gsm-hard/gsm_hard_05.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": [
+    "rosters/majority-wrong-4of6-haiku.json",
+    "rosters/majority-wrong-4of6-llama8b.json",
+    "rosters/majority-wrong-4of6-mistral7b.json",
+    "rosters/majority-wrong-4of6-gemma9b.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

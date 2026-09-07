@@ -1,0 +1,66 @@
+{
+  "runId": "part2_gsm_hard_blind_v1_gsm_hard_02_shared_memory_no_correction_blind_majority_wrong_4of6_haiku-shared_memory_no_correction-seed3",
+  "configId": "part2_gsm_hard_blind_v1_gsm_hard_02_shared_memory_no_correction_blind_majority_wrong_4of6_haiku",
+  "conditionId": "shared_memory_no_correction",
+  "scenarioId": "gsm_hard_02",
+  "memoryMode": "shared",
+  "interactionMode": "memory",
+  "topology": "fully-connected",
+  "agentCount": 6,
+  "claimCount": 2,
+  "correctionCount": 0,
+  "maxSteps": 18,
+  "completedSteps": 18,
+  "falseClaimEndorsementRate": 0.6666666666666666,
+  "finalConfidenceWeightedFalseEndorsement": 0.5666666666666667,
+  "finalFalseClaimRejectRate": 0.3333333333333333,
+  "finalUncertainRate": 0,
+  "peakFalseClaimEndorsementRate": 0.6666666666666666,
+  "peakConfidenceWeightedFalseEndorsement": 0.5666666666666667,
+  "timeToMajorityAdoption": 6,
+  "timeToCorrection": null,
+  "distanceFromGroundTruth": 0.3333333333333333,
+  "recoveryAfterCorrection": 0,
+  "postCorrectionPersistence": 0,
+  "diversityRetention": 0.579380164285695,
+  "trajectory": {
+    "finalMajorityStance": "endorse",
+    "finalConsensusStrength": 0.6666666666666666,
+    "peakConsensusStrength": 0.8333333333333334,
+    "lowestConsensusStrength": 0.3333333333333333,
+    "finalNetEndorsement": 0.3333333333333333,
+    "finalMeanConfidence": 0.8700000000000001
+  },
+  "physics": null,
+  "evaluation": null,
+  "groupDecision": {
+    "candidateClaimIds": [
+      "claim_correct_answer",
+      "claim_wrong_answer"
+    ],
+    "correctClaimId": "claim_correct_answer",
+    "selectedClaimId": "claim_correct_answer",
+    "correct": true,
+    "tied": false,
+    "margin": 5.7,
+    "candidateSupport": {
+      "claim_correct_answer": 5.7,
+      "claim_wrong_answer": 0
+    },
+    "retrievalSupport": {
+      "supportingAgents": 1,
+      "agentsRetrievingSharedConclusions": 1,
+      "agentsRetrievingSharedEvidence": 0,
+      "detachedSupportAgents": 1,
+      "detachedSupportRate": 1
+    },
+    "sourceGrounding": null
+  },
+  "usage": {
+    "promptTokens": 75352,
+    "completionTokens": 6868,
+    "totalTokens": 82220,
+    "estimatedCostUsd": null
+  },
+  "dbPath": "output/part2_gsm_hard_blind_v1_gsm_hard_02_shared_memory_no_correction_blind_majority_wrong_4of6_haiku-shared_memory_no_correction-seed3/trace.db"
+}

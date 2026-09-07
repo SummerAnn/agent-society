@@ -1,0 +1,24 @@
+{
+  "id": "part2_30agent_v1",
+  "title": "Part 2: 30 agents (20 liars / 10 honest) — large-scale pressure",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true,
+    "notes": [
+      "30 agents: 20 informed liars flooding the record + 8 regular + 2 specialist.",
+      "Tests whether scale breaks Claude's resistance.",
+      "Memory + chat for comparison.",
+      "Physics of Agents used 32 agents — comparable scale."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_v1.yaml",
+    "scenarios/familiar-blind/blind_wakefield_mmr_autism_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": ["rosters/blind-large-20of30-haiku.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 270, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

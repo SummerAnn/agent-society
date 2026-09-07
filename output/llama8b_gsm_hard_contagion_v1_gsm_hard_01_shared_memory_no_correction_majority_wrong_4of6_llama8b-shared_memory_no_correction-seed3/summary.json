@@ -1,0 +1,66 @@
+{
+  "runId": "llama8b_gsm_hard_contagion_v1_gsm_hard_01_shared_memory_no_correction_majority_wrong_4of6_llama8b-shared_memory_no_correction-seed3",
+  "configId": "llama8b_gsm_hard_contagion_v1_gsm_hard_01_shared_memory_no_correction_majority_wrong_4of6_llama8b",
+  "conditionId": "shared_memory_no_correction",
+  "scenarioId": "gsm_hard_01",
+  "memoryMode": "shared",
+  "interactionMode": "memory",
+  "topology": "fully-connected",
+  "agentCount": 6,
+  "claimCount": 2,
+  "correctionCount": 0,
+  "maxSteps": 18,
+  "completedSteps": 18,
+  "falseClaimEndorsementRate": 0.6666666666666666,
+  "finalConfidenceWeightedFalseEndorsement": 0.5783333333333334,
+  "finalFalseClaimRejectRate": 0.3333333333333333,
+  "finalUncertainRate": 0,
+  "peakFalseClaimEndorsementRate": 0.8333333333333334,
+  "peakConfidenceWeightedFalseEndorsement": 0.725,
+  "timeToMajorityAdoption": 1,
+  "timeToCorrection": null,
+  "distanceFromGroundTruth": 0.5,
+  "recoveryAfterCorrection": 0,
+  "postCorrectionPersistence": 0,
+  "diversityRetention": 0.579380164285695,
+  "trajectory": {
+    "finalMajorityStance": "endorse",
+    "finalConsensusStrength": 0.6666666666666666,
+    "peakConsensusStrength": 0.8333333333333334,
+    "lowestConsensusStrength": 0.6666666666666666,
+    "finalNetEndorsement": 0.3333333333333333,
+    "finalMeanConfidence": 0.8616666666666667
+  },
+  "physics": null,
+  "evaluation": null,
+  "groupDecision": {
+    "candidateClaimIds": [
+      "claim_correct_answer",
+      "claim_wrong_answer"
+    ],
+    "correctClaimId": "claim_correct_answer",
+    "selectedClaimId": "claim_wrong_answer",
+    "correct": false,
+    "tied": false,
+    "margin": 2.55,
+    "candidateSupport": {
+      "claim_correct_answer": 0,
+      "claim_wrong_answer": 2.55
+    },
+    "retrievalSupport": {
+      "supportingAgents": 1,
+      "agentsRetrievingSharedConclusions": 1,
+      "agentsRetrievingSharedEvidence": 0,
+      "detachedSupportAgents": 1,
+      "detachedSupportRate": 1
+    },
+    "sourceGrounding": null
+  },
+  "usage": {
+    "promptTokens": 38612,
+    "completionTokens": 3864,
+    "totalTokens": 42476,
+    "estimatedCostUsd": null
+  },
+  "dbPath": "output/llama8b_gsm_hard_contagion_v1_gsm_hard_01_shared_memory_no_correction_majority_wrong_4of6_llama8b-shared_memory_no_correction-seed3/trace.db"
+}

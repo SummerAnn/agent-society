@@ -1,0 +1,66 @@
+{
+  "runId": "cross_model_open_models_v1_gsm_hard_01_shared_memory_no_correction_majority_wrong_4of6_mistral7b-shared_memory_no_correction-seed2",
+  "configId": "cross_model_open_models_v1_gsm_hard_01_shared_memory_no_correction_majority_wrong_4of6_mistral7b",
+  "conditionId": "shared_memory_no_correction",
+  "scenarioId": "gsm_hard_01",
+  "memoryMode": "shared",
+  "interactionMode": "memory",
+  "topology": "fully-connected",
+  "agentCount": 6,
+  "claimCount": 2,
+  "correctionCount": 0,
+  "maxSteps": 18,
+  "completedSteps": 18,
+  "falseClaimEndorsementRate": 0.6666666666666666,
+  "finalConfidenceWeightedFalseEndorsement": 0.6483333333333333,
+  "finalFalseClaimRejectRate": 0.3333333333333333,
+  "finalUncertainRate": 0,
+  "peakFalseClaimEndorsementRate": 0.6666666666666666,
+  "peakConfidenceWeightedFalseEndorsement": 0.6483333333333333,
+  "timeToMajorityAdoption": 1,
+  "timeToCorrection": null,
+  "distanceFromGroundTruth": 0.5833333333333334,
+  "recoveryAfterCorrection": 0,
+  "postCorrectionPersistence": 0,
+  "diversityRetention": 0.579380164285695,
+  "trajectory": {
+    "finalMajorityStance": "endorse",
+    "finalConsensusStrength": 0.6666666666666666,
+    "peakConsensusStrength": 0.6666666666666666,
+    "lowestConsensusStrength": 0.6666666666666666,
+    "finalNetEndorsement": 0.3333333333333333,
+    "finalMeanConfidence": 0.955
+  },
+  "physics": null,
+  "evaluation": null,
+  "groupDecision": {
+    "candidateClaimIds": [
+      "claim_correct_answer",
+      "claim_wrong_answer"
+    ],
+    "correctClaimId": "claim_correct_answer",
+    "selectedClaimId": "claim_wrong_answer",
+    "correct": false,
+    "tied": false,
+    "margin": 5.92,
+    "candidateSupport": {
+      "claim_correct_answer": 0,
+      "claim_wrong_answer": 5.92
+    },
+    "retrievalSupport": {
+      "supportingAgents": 1,
+      "agentsRetrievingSharedConclusions": 1,
+      "agentsRetrievingSharedEvidence": 0,
+      "detachedSupportAgents": 1,
+      "detachedSupportRate": 1
+    },
+    "sourceGrounding": null
+  },
+  "usage": {
+    "promptTokens": 42372,
+    "completionTokens": 4211,
+    "totalTokens": 46583,
+    "estimatedCostUsd": null
+  },
+  "dbPath": "output/cross_model_open_models_v1_gsm_hard_01_shared_memory_no_correction_majority_wrong_4of6_mistral7b-shared_memory_no_correction-seed2/trace.db"
+}

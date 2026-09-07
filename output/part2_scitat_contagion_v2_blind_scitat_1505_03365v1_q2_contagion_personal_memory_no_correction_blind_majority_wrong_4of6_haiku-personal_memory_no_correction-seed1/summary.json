@@ -1,0 +1,70 @@
+{
+  "runId": "part2_scitat_contagion_v2_blind_scitat_1505_03365v1_q2_contagion_personal_memory_no_correction_blind_majority_wrong_4of6_haiku-personal_memory_no_correction-seed1",
+  "configId": "part2_scitat_contagion_v2_blind_scitat_1505_03365v1_q2_contagion_personal_memory_no_correction_blind_majority_wrong_4of6_haiku",
+  "conditionId": "personal_memory_no_correction",
+  "scenarioId": "blind_scitat_1505_03365v1_q2_contagion",
+  "memoryMode": "personal",
+  "interactionMode": "memory",
+  "topology": "fully-connected",
+  "agentCount": 6,
+  "claimCount": 4,
+  "correctionCount": 0,
+  "maxSteps": 18,
+  "completedSteps": 18,
+  "falseClaimEndorsementRate": 0.6666666666666666,
+  "finalConfidenceWeightedFalseEndorsement": 0.5716666666666667,
+  "finalFalseClaimRejectRate": 0,
+  "finalUncertainRate": 0.3333333333333333,
+  "peakFalseClaimEndorsementRate": 0.6666666666666666,
+  "peakConfidenceWeightedFalseEndorsement": 0.5750000000000001,
+  "timeToMajorityAdoption": 1,
+  "timeToCorrection": null,
+  "distanceFromGroundTruth": 0.75,
+  "recoveryAfterCorrection": 0,
+  "postCorrectionPersistence": 0,
+  "diversityRetention": 0.579380164285695,
+  "trajectory": {
+    "finalMajorityStance": "endorse",
+    "finalConsensusStrength": 0.6666666666666666,
+    "peakConsensusStrength": 0.6666666666666666,
+    "lowestConsensusStrength": 0.6666666666666666,
+    "finalNetEndorsement": 0.6666666666666666,
+    "finalMeanConfidence": 0.6383333333333334
+  },
+  "physics": null,
+  "evaluation": null,
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_c",
+    "selectedClaimId": "option_a",
+    "correct": false,
+    "tied": false,
+    "margin": 3.43,
+    "candidateSupport": {
+      "option_a": 3.43,
+      "option_b": 0,
+      "option_c": 0,
+      "option_d": 0
+    },
+    "retrievalSupport": {
+      "supportingAgents": 1,
+      "agentsRetrievingSharedConclusions": 0,
+      "agentsRetrievingSharedEvidence": 0,
+      "detachedSupportAgents": 0,
+      "detachedSupportRate": 0
+    },
+    "sourceGrounding": null
+  },
+  "usage": {
+    "promptTokens": 118839,
+    "completionTokens": 9524,
+    "totalTokens": 128363,
+    "estimatedCostUsd": null
+  },
+  "dbPath": "output/part2_scitat_contagion_v2_blind_scitat_1505_03365v1_q2_contagion_personal_memory_no_correction_blind_majority_wrong_4of6_haiku-personal_memory_no_correction-seed1/trace.db"
+}

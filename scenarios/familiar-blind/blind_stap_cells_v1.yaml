@@ -1,0 +1,173 @@
+{
+  "id": "blind_stap_cells_v1",
+  "title": "STAP cells: acid-bath stimulus-triggered pluripotency (blind IDs)",
+  "domain": "stem-cell-biology-fraud",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "shared_memory",
+    "fraud_retraction",
+    "delayed_correction",
+    "global_evidence"
+  ],
+  "sources": [
+    {
+      "label": "Obokata et al. (2014) Nature [RETRACTED]: STAP cells",
+      "url": "https://doi.org/10.1038/nature12968"
+    },
+    {
+      "label": "RIKEN investigation committee report (2014)"
+    },
+    {
+      "label": "Nature editorial (2014): retraction notice",
+      "url": "https://doi.org/10.1038/nature13656"
+    },
+    {
+      "label": "7-lab replication failure documented by Nature News (2014)"
+    }
+  ],
+  "focusClaimId": "claim_stap_works",
+  "claims": [
+    {
+      "id": "claim_stap_works",
+      "text": "Soaking somatic cells in weak acid for 30 minutes reliably converts them to pluripotent stem cells (STAP cells), as demonstrated by Oct4-GFP expression and chimera contribution.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "claim_oct4_expression",
+      "text": "The reported Oct4-GFP fluorescence images confirm genuine reprogramming rather than autofluorescence or contamination.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "claim_stress_response_real",
+      "text": "Low-pH stress can trigger transient gene expression changes in somatic cells, though not full reprogramming.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "claim_nature_peer_review",
+      "text": "Publication in Nature after peer review provides strong evidence for the validity of the STAP protocol.",
+      "truthLabel": "mixed"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_nature_publication",
+      "text": "Two papers published in Nature (Jan 2014) report STAP cell generation with fluorescence images, teratoma assays, and chimeric mouse data from a RIKEN laboratory.",
+      "effects": [
+        {
+          "claimId": "claim_stap_works",
+          "effect": 0.5
+        },
+        {
+          "claimId": "claim_oct4_expression",
+          "effect": 0.4
+        },
+        {
+          "claimId": "claim_nature_peer_review",
+          "effect": 0.6
+        }
+      ],
+      "visibleToAgentIds": []
+    },
+    {
+      "id": "ev_replication_failures",
+      "text": "Seven independent labs (including groups at Harvard, Cambridge, and BGI) report inability to reproduce STAP cells after following the published protocol exactly. Zero of 133 attempts show Oct4 activation.",
+      "effects": [
+        {
+          "claimId": "claim_stap_works",
+          "effect": -0.75
+        },
+        {
+          "claimId": "claim_oct4_expression",
+          "effect": -0.5
+        }
+      ],
+      "visibleToAgentIds": []
+    },
+    {
+      "id": "ev_image_duplication",
+      "text": "Image forensics reveal that key gel-lane images in the Nature papers are duplicated from the lead author's PhD thesis with different labels, and one fluorescence panel is reused across two supposedly different experiments.",
+      "effects": [
+        {
+          "claimId": "claim_stap_works",
+          "effect": -0.6
+        },
+        {
+          "claimId": "claim_oct4_expression",
+          "effect": -0.85
+        },
+        {
+          "claimId": "claim_nature_peer_review",
+          "effect": -0.4
+        }
+      ],
+      "visibleToAgentIds": []
+    },
+    {
+      "id": "ev_stress_gene_expression",
+      "text": "A controlled study confirms that acid stress does upregulate some pluripotency-associated genes transiently, but at levels far below reprogramming thresholds and without self-renewal capability.",
+      "effects": [
+        {
+          "claimId": "claim_stap_works",
+          "effect": -0.2
+        },
+        {
+          "claimId": "claim_stress_response_real",
+          "effect": 0.8
+        }
+      ],
+      "visibleToAgentIds": []
+    },
+    {
+      "id": "ev_genetic_analysis",
+      "text": "Genomic analysis of the claimed STAP stem cell lines shows they are genetically identical to existing embryonic stem cell lines in the lab, consistent with contamination or substitution rather than de novo generation.",
+      "effects": [
+        {
+          "claimId": "claim_stap_works",
+          "effect": -0.9
+        },
+        {
+          "claimId": "claim_oct4_expression",
+          "effect": -0.7
+        }
+      ],
+      "visibleToAgentIds": []
+    }
+  ],
+  "scheduledInterventions": [
+    {
+      "id": "corr_retraction",
+      "step": 10,
+      "type": "correction",
+      "claimId": "claim_stap_works",
+      "text": "Nature retracts both STAP papers after institutional investigation confirms data fabrication and falsification. The lead author's PhD thesis is also revoked.",
+      "effect": -0.95
+    }
+  ],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "claim_stap_works",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "claim_stap_works",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "claim_stap_works",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "claim_stap_works",
+      "stance": "endorse",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": []
+}

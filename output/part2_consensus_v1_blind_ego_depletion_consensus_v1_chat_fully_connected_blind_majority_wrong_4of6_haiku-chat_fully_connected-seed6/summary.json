@@ -1,0 +1,62 @@
+{
+  "runId": "part2_consensus_v1_blind_ego_depletion_consensus_v1_chat_fully_connected_blind_majority_wrong_4of6_haiku-chat_fully_connected-seed6",
+  "configId": "part2_consensus_v1_blind_ego_depletion_consensus_v1_chat_fully_connected_blind_majority_wrong_4of6_haiku",
+  "conditionId": "chat_fully_connected",
+  "scenarioId": "blind_ego_depletion_consensus_v1",
+  "memoryMode": "shared",
+  "interactionMode": "chat",
+  "topology": "fully-connected",
+  "agentCount": 6,
+  "claimCount": 3,
+  "correctionCount": 1,
+  "maxSteps": 18,
+  "completedSteps": 3,
+  "falseClaimEndorsementRate": 0,
+  "finalConfidenceWeightedFalseEndorsement": 0,
+  "finalFalseClaimRejectRate": 1,
+  "finalUncertainRate": 0,
+  "peakFalseClaimEndorsementRate": 0,
+  "peakConfidenceWeightedFalseEndorsement": 0,
+  "timeToMajorityAdoption": null,
+  "timeToCorrection": 6,
+  "distanceFromGroundTruth": 0.3333333333333333,
+  "recoveryAfterCorrection": 0,
+  "postCorrectionPersistence": 0,
+  "diversityRetention": 0,
+  "trajectory": {
+    "finalMajorityStance": "reject",
+    "finalConsensusStrength": 1,
+    "peakConsensusStrength": 1,
+    "lowestConsensusStrength": 1,
+    "finalNetEndorsement": -1,
+    "finalMeanConfidence": 0.8399999999999999
+  },
+  "physics": {
+    "predictedRegime": "consensus",
+    "actualRegime": "consensus",
+    "regimeMatch": true,
+    "extendedModelImprovement": 0.25267066056064014,
+    "truthAsymmetryRatio": null,
+    "groupArchetype": "convergence",
+    "criticalTemperature": 4.755,
+    "correctionEffect": 0.3333333333333333,
+    "correctionSurprise": -0.3333333333333333
+  },
+  "evaluation": {
+    "focusClaimAccuracy": 1,
+    "citationFidelity": null,
+    "citedMessageRate": 0,
+    "sourceCoverage": null,
+    "earlyConsensusPeak": 1,
+    "prematureConsensusRisk": 0,
+    "prematureConsensusFlag": false
+  },
+  "groupDecision": null,
+  "usage": {
+    "promptTokens": 114693,
+    "completionTokens": 14247,
+    "totalTokens": 128940,
+    "estimatedCostUsd": null
+  },
+  "dbPath": "output/part2_consensus_v1_blind_ego_depletion_consensus_v1_chat_fully_connected_blind_majority_wrong_4of6_haiku-chat_fully_connected-seed6/trace.db"
+}

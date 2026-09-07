@@ -1,0 +1,23 @@
+{
+  "id": "part2_ambiguity_gradient_v1",
+  "title": "Part 2: ambiguity gradient — 4 topics from well-known to debatable",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true,
+    "notes": [
+      "Same 4-liar setup across 4 topics with different ambiguity.",
+      "MMR (very certain) → Climate (high) → LK-99 (medium-high) → Ego depletion (medium).",
+      "Tests whether contagion scales with how uncertain the model is about the topic.",
+      "Ego depletion already shows 3/5 contagion, MMR shows 0/5."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_climate_attribution_v1.yaml",
+    "scenarios/familiar-blind/blind_room_temp_superconductor_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": ["rosters/blind-majority-wrong-4of6-haiku.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "part2_20agent_4choice_v1",
+  "title": "Part 2: 20 agents, 4 answer choices, 12 liars vs 8 honest — scale + difficulty",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true,
+    "notes": [
+      "20 agents (12 liars + 6 regular + 2 specialist), 4 answer choices.",
+      "More social pressure (12 wrong entries in record) + harder task (4 choices not 2).",
+      "Tests whether scale changes contagion on Claude."
+    ]
+  },
+  "scenarios": [
+    "scenarios/gsm8k-4choice/gsm8k_4choice_01.yaml",
+    "scenarios/gsm8k-4choice/gsm8k_4choice_02.yaml",
+    "scenarios/gsm8k-4choice/gsm8k_4choice_03.yaml",
+    "scenarios/gsm8k-4choice/gsm8k_4choice_04.yaml",
+    "scenarios/gsm8k-4choice/gsm8k_4choice_05.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": ["rosters/blind-large-12of20-haiku.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 180, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

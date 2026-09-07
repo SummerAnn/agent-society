@@ -1,0 +1,32 @@
+{
+  "id": "cross_model_open_models_v1",
+  "title": "Fair cross-model: Llama + Mistral + Gemma on identical GSM-Hard setup",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Open-model portion of the fair comparison. Claude cells already running in majority-wrong-gsm-hard-v1.",
+      "Same 5 problems, same 2 conditions, same 5 seeds across all 3 open models.",
+      "50 cells per model = 150 total OpenRouter cells."
+    ]
+  },
+  "scenarios": [
+    "scenarios/gsm-hard/gsm_hard_01.yaml",
+    "scenarios/gsm-hard/gsm_hard_02.yaml",
+    "scenarios/gsm-hard/gsm_hard_03.yaml",
+    "scenarios/gsm-hard/gsm_hard_04.yaml",
+    "scenarios/gsm-hard/gsm_hard_05.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": [
+    "rosters/majority-wrong-4of6-llama8b.json",
+    "rosters/majority-wrong-4of6-mistral7b.json",
+    "rosters/majority-wrong-4of6-gemma9b.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

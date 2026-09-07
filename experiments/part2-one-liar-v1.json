@@ -1,0 +1,17 @@
+{
+  "id": "part2_one_liar_v1",
+  "title": "Part 2: 1 informed liar — does one wrong entry spread?",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_v1_one_liar.yaml",
+    "scenarios/familiar-blind/blind_wakefield_mmr_autism_v1_one_liar.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": ["rosters/blind-one-liar-6-haiku.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

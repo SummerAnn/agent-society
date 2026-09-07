@@ -1,0 +1,169 @@
+{
+  "id": "blind_scitat_2201_08077v1_q2_contagion",
+  "title": "SciTaT 2201.08077v1.q2 (full context) (blind IDs, informed liar contagion test)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "full_context"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "paragraph",
+      "title": "Paper paragraph",
+      "citation": "SciTaT item 2201.08077v1-q2",
+      "summary": "Let $\\left[ \\Mcal_{1} \\right]_{n}$ be the submatrix of $\\Mcal_{1}$ of size $n\\times n$ obtained by taking the first $n$ rows and columns. Let $\\Gl_j$ be eigenvalues enumerated according to the rule $|\\Gl_1| \\geq |\\Gl_2| \\geq \\cdots $. Table \\ref{table} exhibits the first 10 eigenvalues when $n=10, 25, 50, 100$. There eigenvalues are computed by using Python built-in function \\textit{eigvalsh} for numerical computation on eigenvalues of Hermitian matrix.",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    },
+    {
+      "id": "table_1",
+      "title": "Table table",
+      "citation": "SciTaT item 2201.08077v1-q2",
+      "summary": "Eigenvalues of $\\left[ \\Mcal_{1} \\right]_{n}$, $n=10, 25, 50, 100$, when $R=1.1$.\n | $\\left[ \\Mcal_{1} \\right]_{10}$ | $\\left[\\Mcal_{1} \\right]_{25}$ | $\\left[ \\Mcal_{1} \\right]_{50}$ | $\\left[ \\Mcal_{1} \\right]_{100}$\n$\\Gl_1$ | 0.249194 | 0.249279 | 0.249280 | 0.249280\n$\\Gl_2$ | 0.0188675 | 0.019039 | 0.0190397 | 0.0190397\n$\\Gl_3$ | 0.00126322 | 0.00135824 | 0.00135840 | 0.00135840\n$\\Gl_4$ | 0.0000716940 | 0.0000967768 | 0.0000968816 | 0.0000968816\n$\\Gl_5$ | 3.10066 $\\times 10^{-6}$ | 6.86233  $\\times 10^{-6}$ | 6.90960    $\\times 10^{-6}$ | 6.90960   $\\times 10^{-6}$\n$\\Gl_6$ | 9.74582   $\\times 10^{-8}$ | 4.77676   $\\times 10^{-7}$ | 4.92791    $\\times 10^{-7}$ | 4.92793   $\\times 10^{-7}$\n$\\Gl_7$ | 2.16813  $\\times 10^{-9}$ | 3.16948   $\\times 10^{-8}$ | 3.51450    $\\times 10^{-8}$ | 3.51461   $\\times 10^{-8}$\n$\\Gl_8$ | 3.24992   $\\times 10^{-11}$ | 1.93082  $\\times 10^{-9}$ | 2.50618    $\\times 10^{-9}$ | 2.50662   $\\times 10^{-9}$\n$\\Gl_9$ | 2.94949   $\\times 10^{-13}$ | 1.05077  $\\times 10^{-10}$ | 1.78615    $\\times 10^{-10}$ | 1.78772   $\\times 10^{-10}$\n$\\Gl_{10}$ | 1.22538     $\\times 10^{-15}$ | 5.05405   $\\times 10^{-12}$ | 1.27027    $\\times 10^{-11}$ | 1.27501   $\\times 10^{-11}$",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_a",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_c",
+    "instruction": "How many cells in the table have eigenvalues smaller than $10^{-10}$?\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": false
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "2201.08077v1-q2",
+    "phase": "full_context",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 19.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 13.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 16.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 32.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "paragraph",
+      "text": "Let $\\left[ \\Mcal_{1} \\right]_{n}$ be the submatrix of $\\Mcal_{1}$ of size $n\\times n$ obtained by taking the first $n$ rows and columns. Let $\\Gl_j$ be eigenvalues enumerated according to the rule $|\\Gl_1| \\geq |\\Gl_2| \\geq \\cdots $. Table \\ref{table} exhibits the first 10 eigenvalues when $n=10, 25, 50, 100$. There eigenvalues are computed by using Python built-in function \\textit{eigvalsh} for numerical computation on eigenvalues of Hermitian matrix.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_c",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "table_1",
+      "text": "Eigenvalues of $\\left[ \\Mcal_{1} \\right]_{n}$, $n=10, 25, 50, 100$, when $R=1.1$.\n | $\\left[ \\Mcal_{1} \\right]_{10}$ | $\\left[\\Mcal_{1} \\right]_{25}$ | $\\left[ \\Mcal_{1} \\right]_{50}$ | $\\left[ \\Mcal_{1} \\right]_{100}$\n$\\Gl_1$ | 0.249194 | 0.249279 | 0.249280 | 0.249280\n$\\Gl_2$ | 0.0188675 | 0.019039 | 0.0190397 | 0.0190397\n$\\Gl_3$ | 0.00126322 | 0.00135824 | 0.00135840 | 0.00135840\n$\\Gl_4$ | 0.0000716940 | 0.0000967768 | 0.0000968816 | 0.0000968816\n$\\Gl_5$ | 3.10066 $\\times 10^{-6}$ | 6.86233  $\\times 10^{-6}$ | 6.90960    $\\times 10^{-6}$ | 6.90960   $\\times 10^{-6}$\n$\\Gl_6$ | 9.74582   $\\times 10^{-8}$ | 4.77676   $\\times 10^{-7}$ | 4.92791    $\\times 10^{-7}$ | 4.92793   $\\times 10^{-7}$\n$\\Gl_7$ | 2.16813  $\\times 10^{-9}$ | 3.16948   $\\times 10^{-8}$ | 3.51450    $\\times 10^{-8}$ | 3.51461   $\\times 10^{-8}$\n$\\Gl_8$ | 3.24992   $\\times 10^{-11}$ | 1.93082  $\\times 10^{-9}$ | 2.50618    $\\times 10^{-9}$ | 2.50662   $\\times 10^{-9}$\n$\\Gl_9$ | 2.94949   $\\times 10^{-13}$ | 1.05077  $\\times 10^{-10}$ | 1.78615    $\\times 10^{-10}$ | 1.78772   $\\times 10^{-10}$\n$\\Gl_{10}$ | 1.22538     $\\times 10^{-15}$ | 5.05405   $\\times 10^{-12}$ | 1.27027    $\\times 10^{-11}$ | 1.27501   $\\times 10^{-11}$",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_c",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_1",
+      "claimId": "option_c",
+      "stance": "reject",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "option_c",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "option_c",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "option_c",
+      "stance": "reject",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

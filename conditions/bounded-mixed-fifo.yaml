@@ -1,0 +1,15 @@
+{
+  "id": "bounded_mixed_fifo",
+  "title": "Four-slot source-plus-conclusion record, oldest entry removed",
+  "memory": {
+    "mode": "shared",
+    "record": "mixed_record",
+    "maxRetrievedEntries": 2,
+    "maxStoredEntries": 4,
+    "evictionPolicy": "fifo"
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

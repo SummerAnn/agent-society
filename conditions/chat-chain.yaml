@@ -1,0 +1,16 @@
+{
+  "id": "chat_chain",
+  "title": "Chat debate (chain topology)",
+  "memory": {
+    "mode": "shared",
+    "maxRetrievedEntries": 6
+  },
+  "interaction": {
+    "mode": "chat",
+    "chatRounds": 3,
+    "topology": "chain"
+  },
+  "interventions": {
+    "correctionVisibility": "global"
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "id": "blind_scitat_1601_07336v1_q1_contagion",
+  "title": "SciTaT 1601.07336v1-q1 (full context) (blind IDs, informed liar contagion test)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "full_context"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "paragraph",
+      "title": "Paper paragraph",
+      "citation": "SciTaT item 1601.07336v1-q1",
+      "summary": "By applying the different methods, we presented the classification results in Table \\ref{Tab3}.  As well, the tuned parameters are reported for the results achieved by other methods. The bold numbers highlight the best results. From the results, we can observe that the proposed approach outperforms other methods in most cases while, on average, RSRS achieved the second best performance based on Stein kernel. This can be interpreted by the Stein distance may better suit some subset of Brodatz dataset, i.e., `5v2' and`5v3'. As for SRC, it conducts classification as a baseline due to the lack of consideration of the intrinsic geometry structure within data.",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    },
+    {
+      "id": "table_1",
+      "title": "Table Tab3",
+      "citation": "SciTaT item 1601.07336v1-q1",
+      "summary": "Classification results in terms of accuracy (\\%) on Brodatz dataset.\n$Dataset$ | `5c' | `5m' | `5v' | `5v2' | `5v3' | `16v' | `16c' | `10v' | `10' | avg.\nSRC\\citep{WrightYangGaneshSastryMa2009} (0.001) | 20.00 | 20.00 | 20.00 | 20.00 | 20.00 | 6.25 | 44.07 | 10.00 | 20.00 | 20.04\nRSRC\\citep{CherianSra2014}(0.01) | 97.97 | 50.51 | 83.05 | 83.05 | 71.19 | 61.65 | 74.05 | 85.08 | 92.88 | 77.71\nRSRS\\citep{HarandiHartleyLovellSanderson2014}(10.0) | 98.31 | 89.15 | 83.05 | \\textbf{87.12} | \\textbf{88.14} | 72.46 | 83.79 | 88.31 | 94.24 | 87.17\nLogE-GkSRC\\citep{LiWangZuoZhang2013}(0.001,0.02) | 97.29 | 94.92 | 83.73 | 86.10 | 86.78 | 73.20 | 80.08 | 90.34 | 94.58 | 84.55\nNPKSRC(0.09,0.05) | \\textbf{98.31} | \\textbf{98.98} | \\textbf{84.41} | 84.07 | 87.12 | \\textbf{79.34} | \\textbf{88.35} | \\textbf{91.02} | \\textbf{98.31} | \\textbf{89.26}",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_b",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_a",
+    "instruction": "Based on the paragraph, find the difference in average accuracy between the proposed approach and the method described as achieving the second best performance.\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": false
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "1601.07336v1-q1",
+    "phase": "full_context",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 2.09.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 1.09.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 3.09.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 4.18.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "paragraph",
+      "text": "By applying the different methods, we presented the classification results in Table \\ref{Tab3}.  As well, the tuned parameters are reported for the results achieved by other methods. The bold numbers highlight the best results. From the results, we can observe that the proposed approach outperforms other methods in most cases while, on average, RSRS achieved the second best performance based on Stein kernel. This can be interpreted by the Stein distance may better suit some subset of Brodatz dataset, i.e., `5v2' and`5v3'. As for SRC, it conducts classification as a baseline due to the lack of consideration of the intrinsic geometry structure within data.",
+      "visibleToAgentIds": [],
+      "effects": [
+        {
+          "claimId": "option_a",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "table_1",
+      "text": "Classification results in terms of accuracy (\\%) on Brodatz dataset.\n$Dataset$ | `5c' | `5m' | `5v' | `5v2' | `5v3' | `16v' | `16c' | `10v' | `10' | avg.\nSRC\\citep{WrightYangGaneshSastryMa2009} (0.001) | 20.00 | 20.00 | 20.00 | 20.00 | 20.00 | 6.25 | 44.07 | 10.00 | 20.00 | 20.04\nRSRC\\citep{CherianSra2014}(0.01) | 97.97 | 50.51 | 83.05 | 83.05 | 71.19 | 61.65 | 74.05 | 85.08 | 92.88 | 77.71\nRSRS\\citep{HarandiHartleyLovellSanderson2014}(10.0) | 98.31 | 89.15 | 83.05 | \\textbf{87.12} | \\textbf{88.14} | 72.46 | 83.79 | 88.31 | 94.24 | 87.17\nLogE-GkSRC\\citep{LiWangZuoZhang2013}(0.001,0.02) | 97.29 | 94.92 | 83.73 | 86.10 | 86.78 | 73.20 | 80.08 | 90.34 | 94.58 | 84.55\nNPKSRC(0.09,0.05) | \\textbf{98.31} | \\textbf{98.98} | \\textbf{84.41} | 84.07 | 87.12 | \\textbf{79.34} | \\textbf{88.35} | \\textbf{91.02} | \\textbf{98.31} | \\textbf{89.26}",
+      "visibleToAgentIds": [],
+      "effects": [
+        {
+          "claimId": "option_a",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "option_b",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_1",
+      "claimId": "option_a",
+      "stance": "reject",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "option_b",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "option_a",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "option_b",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "option_a",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "option_b",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "option_a",
+      "stance": "reject",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

@@ -1,0 +1,29 @@
+{
+  "id": "llama8b_familiar_contagion_v1",
+  "title": "Llama 8B on familiar topics: does contagion appear where Claude showed zero?",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Same familiar science topics where Claude showed zero contagion across 2500+ cells.",
+      "Llama 8B already showed contagion on GSM-Hard majority-wrong (memory mode).",
+      "If Llama also shows contagion on ego depletion / MMR, model capability is the key variable.",
+      "Compare: 1-wrong baseline vs 4-wrong majority, shared memory vs chat.",
+      "Directly tests whether Claude's zero-contagion finding is model-specific."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1, 2, 3],
+  "rosterPaths": [
+    "rosters/baseline-6-llama8b.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "shared_memory_early_correction",
+  "title": "Shared memory with early correction",
+  "memory": {
+    "mode": "shared",
+    "maxRetrievedEntries": 6
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "early"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "bounded_chat_mixed_fifo",
+  "title": "Four-message source-plus-conclusion thread, oldest message removed",
+  "memory": {
+    "mode": "shared",
+    "record": "mixed_record",
+    "maxRetrievedEntries": 2,
+    "maxStoredEntries": 4,
+    "evictionPolicy": "fifo"
+  },
+  "interaction": {
+    "mode": "chat",
+    "chatRounds": 1,
+    "maxStoredMessages": 4,
+    "maxVisibleMessages": 2,
+    "maxMessageWords": 40,
+    "topology": "fully-connected",
+    "chatStyle": "claim-debate",
+    "collusion": { "strategy": "none", "visibility": "hidden", "omitContraryEvidence": false, "repeatSupportiveEvidence": false }
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

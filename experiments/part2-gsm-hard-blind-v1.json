@@ -1,0 +1,24 @@
+{
+  "id": "part2_gsm_hard_blind_v1",
+  "title": "Part 2: GSM-Hard (absurd numbers) with blind IDs — Claude rejects, Llama engages",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true,
+    "notes": [
+      "GSM-Hard with blind IDs + informed contaminator.",
+      "Claude will reject both answers (absurd numbers). Llama will engage.",
+      "Tests whether the new contaminator prompt changes anything on GSM-Hard."
+    ]
+  },
+  "scenarios": [
+    "scenarios/gsm-hard/gsm_hard_01.yaml",
+    "scenarios/gsm-hard/gsm_hard_02.yaml",
+    "scenarios/gsm-hard/gsm_hard_03.yaml"
+  ],
+  "conditions": ["conditions/shared-memory-no-correction.yaml"],
+  "seeds": [1, 2, 3],
+  "rosterPaths": [
+    "rosters/blind-majority-wrong-4of6-haiku.json",
+    "rosters/blind-majority-wrong-4of6-llama8b.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

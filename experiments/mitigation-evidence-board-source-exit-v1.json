@@ -1,0 +1,29 @@
+{
+  "id": "mitigation_evidence_board_source_exit_v1",
+  "title": "Mitigation: does evidence-board-only record prevent frozen belief lock-in?",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Source-exit roster with evidence-board condition (evidence only, no opinions in record).",
+      "If the contamination agent's OPINION entries are not stored (only evidence cards), does the frozen belief still persist?",
+      "Compare to shared-memory (stores opinions) to see if filtering opinions from the record is a mitigation."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-v1.yaml",
+    "scenarios/distributed-wakefield-mmr-autism-v1.yaml",
+    "scenarios/distributed-climate-attribution-v1.yaml",
+    "scenarios/distributed-room-temp-superconductor-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-evidence-board-no-correction.yaml",
+    "conditions/shared-memory-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-source-exit-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0 }
+}

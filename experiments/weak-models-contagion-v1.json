@@ -1,0 +1,32 @@
+{
+  "id": "weak_models_contagion_v1",
+  "title": "Cross-model contagion: Mistral 7B + Gemma 9B on GSM-Hard majority-wrong",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Same setup as Llama 8B experiment — majority wrong (4/6) on GSM-Hard.",
+      "Mistral 7B: used by Cost of Consensus. Gemma 9B: used by Physics of Agents.",
+      "Llama 8B already showed contagion (specialist_1 and regular_1 endorsed at steps 10-11).",
+      "If Mistral and Gemma also show contagion, the model-capability story is confirmed.",
+      "Compare across 4 models: Claude Haiku (0%), Llama 8B (?%), Mistral 7B (?%), Gemma 9B (?%)."
+    ]
+  },
+  "scenarios": [
+    "scenarios/gsm-hard/gsm_hard_01.yaml",
+    "scenarios/gsm-hard/gsm_hard_02.yaml",
+    "scenarios/gsm-hard/gsm_hard_03.yaml",
+    "scenarios/gsm-hard/gsm_hard_04.yaml",
+    "scenarios/gsm-hard/gsm_hard_05.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3],
+  "rosterPaths": [
+    "rosters/majority-wrong-4of6-mistral7b.json",
+    "rosters/majority-wrong-4of6-gemma9b.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

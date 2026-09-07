@@ -1,0 +1,11 @@
+{
+  "id": "part2_temperature_v1",
+  "title": "Part 2: temperature 0.7 — does randomness increase contagion?",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true },
+  "scenarios": ["scenarios/familiar-blind/blind_ego_depletion_v1.yaml"],
+  "conditions": ["conditions/shared-memory-no-correction.yaml"],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": ["rosters/blind-majority-wrong-4of6-haiku.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0.7 }
+}

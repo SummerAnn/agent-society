@@ -1,0 +1,18 @@
+{
+  "id": "bounded-record-12-early-exit-haiku",
+  "title": "Twelve neutral analysts, first 4 exit after their turn (Haiku)",
+  "agents": [
+    { "id": "analyst_01", "role": "neutral_analyst", "model": "claude-haiku-4-5-20251001", "positiveEvidenceWeight": 1, "negativeEvidenceWeight": 1, "socialWeight": 0, "falseClaimBias": 0, "correctionTrust": 0.5, "writesMemoryThreshold": 1, "activeUntilStep": 4 },
+    { "id": "analyst_02", "role": "neutral_analyst", "model": "claude-haiku-4-5-20251001", "positiveEvidenceWeight": 1, "negativeEvidenceWeight": 1, "socialWeight": 0, "falseClaimBias": 0, "correctionTrust": 0.5, "writesMemoryThreshold": 1, "activeUntilStep": 4 },
+    { "id": "analyst_03", "role": "neutral_analyst", "model": "claude-haiku-4-5-20251001", "positiveEvidenceWeight": 1, "negativeEvidenceWeight": 1, "socialWeight": 0, "falseClaimBias": 0, "correctionTrust": 0.5, "writesMemoryThreshold": 1, "activeUntilStep": 4 },
+    { "id": "analyst_04", "role": "neutral_analyst", "model": "claude-haiku-4-5-20251001", "positiveEvidenceWeight": 1, "negativeEvidenceWeight": 1, "socialWeight": 0, "falseClaimBias": 0, "correctionTrust": 0.5, "writesMemoryThreshold": 1, "activeUntilStep": 4 },
+    { "id": "analyst_05", "role": "neutral_analyst", "model": "claude-haiku-4-5-20251001", "positiveEvidenceWeight": 1, "negativeEvidenceWeight": 1, "socialWeight": 0, "falseClaimBias": 0, "correctionTrust": 0.5, "writesMemoryThreshold": 1 },
+    { "id": "analyst_06", "role": "neutral_analyst", "model": "claude-haiku-4-5-20251001", "positiveEvidenceWeight": 1, "negativeEvidenceWeight": 1, "socialWeight": 0, "falseClaimBias": 0, "correctionTrust": 0.5, "writesMemoryThreshold": 1 },
+    { "id": "analyst_07", "role": "neutral_analyst", "model": "claude-haiku-4-5-20251001", "positiveEvidenceWeight": 1, "negativeEvidenceWeight": 1, "socialWeight": 0, "falseClaimBias": 0, "correctionTrust": 0.5, "writesMemoryThreshold": 1 },
+    { "id": "analyst_08", "role": "neutral_analyst", "model": "claude-haiku-4-5-20251001", "positiveEvidenceWeight": 1, "negativeEvidenceWeight": 1, "socialWeight": 0, "falseClaimBias": 0, "correctionTrust": 0.5, "writesMemoryThreshold": 1 },
+    { "id": "analyst_09", "role": "neutral_analyst", "model": "claude-haiku-4-5-20251001", "positiveEvidenceWeight": 1, "negativeEvidenceWeight": 1, "socialWeight": 0, "falseClaimBias": 0, "correctionTrust": 0.5, "writesMemoryThreshold": 1 },
+    { "id": "analyst_10", "role": "neutral_analyst", "model": "claude-haiku-4-5-20251001", "positiveEvidenceWeight": 1, "negativeEvidenceWeight": 1, "socialWeight": 0, "falseClaimBias": 0, "correctionTrust": 0.5, "writesMemoryThreshold": 1 },
+    { "id": "analyst_11", "role": "neutral_analyst", "model": "claude-haiku-4-5-20251001", "positiveEvidenceWeight": 1, "negativeEvidenceWeight": 1, "socialWeight": 0, "falseClaimBias": 0, "correctionTrust": 0.5, "writesMemoryThreshold": 1 },
+    { "id": "analyst_12", "role": "neutral_analyst", "model": "claude-haiku-4-5-20251001", "positiveEvidenceWeight": 1, "negativeEvidenceWeight": 1, "socialWeight": 0, "falseClaimBias": 0, "correctionTrust": 0.5, "writesMemoryThreshold": 1 }
+  ]
+}

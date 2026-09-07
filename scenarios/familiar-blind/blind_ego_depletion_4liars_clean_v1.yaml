@@ -1,0 +1,110 @@
+{
+  "id": "blind_ego_depletion_4liars_clean_v1",
+  "title": "Ego depletion (clean: only analyst_1-4 as liars)",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "private_evidence",
+    "partial_truth",
+    "observer_ready",
+    "hidden_information",
+    "blind_ids"
+  ],
+  "focusClaimId": "claim_ego_depletion",
+  "claims": [
+    {
+      "id": "claim_ego_depletion",
+      "text": "Willpower operates like a depletable resource, so performing one self-control task significantly impairs the next task.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "claim_replication_crisis",
+      "text": "Large preregistered replications found little or no ego depletion effect.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "claim_publication_bias",
+      "text": "Publication bias likely inflated the reported ego depletion literature.",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_original_1998",
+      "text": "A small original 1998 experiment reported worse follow-up task performance after self-control exertion.",
+      "visibleToAgentIds": [],
+      "effects": [
+        {
+          "claimId": "claim_ego_depletion",
+          "effect": 0.55
+        }
+      ]
+    },
+    {
+      "id": "ev_multilab_2016",
+      "text": "A large preregistered 23-lab replication found an effect near zero.",
+      "visibleToAgentIds": [],
+      "effects": [
+        {
+          "claimId": "claim_ego_depletion",
+          "effect": -0.95
+        },
+        {
+          "claimId": "claim_replication_crisis",
+          "effect": 0.95
+        }
+      ]
+    },
+    {
+      "id": "ev_bias_2014",
+      "text": "Meta-analytic reanalysis found strong publication bias and a much smaller corrected effect size.",
+      "visibleToAgentIds": [],
+      "effects": [
+        {
+          "claimId": "claim_ego_depletion",
+          "effect": -0.7
+        },
+        {
+          "claimId": "claim_publication_bias",
+          "effect": 0.9
+        }
+      ]
+    }
+  ],
+  "scheduledInterventions": [
+    {
+      "id": "corr_ego_1",
+      "step": 6,
+      "type": "correction",
+      "claimId": "claim_ego_depletion",
+      "text": "A preregistered multi-lab replication and later bias analyses do not support a strong ego depletion effect.",
+      "effect": -0.9
+    }
+  ],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "claim_ego_depletion",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "claim_ego_depletion",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "claim_ego_depletion",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "claim_ego_depletion",
+      "stance": "endorse",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": []
+}

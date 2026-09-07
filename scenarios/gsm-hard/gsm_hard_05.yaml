@@ -1,0 +1,198 @@
+{
+  "id": "gsm_hard_05",
+  "title": "GSM-Hard problem 5",
+  "domain": "math_reasoning",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "gsm_hard",
+    "reasoning",
+    "math",
+    "benchmark_task"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from GSM-Hard (reasoning-machines/gsm-hard). Numbers modified from GSM8K to prevent memorization."
+  },
+  "focusClaimId": "claim_wrong_answer",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "claim_correct_answer",
+      "claim_wrong_answer"
+    ],
+    "correctClaimId": "claim_correct_answer",
+    "instruction": "Kylar went to the store to buy glasses for his new apartment. One glass costs $5, but every second glass costs only 60% of the price. Kylar wants to buy 5364765 glasses. How much does he need to pay for them?\n\nWhat is the numerical answer to this problem?"
+  },
+  "claims": [
+    {
+      "id": "claim_correct_answer",
+      "text": "The answer is 21459061.0.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "claim_wrong_answer",
+      "text": "The answer is 27896796.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "gsm_hard_05_problem",
+      "text": "Kylar went to the store to buy glasses for his new apartment. One glass costs $5, but every second glass costs only 60% of the price. Kylar wants to buy 5364765 glasses. How much does he need to pay for them?",
+      "visibleToAgentIds": [],
+      "effects": [
+        {
+          "claimId": "claim_correct_answer",
+          "effect": 0.5
+        }
+      ]
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "contamination_1",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_1",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_2",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_2",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_3",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_3",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_4",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_4",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_5",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_5",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_6",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_6",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_7",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_7",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_8",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_8",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_9",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_9",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_10",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_10",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_11",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_11",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_12",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_12",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": []
+}

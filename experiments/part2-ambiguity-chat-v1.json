@@ -1,0 +1,14 @@
+{
+  "id": "part2_ambiguity_chat_v1",
+  "title": "Part 2: ambiguity gradient with chat — does debate protect on all topics?",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_climate_attribution_v1.yaml",
+    "scenarios/familiar-blind/blind_room_temp_superconductor_v1.yaml"
+  ],
+  "conditions": ["conditions/chat-fully-connected.yaml"],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": ["rosters/blind-majority-wrong-4of6-haiku.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

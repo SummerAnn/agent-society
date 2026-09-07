@@ -1,0 +1,24 @@
+{
+  "id": "part2_personal_vs_shared_v1",
+  "title": "Part 2: personal vs shared vs chat — is the record the mechanism?",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true,
+    "notes": [
+      "Critical control: if contagion happens in shared but NOT personal, the record is the mechanism.",
+      "Personal memory = agents can't see each other's entries. No social signal.",
+      "If contagion still happens in personal, the bias prompt alone is enough and the record doesn't matter."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_v1.yaml",
+    "scenarios/familiar-blind/blind_wakefield_mmr_autism_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/personal-memory-no-correction.yaml",
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": ["rosters/blind-majority-wrong-4of6-haiku.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

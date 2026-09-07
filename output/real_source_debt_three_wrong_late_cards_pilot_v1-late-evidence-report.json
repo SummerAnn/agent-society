@@ -1,0 +1,6 @@
+{
+  "gridId": "real_source_debt_three_wrong_late_cards_pilot_v1",
+  "definition": "An at-risk agent is one that endorsed the false focus claim before a late counter-source first became visible in its prompt. Persistence is the share of those agents that still endorsed the claim in their final recorded stance. Rejection is the share that ended by rejecting it.",
+  "scopeNote": "This measures recorded exposure and later belief change. It does not establish why an agent changed or prove that it attended to a particular source.",
+  "scenarios": []
+}

@@ -1,0 +1,11 @@
+{
+  "id": "part2_100agent_v1",
+  "title": "Part 2: 100 agents (60 liars / 40 honest) — massive scale",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true },
+  "scenarios": ["scenarios/familiar-blind/blind_ego_depletion_v1.yaml"],
+  "conditions": ["conditions/shared-memory-no-correction.yaml"],
+  "seeds": [1, 2, 3],
+  "rosterPaths": ["rosters/blind-100agent-60of100-haiku.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 6000, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

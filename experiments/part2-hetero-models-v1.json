@@ -1,0 +1,23 @@
+{
+  "id": "part2_hetero_models_v1",
+  "title": "Part 2: heterogeneous — Llama liars vs Claude honest agents",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true,
+    "notes": [
+      "Liars use Llama 8B (holds the lie better, doesn't self-correct).",
+      "Honest agents use Claude Haiku (stronger reasoning).",
+      "Realistic scenario: compromised agents could be weaker models."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_v1.yaml",
+    "scenarios/familiar-blind/blind_wakefield_mmr_autism_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": ["rosters/blind-hetero-llama-liars-claude-honest.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

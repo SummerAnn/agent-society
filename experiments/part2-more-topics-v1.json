@@ -1,0 +1,20 @@
+{
+  "id": "part2_more_topics_v1",
+  "title": "Part 2: STAP cells + PANDAS — more ambiguity gradient points",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true,
+    "notes": [
+      "STAP cells: Obokata 2014 fraud, retracted. Similar to LK-99 (debunked claim).",
+      "PANDAS: controversial medical diagnosis. Genuine scientific debate.",
+      "Adds 2 more data points to the ambiguity gradient."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_stap_cells_v1.yaml",
+    "scenarios/familiar-blind/blind_medical_pandas_dx_v1.yaml"
+  ],
+  "conditions": ["conditions/shared-memory-no-correction.yaml"],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": ["rosters/blind-majority-wrong-4of6-haiku.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

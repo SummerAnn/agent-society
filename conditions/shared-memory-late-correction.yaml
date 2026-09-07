@@ -1,0 +1,12 @@
+{
+  "id": "shared_memory_late_correction",
+  "title": "Shared memory with late correction",
+  "memory": {
+    "mode": "shared",
+    "maxRetrievedEntries": 6
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "late"
+  }
+}

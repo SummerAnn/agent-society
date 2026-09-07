@@ -1,0 +1,11 @@
+{
+  "id": "part2_force_write_v2",
+  "title": "Part 2: force write v2 — clean 4-liar scenario, specialist writes uncertain",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true },
+  "scenarios": ["scenarios/familiar-blind/blind_ego_depletion_4liars_clean_v1.yaml"],
+  "conditions": ["conditions/shared-memory-no-correction.yaml"],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": ["rosters/blind-majority-force-write-haiku.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

@@ -1,0 +1,110 @@
+{
+  "id": "blind_wakefield_mmr_autism_v1_mixed8",
+  "title": "Distributed evidence on Wakefield and MMR-autism (blind IDs) (mixed 8-agent)",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "private_evidence",
+    "partial_truth",
+    "observer_ready",
+    "hidden_information",
+    "blind_ids"
+  ],
+  "focusClaimId": "claim_mmr_causes_autism",
+  "claims": [
+    {
+      "id": "claim_mmr_causes_autism",
+      "text": "The MMR vaccine causes autism.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "claim_large_cohort_null",
+      "text": "Large cohort and meta-analytic studies found no association between MMR vaccination and autism.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "claim_wakefield_fraud",
+      "text": "The original Wakefield study was undermined by fraud findings and retraction.",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_wakefield_case_series",
+      "text": "The original 1998 Wakefield paper described 12 children and suggested a temporal link between MMR vaccination and autism symptoms.",
+      "visibleToAgentIds": [],
+      "effects": [
+        {
+          "claimId": "claim_mmr_causes_autism",
+          "effect": 0.5
+        }
+      ]
+    },
+    {
+      "id": "ev_danish_cohort_null",
+      "text": "A Danish cohort study of more than 500,000 children found no increased autism risk in vaccinated children.",
+      "visibleToAgentIds": [],
+      "effects": [
+        {
+          "claimId": "claim_mmr_causes_autism",
+          "effect": -0.9
+        },
+        {
+          "claimId": "claim_large_cohort_null",
+          "effect": 0.95
+        }
+      ]
+    },
+    {
+      "id": "ev_fraud_and_retraction",
+      "text": "Investigations found conflicts of interest, altered case histories, and serious misconduct in the Wakefield study, which was later fully retracted.",
+      "visibleToAgentIds": [],
+      "effects": [
+        {
+          "claimId": "claim_mmr_causes_autism",
+          "effect": -0.75
+        },
+        {
+          "claimId": "claim_wakefield_fraud",
+          "effect": 0.95
+        }
+      ]
+    }
+  ],
+  "scheduledInterventions": [
+    {
+      "id": "corr_mmr_1",
+      "step": 6,
+      "type": "correction",
+      "claimId": "claim_mmr_causes_autism",
+      "text": "Large cohort studies and the later retraction of Wakefield's paper do not support any causal link between MMR vaccination and autism.",
+      "effect": -0.92
+    }
+  ],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "claim_mmr_causes_autism",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "claim_mmr_causes_autism",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "claim_mmr_causes_autism",
+      "stance": "endorse",
+      "confidence": 0.65
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "claim_mmr_causes_autism",
+      "stance": "endorse",
+      "confidence": 0.6
+    }
+  ],
+  "initialMemoryEntries": []
+}

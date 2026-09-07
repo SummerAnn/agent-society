@@ -1,0 +1,11 @@
+{
+  "id": "part2_40agent_v1",
+  "title": "Part 2: 40 agents 50/50 — equal split liars vs honest",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true },
+  "scenarios": ["scenarios/familiar-blind/blind_ego_depletion_v1.yaml"],
+  "conditions": ["conditions/shared-memory-no-correction.yaml"],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": ["rosters/blind-40agent-20of40-haiku.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 2400, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

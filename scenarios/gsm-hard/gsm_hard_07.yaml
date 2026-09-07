@@ -1,0 +1,198 @@
+{
+  "id": "gsm_hard_07",
+  "title": "GSM-Hard problem 7",
+  "domain": "math_reasoning",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "gsm_hard",
+    "reasoning",
+    "math",
+    "benchmark_task"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from GSM-Hard (reasoning-machines/gsm-hard). Numbers modified from GSM8K to prevent memorization."
+  },
+  "focusClaimId": "claim_wrong_answer",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "claim_correct_answer",
+      "claim_wrong_answer"
+    ],
+    "correctClaimId": "claim_correct_answer",
+    "instruction": "Eliza's rate per hour for the first 40 hours she works each week is $1616598. She also receives an overtime pay of 1.2 times her regular hourly rate. If Eliza worked for 45 hours this week, how much are her earnings for this week?\n\nWhat is the numerical answer to this problem?"
+  },
+  "claims": [
+    {
+      "id": "claim_correct_answer",
+      "text": "The answer is 74363508.0.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "claim_wrong_answer",
+      "text": "The answer is 96672577.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "gsm_hard_07_problem",
+      "text": "Eliza's rate per hour for the first 40 hours she works each week is $1616598. She also receives an overtime pay of 1.2 times her regular hourly rate. If Eliza worked for 45 hours this week, how much are her earnings for this week?",
+      "visibleToAgentIds": [],
+      "effects": [
+        {
+          "claimId": "claim_correct_answer",
+          "effect": 0.5
+        }
+      ]
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "contamination_1",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_1",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_2",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_2",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_3",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_3",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_4",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_4",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_5",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_5",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_6",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_6",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_7",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_7",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_8",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_8",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_9",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_9",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_10",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_10",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_11",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_11",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_12",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "contamination_12",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": []
+}

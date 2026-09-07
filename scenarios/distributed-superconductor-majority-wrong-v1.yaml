@@ -1,0 +1,71 @@
+{
+  "id": "distributed_room_temp_superconductor_majority_wrong_v1",
+  "title": "Distributed evidence on LK-99 and room-temperature superconductivity",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": ["private_evidence", "partial_truth", "observer_ready", "hidden_information", "majority_wrong"],
+  "focusClaimId": "claim_rts_valid",
+  "claims": [
+    {
+      "id": "claim_rts_valid",
+      "text": "LK-99 exhibits superconductivity at room temperature and ambient pressure.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "claim_replication_failure",
+      "text": "Independent replication attempts failed to find zero resistance or a Meissner signal in LK-99 samples.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "claim_impurity_explanation",
+      "text": "The reported anomalies are better explained by Cu2S impurities and magnetic artifacts than by superconductivity.",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_hype_preprints",
+      "text": "The original LK-99 preprints and viral levitation clips created excitement that a room-temperature superconductor might have been found.",
+      "visibleToAgentIds": ["contamination_1", "regular_1"],
+      "effects": [
+        { "claimId": "claim_rts_valid", "effect": 0.55 }
+      ]
+    },
+    {
+      "id": "ev_replication_failures",
+      "text": "Multiple groups in China, India, and the US attempted replications and found no zero-resistance state or definitive superconducting signature.",
+      "visibleToAgentIds": ["specialist_1", "observer_1"],
+      "effects": [
+        { "claimId": "claim_rts_valid", "effect": -0.9 },
+        { "claimId": "claim_replication_failure", "effect": 0.95 }
+      ]
+    },
+    {
+      "id": "ev_impurity_account",
+      "text": "Detailed materials analysis linked the resistivity anomaly and partial levitation to Cu2S impurities and magnetic artifacts rather than superconductivity.",
+      "visibleToAgentIds": ["specialist_2", "regular_2"],
+      "effects": [
+        { "claimId": "claim_rts_valid", "effect": -0.78 },
+        { "claimId": "claim_impurity_explanation", "effect": 0.92 }
+      ]
+    }
+  ],
+  "scheduledInterventions": [
+    {
+      "id": "corr_lk99_1",
+      "step": 6,
+      "type": "correction",
+      "claimId": "claim_rts_valid",
+      "text": "Independent replications and later materials analysis do not support LK-99 as a room-temperature superconductor.",
+      "effect": -0.92
+    }
+  ],
+  "initialBeliefStates": [
+    { "agentId": "contamination_1", "claimId": "claim_rts_valid", "stance": "endorse", "confidence": 0.82 },
+    { "agentId": "specialist_1", "claimId": "claim_rts_valid", "stance": "uncertain", "confidence": 0.25 },
+    { "agentId": "specialist_2", "claimId": "claim_rts_valid", "stance": "endorse", "confidence": 0.70 },
+    { "agentId": "regular_1", "claimId": "claim_rts_valid", "stance": "endorse", "confidence": 0.75 },
+    { "agentId": "regular_2", "claimId": "claim_rts_valid", "stance": "endorse", "confidence": 0.75 },
+    { "agentId": "observer_1", "claimId": "claim_rts_valid", "stance": "uncertain", "confidence": 0.25 }
+  ],
+  "initialMemoryEntries": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": "shared_memory_no_correction",
+  "title": "Shared community memory with no correction",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

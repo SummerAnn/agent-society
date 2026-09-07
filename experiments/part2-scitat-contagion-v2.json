@@ -1,0 +1,46 @@
+{
+  "id": "part2_scitat_contagion_v2",
+  "title": "Part 2: SciTaT contagion v2 — all 18 screened novel items × 3 models",
+  "benchmarkMeta": { "status": "paper-facing", "locked": false,
+    "notes": [
+      "18 SciTaT items that passed screening (0% no-context, 80%+ full-context).",
+      "4 informed liars argue for wrong numeric answer.",
+      "Same settings as v1: 3 conditions, 5 seeds, 18 steps, temp 0.",
+      "Cross-model: Haiku + Llama 8B + Mistral 8B.",
+      "Tests whether novel-task contagion generalizes across items AND models."
+    ]
+  },
+  "scenarios": [
+    "scenarios/scitat-blind/blind_scitat_1210_8343v1_q1_contagion.yaml",
+    "scenarios/scitat-blind/blind_scitat_1505_03365v1_q2_contagion.yaml",
+    "scenarios/scitat-blind/blind_scitat_1511_04136v4_q1_contagion.yaml",
+    "scenarios/scitat-blind/blind_scitat_1512_01642v1_q2_contagion.yaml",
+    "scenarios/scitat-blind/blind_scitat_1602_05314v1_q1_contagion.yaml",
+    "scenarios/scitat-blind/blind_scitat_1711_05098v1_q2_contagion.yaml",
+    "scenarios/scitat-blind/blind_scitat_1808_02092v2_q2_contagion.yaml",
+    "scenarios/scitat-blind/blind_scitat_1809_04093v1_q2_contagion.yaml",
+    "scenarios/scitat-blind/blind_scitat_1907_12901v1_q1_contagion.yaml",
+    "scenarios/scitat-blind/blind_scitat_2004_09418v1_q2_contagion.yaml",
+    "scenarios/scitat-blind/blind_scitat_2201_08077v1_q2_contagion.yaml",
+    "scenarios/scitat-blind/blind_scitat_2204_00292v1_q2_contagion.yaml",
+    "scenarios/scitat-blind/blind_scitat_2207_12990v1_q1_contagion.yaml",
+    "scenarios/scitat-blind/blind_scitat_2301_07831v2_q1_contagion.yaml",
+    "scenarios/scitat-blind/blind_scitat_2302_13709v1_q1_contagion.yaml",
+    "scenarios/scitat-blind/blind_scitat_2305_18874v2_q2_contagion.yaml",
+    "scenarios/scitat-blind/blind_scitat_2311_08320v1_q1_contagion.yaml",
+    "scenarios/scitat-blind/blind_scitat_math_0012242v1_q2_contagion.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml",
+    "conditions/personal-memory-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": [
+    "rosters/blind-majority-wrong-4of6-haiku.json",
+    "rosters/blind-majority-wrong-4of6-llama8b.json",
+    "rosters/blind-majority-wrong-4of6-mistral8b.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 108, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "personal_memory_no_correction",
+  "title": "Personal memory only with no correction",
+  "memory": {
+    "mode": "personal",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

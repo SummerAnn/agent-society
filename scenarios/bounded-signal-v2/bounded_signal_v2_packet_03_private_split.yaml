@@ -1,0 +1,222 @@
+{
+  "id": "bounded_signal_v2_packet_03_private_split",
+  "title": "Neutral model packet 03 with one private card per analyst",
+  "domain": "generated diagnostic task",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "generated_signal",
+    "bounded_record",
+    "private_split",
+    "fixed_arrival_order"
+  ],
+  "provenance": {
+    "kind": "new",
+    "note": "Generated before model calls. Candidate names, answer positions, excluded alternatives, and card wording rotate across packets."
+  },
+  "focusClaimId": "explanation_c",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "explanation_c",
+      "explanation_a",
+      "explanation_b"
+    ],
+    "correctClaimId": "explanation_c",
+    "instruction": "A recorded pattern may be explained by one of three named models. Choose a model only when the supplied checks rule out both alternatives.",
+    "requiredSourceIds": [
+      "bounded_signal_v2_packet_03_full_packet_rules_out_early_1",
+      "bounded_signal_v2_packet_03_full_packet_rules_out_other_1"
+    ],
+    "evidenceAccess": "private_split",
+    "allowAbstain": false
+  },
+  "claims": [
+    {
+      "id": "explanation_c",
+      "text": "Model Cinder best explains the recorded pattern.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "explanation_a",
+      "text": "Model Atlas best explains the recorded pattern.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "explanation_b",
+      "text": "Model Birch best explains the recorded pattern.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "bounded_signal_v2_packet_03_full_packet_early_1",
+      "text": "An early screening result fit Model Atlas, but the screening method could not separate the alternatives.",
+      "effects": [
+        {
+          "claimId": "explanation_a",
+          "effect": 0.2
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_01"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_signal_v2_packet_03_full_packet_early_2",
+      "text": "An early screening result fit Model Atlas, but the screening method could not separate the alternatives.",
+      "effects": [
+        {
+          "claimId": "explanation_a",
+          "effect": 0.2
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_02"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_signal_v2_packet_03_full_packet_early_3",
+      "text": "An early screening result fit Model Atlas, but the screening method could not separate the alternatives.",
+      "effects": [
+        {
+          "claimId": "explanation_a",
+          "effect": 0.2
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_03"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_signal_v2_packet_03_full_packet_early_4",
+      "text": "An early screening result fit Model Atlas, but the screening method could not separate the alternatives.",
+      "effects": [
+        {
+          "claimId": "explanation_a",
+          "effect": 0.2
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_04"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_signal_v2_packet_03_full_packet_rules_out_early_1",
+      "text": "A higher-quality check conflicts with Model Atlas. The two other models remain possible from this check alone.",
+      "effects": [
+        {
+          "claimId": "explanation_a",
+          "effect": -0.85
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_05"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_signal_v2_packet_03_full_packet_rules_out_early_2",
+      "text": "A higher-quality check conflicts with Model Atlas. The two other models remain possible from this check alone.",
+      "effects": [
+        {
+          "claimId": "explanation_a",
+          "effect": -0.85
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_06"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_signal_v2_packet_03_full_packet_rules_out_early_3",
+      "text": "A higher-quality check conflicts with Model Atlas. The two other models remain possible from this check alone.",
+      "effects": [
+        {
+          "claimId": "explanation_a",
+          "effect": -0.85
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_07"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_signal_v2_packet_03_full_packet_rules_out_early_4",
+      "text": "A higher-quality check conflicts with Model Atlas. The two other models remain possible from this check alone.",
+      "effects": [
+        {
+          "claimId": "explanation_a",
+          "effect": -0.85
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_08"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_signal_v2_packet_03_full_packet_rules_out_other_1",
+      "text": "A later blinded check is incompatible with Model Birch. It leaves the other two models unresolved.",
+      "effects": [
+        {
+          "claimId": "explanation_b",
+          "effect": -0.85
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_09"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_signal_v2_packet_03_full_packet_rules_out_other_2",
+      "text": "A later blinded check is incompatible with Model Birch. It leaves the other two models unresolved.",
+      "effects": [
+        {
+          "claimId": "explanation_b",
+          "effect": -0.85
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_10"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_signal_v2_packet_03_full_packet_rules_out_other_3",
+      "text": "A later blinded check is incompatible with Model Birch. It leaves the other two models unresolved.",
+      "effects": [
+        {
+          "claimId": "explanation_b",
+          "effect": -0.85
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_11"
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "bounded_signal_v2_packet_03_full_packet_rules_out_other_4",
+      "text": "A later blinded check is incompatible with Model Birch. It leaves the other two models unresolved.",
+      "effects": [
+        {
+          "claimId": "explanation_b",
+          "effect": -0.85
+        }
+      ],
+      "visibleToAgentIds": [
+        "analyst_12"
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [],
+  "initialMemoryEntries": []
+}

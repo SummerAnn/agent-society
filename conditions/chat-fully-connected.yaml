@@ -1,0 +1,16 @@
+{
+  "id": "chat_fully_connected",
+  "title": "Chat debate (fully connected)",
+  "memory": {
+    "mode": "shared",
+    "maxRetrievedEntries": 6
+  },
+  "interaction": {
+    "mode": "chat",
+    "chatRounds": 3,
+    "topology": "fully-connected"
+  },
+  "interventions": {
+    "correctionVisibility": "global"
+  }
+}

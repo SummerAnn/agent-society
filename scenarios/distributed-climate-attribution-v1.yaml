@@ -1,0 +1,71 @@
+{
+  "id": "distributed_climate_attribution_v1",
+  "title": "Distributed evidence on climate attribution and the natural-cycles counterclaim",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": ["private_evidence", "partial_truth", "observer_ready", "hidden_information"],
+  "focusClaimId": "claim_natural_cycles",
+  "claims": [
+    {
+      "id": "claim_natural_cycles",
+      "text": "Current global warming is primarily driven by natural cycles rather than anthropogenic CO2 emissions.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "claim_attribution_consensus",
+      "text": "Detection-and-attribution evidence shows human greenhouse gas emissions are the dominant driver of recent warming.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "claim_solar_too_small",
+      "text": "Observed solar forcing is far too small to explain the recent warming trend on its own.",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_natural_cycles_talking_point",
+      "text": "A common skeptic argument points to past climate swings like the Medieval Warm Period and Little Ice Age, claiming today's warming is just another natural fluctuation.",
+      "visibleToAgentIds": ["contamination_1", "regular_1"],
+      "effects": [
+        { "claimId": "claim_natural_cycles", "effect": 0.55 }
+      ]
+    },
+    {
+      "id": "ev_ipcc_attribution",
+      "text": "IPCC AR6 detection-and-attribution analysis finds natural forcings alone produce near-zero warming over the modern period, while anthropogenic forcings reproduce the observed trend.",
+      "visibleToAgentIds": ["specialist_1", "observer_1"],
+      "effects": [
+        { "claimId": "claim_natural_cycles", "effect": -0.95 },
+        { "claimId": "claim_attribution_consensus", "effect": 0.95 }
+      ]
+    },
+    {
+      "id": "ev_solar_measurements",
+      "text": "Satellite and reconstruction evidence shows solar irradiance has no net upward trend large enough to explain recent warming; the contribution is an order of magnitude too small.",
+      "visibleToAgentIds": ["specialist_2", "regular_2"],
+      "effects": [
+        { "claimId": "claim_natural_cycles", "effect": -0.75 },
+        { "claimId": "claim_solar_too_small", "effect": 0.9 }
+      ]
+    }
+  ],
+  "scheduledInterventions": [
+    {
+      "id": "corr_climate_1",
+      "step": 6,
+      "type": "correction",
+      "claimId": "claim_natural_cycles",
+      "text": "Formal attribution analyses and direct forcing measurements do not support a natural-cycles explanation for recent warming.",
+      "effect": -0.92
+    }
+  ],
+  "initialBeliefStates": [
+    { "agentId": "contamination_1", "claimId": "claim_natural_cycles", "stance": "endorse", "confidence": 0.84 },
+    { "agentId": "specialist_1", "claimId": "claim_natural_cycles", "stance": "uncertain", "confidence": 0.25 },
+    { "agentId": "specialist_2", "claimId": "claim_natural_cycles", "stance": "uncertain", "confidence": 0.25 },
+    { "agentId": "regular_1", "claimId": "claim_natural_cycles", "stance": "uncertain", "confidence": 0.25 },
+    { "agentId": "regular_2", "claimId": "claim_natural_cycles", "stance": "uncertain", "confidence": 0.2 },
+    { "agentId": "observer_1", "claimId": "claim_natural_cycles", "stance": "uncertain", "confidence": 0.25 }
+  ],
+  "initialMemoryEntries": []
+}

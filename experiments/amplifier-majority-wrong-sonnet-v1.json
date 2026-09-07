@@ -1,0 +1,26 @@
+{
+  "id": "amplifier_majority_wrong_sonnet_v1",
+  "title": "Amplifier test: evidence board vs mixed record when majority starts wrong (6 agents, Sonnet)",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Exact replication of amplifier_majority_wrong_haiku_v1; only model assignment differs.",
+      "Run only after the manifest-equivalence check passes."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-majority-wrong-v1.yaml",
+    "scenarios/distributed-wakefield-majority-wrong-v1.yaml",
+    "scenarios/distributed-climate-majority-wrong-v1.yaml",
+    "scenarios/distributed-superconductor-majority-wrong-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-evidence-board-no-correction.yaml",
+    "conditions/shared-mixed-record-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": ["rosters/distributed-baseline-6-sonnet.json"],
+  "maxSteps": 18,
+  "budget": {"maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0}
+}

@@ -1,0 +1,169 @@
+{
+  "id": "blind_scitat_1512_01642v1_q2_contagion",
+  "title": "SciTaT 1512.01642v1.q2 (full context) (blind IDs, informed liar contagion test)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "full_context"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "paragraph",
+      "title": "Paper paragraph",
+      "citation": "SciTaT item 1512.01642v1-q2",
+      "summary": "{\\bf Relaxed Radius-margin Bound.} As described above, the training data for grayscale-depth human activity recognition are scarce. Thus, for the last fully connected layer, we adopt the SVM classifier by incorporating with the relaxed radius-margin bound, resulting in the R-SVM + LCNN model. { To justify the role of the relaxed radius-margin bound, Table~\\ref{tab:r-svm} compares the accuracies of Softmax + LCNN, SVM + LCNN, and R-SVM + LCNN on all datasets with the same experimental settings. It is observed that the max-margin based classifiers (SVM and R-SVM) are particularly effective on small scale datasets (CAD120, SBU, OA1, OA2, Merged\\_50). On average, the accuracy of R-SVM + LCNN is average $6.5\\%$ higher than that of Softmax + LCNN, and is about $1\\%$ higher than that of SVM + LCNN. On Merged\\_4 dataset, the improvement of R-SVM + LCNN is incrementally evident, $1.8\\%$ higher than Softmax + LCNN. These results finely accord with our motivation of incorporating the radius-margin bound into our deep learning framework.} Moreover, when the model is learned without pre-training, R-SVM + LCNN gains about $4\\%$ and $8\\%$ improvements over Softmax + LCNN and SVM + LCNN by accuracy, respectively, as Table~\\ref{tab:pretrain} reports.",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    },
+    {
+      "id": "table_1",
+      "title": "Table tab:r-svm",
+      "citation": "SciTaT item 1512.01642v1-q2",
+      "summary": "{ Average accuracy of all categories on four datasets with different classifiers.}\n | Softmax + | SVM + | R-SVM +\n | LCNN | LCNN | LCNN\nCAD120 | 82.7\\% | 89.4\\% | \\textbf{90.1}\\%\nSBU | 92.4\\% | 92.8\\% | \\textbf{94.0}\\%\nOA1 | 60.7\\% | 68.5\\% | \\textbf{69.3}\\%\nOA2 | 47.0\\% | 53.7\\% | \\textbf{54.5}\\%\nMerged\\_50 | 30.3\\% | 36.4\\% | \\textbf{37.3}\\%\nMerged\\_4 | 87.1\\% | 88.5\\% | \\textbf{88.9}\\%",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_b",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_a",
+    "instruction": "Considering the improvement mentioned, on how many datasets does R-SVM + LCNN show a more than 4% increase in accuracy compared to Softmax + LCNN?\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": false
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "1512.01642v1-q2",
+    "phase": "full_context",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 4.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 3.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 8.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 5.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "paragraph",
+      "text": "{\\bf Relaxed Radius-margin Bound.} As described above, the training data for grayscale-depth human activity recognition are scarce. Thus, for the last fully connected layer, we adopt the SVM classifier by incorporating with the relaxed radius-margin bound, resulting in the R-SVM + LCNN model. { To justify the role of the relaxed radius-margin bound, Table~\\ref{tab:r-svm} compares the accuracies of Softmax + LCNN, SVM + LCNN, and R-SVM + LCNN on all datasets with the same experimental settings. It is observed that the max-margin based classifiers (SVM and R-SVM) are particularly effective on small scale datasets (CAD120, SBU, OA1, OA2, Merged\\_50). On average, the accuracy of R-SVM + LCNN is average $6.5\\%$ higher than that of Softmax + LCNN, and is about $1\\%$ higher than that of SVM + LCNN. On Merged\\_4 dataset, the improvement of R-SVM + LCNN is incrementally evident, $1.8\\%$ higher than Softmax + LCNN. These results finely accord with our motivation of incorporating the radius-margin bound into our deep learning framework.} Moreover, when the model is learned without pre-training, R-SVM + LCNN gains about $4\\%$ and $8\\%$ improvements over Softmax + LCNN and SVM + LCNN by accuracy, respectively, as Table~\\ref{tab:pretrain} reports.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_a",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "table_1",
+      "text": "{ Average accuracy of all categories on four datasets with different classifiers.}\n | Softmax + | SVM + | R-SVM +\n | LCNN | LCNN | LCNN\nCAD120 | 82.7\\% | 89.4\\% | \\textbf{90.1}\\%\nSBU | 92.4\\% | 92.8\\% | \\textbf{94.0}\\%\nOA1 | 60.7\\% | 68.5\\% | \\textbf{69.3}\\%\nOA2 | 47.0\\% | 53.7\\% | \\textbf{54.5}\\%\nMerged\\_50 | 30.3\\% | 36.4\\% | \\textbf{37.3}\\%\nMerged\\_4 | 87.1\\% | 88.5\\% | \\textbf{88.9}\\%",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_a",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "option_b",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_1",
+      "claimId": "option_a",
+      "stance": "reject",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "option_b",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "option_a",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "option_b",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "option_a",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "option_b",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "option_a",
+      "stance": "reject",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

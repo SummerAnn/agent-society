@@ -1,0 +1,13 @@
+{
+  "id": "shared_independence_aware_no_correction",
+  "title": "Shared independence-aware record with no correction",
+  "memory": {
+    "mode": "shared",
+    "record": "independence_aware",
+    "maxRetrievedEntries": 6
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

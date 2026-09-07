@@ -1,0 +1,29 @@
+{
+  "id": "blind_familiar_claude_v1",
+  "title": "CLEAN familiar topics: neutral IDs, strong contamination, Claude Haiku",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Reruns ego depletion + MMR with two fixes:",
+      "1. Neutral agent IDs (analyst_1-6 instead of contamination_1)",
+      "2. Stronger contamination prompt (COMMITTED, do not waver)",
+      "Compare with original 160-cell source-exit results that used contamination_1 naming.",
+      "If contagion appears now but not before, the agent name was the confound."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_v1.yaml",
+    "scenarios/familiar-blind/blind_wakefield_mmr_autism_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": [
+    "rosters/blind-majority-wrong-4of6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

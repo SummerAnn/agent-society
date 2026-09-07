@@ -1,0 +1,28 @@
+{
+  "id": "chat_majority_wrong_haiku_v1",
+  "title": "Chat mode: 4/6 wrong, fully-connected discussion, same topics as memory-mode amplifier",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Same 4 majority-wrong scenarios and same 6-agent distributed roster as the memory-mode amplifier test.",
+      "Changed variable: interaction mode is chat (multi-round discussion) instead of memory (shared record).",
+      "Agents discuss claims in 3 rounds with fully-connected topology. Each agent sees all others' messages.",
+      "This tests whether real-time discussion produces different outcomes than asynchronous record-reading.",
+      "Uses the heterogeneous roster first. A neutral-roster version can follow if needed."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-majority-wrong-v1.yaml",
+    "scenarios/distributed-wakefield-majority-wrong-v1.yaml",
+    "scenarios/distributed-climate-majority-wrong-v1.yaml",
+    "scenarios/distributed-superconductor-majority-wrong-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": ["rosters/distributed-baseline-6-haiku.json"],
+  "maxSteps": 18,
+  "budget": {"maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0}
+}

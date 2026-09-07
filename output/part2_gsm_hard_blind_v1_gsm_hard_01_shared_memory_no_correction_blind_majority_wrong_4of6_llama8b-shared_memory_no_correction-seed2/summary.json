@@ -1,0 +1,66 @@
+{
+  "runId": "part2_gsm_hard_blind_v1_gsm_hard_01_shared_memory_no_correction_blind_majority_wrong_4of6_llama8b-shared_memory_no_correction-seed2",
+  "configId": "part2_gsm_hard_blind_v1_gsm_hard_01_shared_memory_no_correction_blind_majority_wrong_4of6_llama8b",
+  "conditionId": "shared_memory_no_correction",
+  "scenarioId": "gsm_hard_01",
+  "memoryMode": "shared",
+  "interactionMode": "memory",
+  "topology": "fully-connected",
+  "agentCount": 6,
+  "claimCount": 2,
+  "correctionCount": 0,
+  "maxSteps": 18,
+  "completedSteps": 18,
+  "falseClaimEndorsementRate": 1,
+  "finalConfidenceWeightedFalseEndorsement": 0.9333333333333335,
+  "finalFalseClaimRejectRate": 0,
+  "finalUncertainRate": 0,
+  "peakFalseClaimEndorsementRate": 1,
+  "peakConfidenceWeightedFalseEndorsement": 0.9500000000000001,
+  "timeToMajorityAdoption": 4,
+  "timeToCorrection": null,
+  "distanceFromGroundTruth": 0.5833333333333334,
+  "recoveryAfterCorrection": 0,
+  "postCorrectionPersistence": 0,
+  "diversityRetention": 0,
+  "trajectory": {
+    "finalMajorityStance": "endorse",
+    "finalConsensusStrength": 1,
+    "peakConsensusStrength": 1,
+    "lowestConsensusStrength": 0.5,
+    "finalNetEndorsement": 1,
+    "finalMeanConfidence": 0.9333333333333335
+  },
+  "physics": null,
+  "evaluation": null,
+  "groupDecision": {
+    "candidateClaimIds": [
+      "claim_correct_answer",
+      "claim_wrong_answer"
+    ],
+    "correctClaimId": "claim_correct_answer",
+    "selectedClaimId": "claim_correct_answer",
+    "correct": true,
+    "tied": false,
+    "margin": 2.94,
+    "candidateSupport": {
+      "claim_correct_answer": 2.94,
+      "claim_wrong_answer": 0
+    },
+    "retrievalSupport": {
+      "supportingAgents": 1,
+      "agentsRetrievingSharedConclusions": 1,
+      "agentsRetrievingSharedEvidence": 0,
+      "detachedSupportAgents": 1,
+      "detachedSupportRate": 1
+    },
+    "sourceGrounding": null
+  },
+  "usage": {
+    "promptTokens": 40106,
+    "completionTokens": 4325,
+    "totalTokens": 44431,
+    "estimatedCostUsd": null
+  },
+  "dbPath": "output/part2_gsm_hard_blind_v1_gsm_hard_01_shared_memory_no_correction_blind_majority_wrong_4of6_llama8b-shared_memory_no_correction-seed2/trace.db"
+}

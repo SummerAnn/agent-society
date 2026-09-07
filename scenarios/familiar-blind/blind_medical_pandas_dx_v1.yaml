@@ -1,0 +1,190 @@
+{
+  "id": "blind_medical_pandas_dx_v1",
+  "title": "Medical differential diagnosis: pediatric acute-onset neuropsychiatric case (blind IDs)",
+  "domain": "medical-differential-diagnosis",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "anchoring_risk",
+    "medical_reasoning",
+    "shared_memory",
+    "source_grounding"
+  ],
+  "sources": [
+    {
+      "label": "Swedo et al. (1998) Am. J. Psychiatry: PANDAS criteria",
+      "url": "https://doi.org/10.1176/ajp.155.2.264"
+    },
+    {
+      "label": "Williams et al. (2019) Lancet Psychiatry: systematic review",
+      "url": "https://doi.org/10.1016/S2215-0366(18)30474-5"
+    },
+    {
+      "label": "Ask WhAI (2025): multi-agent diagnostic belief probing",
+      "url": "https://arxiv.org/abs/2511.14780"
+    },
+    {
+      "label": "MeDxAgent (2026): multi-agent consultation for diagnosis",
+      "url": "https://arxiv.org/abs/2606.03416"
+    }
+  ],
+  "focusClaimId": "claim_pandas_dx",
+  "claims": [
+    {
+      "id": "claim_pandas_dx",
+      "text": "The patient's acute-onset OCD and motor tics following group A streptococcal pharyngitis are best explained by PANDAS (Pediatric Autoimmune Neuropsychiatric Disorders Associated with Streptococcal infections), requiring antibiotic prophylaxis and IVIG.",
+      "truthLabel": "mixed"
+    },
+    {
+      "id": "claim_tourette",
+      "text": "The presentation is better explained by Tourette syndrome with comorbid OCD, which commonly emerges at this age (7-10 years) and does not require immunotherapy.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "claim_autoimmune_encephalitis",
+      "text": "Anti-NMDA receptor autoimmune encephalitis should be ruled out, as it can present with acute psychiatric symptoms and movement abnormalities in children.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "claim_strep_causal",
+      "text": "The temporal correlation between strep infection and symptom onset proves a causal autoimmune mechanism rather than coincidental timing.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_clinical_presentation",
+      "text": "8-year-old male presents with sudden onset of severe OCD (contamination fears, hand-washing), motor tics, emotional lability, and separation anxiety 2 weeks after confirmed group A strep pharyngitis. ASO titer elevated at 480 IU/mL. Neurological exam otherwise normal.",
+      "effects": [
+        {
+          "claimId": "claim_pandas_dx",
+          "effect": 0.45
+        },
+        {
+          "claimId": "claim_tourette",
+          "effect": 0.2
+        },
+        {
+          "claimId": "claim_strep_causal",
+          "effect": 0.35
+        }
+      ],
+      "visibleToAgentIds": []
+    },
+    {
+      "id": "ev_swedo_criteria",
+      "text": "The case meets Swedo et al. (1998) proposed PANDAS criteria: prepubertal onset, OCD/tic disorder, acute onset, temporal association with strep, neurological abnormalities during exacerbation. However, these criteria remain controversial and are not in DSM-5.",
+      "effects": [
+        {
+          "claimId": "claim_pandas_dx",
+          "effect": 0.3
+        },
+        {
+          "claimId": "claim_strep_causal",
+          "effect": 0.2
+        }
+      ],
+      "visibleToAgentIds": []
+    },
+    {
+      "id": "ev_lancet_systematic_review",
+      "text": "A 2019 Lancet Psychiatry systematic review of 31 studies found insufficient evidence that streptococcal infection causes neuropsychiatric symptoms. Temporal correlations were inconsistent across prospective studies, and IVIG trials showed no benefit over placebo in two RCTs (Williams et al., 2019).",
+      "effects": [
+        {
+          "claimId": "claim_pandas_dx",
+          "effect": -0.5
+        },
+        {
+          "claimId": "claim_strep_causal",
+          "effect": -0.7
+        },
+        {
+          "claimId": "claim_tourette",
+          "effect": 0.3
+        }
+      ],
+      "visibleToAgentIds": []
+    },
+    {
+      "id": "ev_base_rate",
+      "text": "Strep pharyngitis affects 15-35% of children annually. Tic disorders emerge in 10-20% of school-age children. Given these high base rates, temporal co-occurrence is expected by chance alone in ~3-7% of the pediatric population, without requiring a causal mechanism.",
+      "effects": [
+        {
+          "claimId": "claim_strep_causal",
+          "effect": -0.6
+        },
+        {
+          "claimId": "claim_tourette",
+          "effect": 0.25
+        }
+      ],
+      "visibleToAgentIds": []
+    },
+    {
+      "id": "ev_autoimmune_workup",
+      "text": "Anti-NMDA receptor antibody panel returns negative. CSF analysis normal. Brain MRI unremarkable. This effectively rules out anti-NMDA receptor encephalitis.",
+      "effects": [
+        {
+          "claimId": "claim_autoimmune_encephalitis",
+          "effect": -0.8
+        },
+        {
+          "claimId": "claim_pandas_dx",
+          "effect": 0.1
+        }
+      ],
+      "visibleToAgentIds": []
+    },
+    {
+      "id": "ev_aap_position",
+      "text": "The American Academy of Pediatrics and the American Academy of Neurology do not recognize PANDAS as a confirmed diagnosis. They recommend standard treatment for OCD/tics (CBT + SSRIs if needed) rather than immunotherapy, noting the risk of IVIG adverse effects in a condition with unproven autoimmune etiology.",
+      "effects": [
+        {
+          "claimId": "claim_pandas_dx",
+          "effect": -0.45
+        },
+        {
+          "claimId": "claim_tourette",
+          "effect": 0.35
+        }
+      ],
+      "visibleToAgentIds": []
+    }
+  ],
+  "scheduledInterventions": [
+    {
+      "id": "corr_longitudinal_followup",
+      "step": 10,
+      "type": "correction",
+      "claimId": "claim_strep_causal",
+      "text": "Six-month follow-up: tic symptoms persist with waxing-waning course despite antibiotic treatment and clearance of strep. Pattern is consistent with Tourette syndrome natural history. Subsequent strep-negative episodes still show symptom flares, undermining the causal hypothesis.",
+      "effect": -0.8
+    }
+  ],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "claim_pandas_dx",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "claim_pandas_dx",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "claim_pandas_dx",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "claim_pandas_dx",
+      "stance": "endorse",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": []
+}

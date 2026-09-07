@@ -1,0 +1,169 @@
+{
+  "id": "blind_scitat_2311_08320v1_q1_contagion",
+  "title": "SciTaT 2311.08320v1.q1 (full context) (blind IDs, informed liar contagion test)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "full_context"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "paragraph",
+      "title": "Paper paragraph",
+      "citation": "SciTaT item 2311.08320v1-q1",
+      "summary": "\\subsubsection {Task context save/restore acceleration}\nRegister banking is a technique adopted by several interrupt controller architectures to swap a task's context without pushing/popping register values to the stack at the cost of an additional area overhead in the design.\nAs discussed above, in Arm designs, this is the case of \\gls{hw} register banking in platform-level interrupt controllers (\\gls{gic}). \nA similar approach is implemented in the Renesas M32C/80 series~\\cite{renesas_m32c80}. A dual register bank allows quickly swapping the context without saving/restoring to/from the stack, as the second register bank is reserved for high-speed interrupts.\nThe Aurix family instead implements a \\gls{sw} managed solution, featuring a specific organization of the context layout in the system memory based on \\glspl{csa} chained in a linked list fashion~\\cite{tricore_patent}.\nThese approaches trade-off \\gls{hw} and \\gls{sw}-induced latencies when handling asynchronous events, as depicted in~\\cref{fig:int-latency-decomposed}. Gaitan et al.~\\cite{TASK_SWITCHING_TVLSI} propose instead a full \\gls{hw} solution based on a Hardware Scheduling Engine (HSE) that directly attaches interrupts to running tasks without the need for a specialized interrupt controller. While this approach allows lowering interrupt latency and task context switches dramatically, as reported in \\cref{tab:related_work}, it is expensive in terms of area as it requires replicating hardware resources per task.",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    },
+    {
+      "id": "table_1",
+      "title": "Table tab:related_work",
+      "citation": "SciTaT item 2311.08320v1-q1",
+      "summary": "Comparison of the main techniques for optimizing interrupt context and task context save/restore with nested and non-nested interrupts employed by industry and academia in the embedded and real-time application domains.\n\\rotatebox{0}{\\textbf{Processor}} | \\rotatebox{0}{\\textbf{\\thead{Interrupt |  |  |  |  |  |  |  | \ncontroller}}} | \\rotatebox{0}{\\textbf{\\gls{isa}}} | \\rotatebox{0}{\\textbf{\\thead{Interrupt context |  |  |  |  |  |  | \nsave/restore acceleration}}} | \\rotatebox{0}{\\textbf{\\thead{Task context |  |  |  |  |  |  |  | \nsave/restore acceleration}}} | \\rotatebox{0}{\\textbf{\\thead{Back-to-back interrupts |  |  |  |  |  |  |  | \nacceleration}}} | \\rotatebox{0}{\\textbf{Open?}} | \\rotatebox{0}{\\textbf{\\thead{Max. |  |  |  |  |  |  | \n\\#levels}}} | \\rotatebox{0}{\\textbf{\\thead{Interrupt |  |  |  |  |  |  |  | \nlatency}}} | \\rotatebox{0}{\\textbf{\\thead{Task context |  |  |  |  |  |  |  | \nswitch time}}} |  |  |  |  |  |  |  |  | \n\\textbf{Industry} | \\textbf{Industry} | \\textbf{Industry} | \\textbf{Industry} | \\textbf{Industry} | \\textbf{Industry} | \\textbf{Industry} | \\textbf{Industry} | \\textbf{Industry} | \\textbf{Industry}\nArm Cortex M4~\\cite{arm_interrupt_beginner_guide, freertos} | NVIC | Arm RISC | Automatic in \\gls{hw} | n.a. | NVIC tail-chaining | \\xmark | 256 | 12 | 96\nArm Cortex R5 | VIC/GIC | Arm RISC | n.a. | Register banking | n.a. | \\xmark | n.a. | 20 | n.a.\nInfineon AURIX | ICU | TriCore RISC | Automatic in \\gls{hw} | \\Gls{sw} based - \\gls{csa} | n.a. | \\xmark | 256 | 10-16 | 156-162\nRenesas M32C/80 | IC | M32C/80 | Dual register bank | Dual register bank | n.a. | \\xmark | 8 | 5~\\tnote{a} | n.a.\nNuclei System Technology | ECLIC | RISC-V | n.a. | n.a. | \\texttt{jalmnxti} | \\xmark | 256 | 4-6~\\tnote{b} | n.a.\nAlibaba\u00e2\u0080\u0099s T-Head Xuantie E906 | CLIC | RISC-V | n.a. | n.a. | \\texttt{mnxti} | \\cmark | n.a. | n.a. | n.a.\nSiFive E21 | CLIC | RISC-V | n.a. | n.a. | \\texttt{mnxti} | \\xmark | 16 | 20~\\tnote{c} | n.a.\nESP32 C3 | INTC | RISC-V | n.a. | n.a. | n.a. | \\xmark | 15 | n.a. | n.a.\n- | AIA local | RISC-V | - | - | \\texttt{xtopi} | \\xmark | - | - | -\n\\textbf{Academia} | \\textbf{Academia} | \\textbf{Academia} | \\textbf{Academia} | \\textbf{Academia} | \\textbf{Academia} | \\textbf{Academia} | \\textbf{Academia} | \\textbf{Academia} | \\textbf{Academia}\nGaitan et al.~\\cite{TASK_SWITCHING_TVLSI} | MPRA/HSE | RISC | Automatic in \\gls{hw} | Automatic in \\gls{hw} | n.a. | \\xmark | n.a. | 1.5~\\tnote{d} | 3~\\tnote{d}\nMao et al.~\\cite{mao_2021} | CLIC | RISC-V | Automatic in \\gls{hw} | n.a. | n.a.~\\tnote{e} | \\xmark | n.a. | 13 | n.a.\nBalas et al.~\\cite{balas_2021} | CLINT | RISC-V | - | - | - | \\cmark | - | 24 | 129\n\\textbf{This work} | \\textbf{CLIC} | \\textbf{RISC-V} | \\textbf{Hybrid}~\\tnote{\\textbf{f}} | \\textbf{Hybrid} | \\texttt{\\textbf{emret}} | \\cmark | \\textbf{256} | \\textbf{6} | \\textbf{114}",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_a",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_b",
+    "instruction": "Based on the paragraph, if the interrupt latency for a system using register banking is 20 cycles and the interrupt latency for a system using a full hardware solution is 1.5 cycles, by what percentage does the full hardware solution reduce the interrupt latency compared to the register banking approach?\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": false
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "2311.08320v1-q1",
+    "phase": "full_context",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 111.0%.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 92.5%.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 185.0%.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 74.0%.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "paragraph",
+      "text": "\\subsubsection {Task context save/restore acceleration}\nRegister banking is a technique adopted by several interrupt controller architectures to swap a task's context without pushing/popping register values to the stack at the cost of an additional area overhead in the design.\nAs discussed above, in Arm designs, this is the case of \\gls{hw} register banking in platform-level interrupt controllers (\\gls{gic}). \nA similar approach is implemented in the Renesas M32C/80 series~\\cite{renesas_m32c80}. A dual register bank allows quickly swapping the context without saving/restoring to/from the stack, as the second register bank is reserved for high-speed interrupts.\nThe Aurix family instead implements a \\gls{sw} managed solution, featuring a specific organization of the context layout in the system memory based on \\glspl{csa} chained in a linked list fashion~\\cite{tricore_patent}.\nThese approaches trade-off \\gls{hw} and \\gls{sw}-induced latencies when handling asynchronous events, as depicted in~\\cref{fig:int-latency-decomposed}. Gaitan et al.~\\cite{TASK_SWITCHING_TVLSI} propose instead a full \\gls{hw} solution based on a Hardware Scheduling Engine (HSE) that directly attaches interrupts to running tasks without the need for a specialized interrupt controller. While this approach allows lowering interrupt latency and task context switches dramatically, as reported in \\cref{tab:related_work}, it is expensive in terms of area as it requires replicating hardware resources per task.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_b",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "table_1",
+      "text": "Comparison of the main techniques for optimizing interrupt context and task context save/restore with nested and non-nested interrupts employed by industry and academia in the embedded and real-time application domains.\n\\rotatebox{0}{\\textbf{Processor}} | \\rotatebox{0}{\\textbf{\\thead{Interrupt |  |  |  |  |  |  |  | \ncontroller}}} | \\rotatebox{0}{\\textbf{\\gls{isa}}} | \\rotatebox{0}{\\textbf{\\thead{Interrupt context |  |  |  |  |  |  | \nsave/restore acceleration}}} | \\rotatebox{0}{\\textbf{\\thead{Task context |  |  |  |  |  |  |  | \nsave/restore acceleration}}} | \\rotatebox{0}{\\textbf{\\thead{Back-to-back interrupts |  |  |  |  |  |  |  | \nacceleration}}} | \\rotatebox{0}{\\textbf{Open?}} | \\rotatebox{0}{\\textbf{\\thead{Max. |  |  |  |  |  |  | \n\\#levels}}} | \\rotatebox{0}{\\textbf{\\thead{Interrupt |  |  |  |  |  |  |  | \nlatency}}} | \\rotatebox{0}{\\textbf{\\thead{Task context |  |  |  |  |  |  |  | \nswitch time}}} |  |  |  |  |  |  |  |  | \n\\textbf{Industry} | \\textbf{Industry} | \\textbf{Industry} | \\textbf{Industry} | \\textbf{Industry} | \\textbf{Industry} | \\textbf{Industry} | \\textbf{Industry} | \\textbf{Industry} | \\textbf{Industry}\nArm Cortex M4~\\cite{arm_interrupt_beginner_guide, freertos} | NVIC | Arm RISC | Automatic in \\gls{hw} | n.a. | NVIC tail-chaining | \\xmark | 256 | 12 | 96\nArm Cortex R5 | VIC/GIC | Arm RISC | n.a. | Register banking | n.a. | \\xmark | n.a. | 20 | n.a.\nInfineon AURIX | ICU | TriCore RISC | Automatic in \\gls{hw} | \\Gls{sw} based - \\gls{csa} | n.a. | \\xmark | 256 | 10-16 | 156-162\nRenesas M32C/80 | IC | M32C/80 | Dual register bank | Dual register bank | n.a. | \\xmark | 8 | 5~\\tnote{a} | n.a.\nNuclei System Technology | ECLIC | RISC-V | n.a. | n.a. | \\texttt{jalmnxti} | \\xmark | 256 | 4-6~\\tnote{b} | n.a.\nAlibaba\u00e2\u0080\u0099s T-Head Xuantie E906 | CLIC | RISC-V | n.a. | n.a. | \\texttt{mnxti} | \\cmark | n.a. | n.a. | n.a.\nSiFive E21 | CLIC | RISC-V | n.a. | n.a. | \\texttt{mnxti} | \\xmark | 16 | 20~\\tnote{c} | n.a.\nESP32 C3 | INTC | RISC-V | n.a. | n.a. | n.a. | \\xmark | 15 | n.a. | n.a.\n- | AIA local | RISC-V | - | - | \\texttt{xtopi} | \\xmark | - | - | -\n\\textbf{Academia} | \\textbf{Academia} | \\textbf{Academia} | \\textbf{Academia} | \\textbf{Academia} | \\textbf{Academia} | \\textbf{Academia} | \\textbf{Academia} | \\textbf{Academia} | \\textbf{Academia}\nGaitan et al.~\\cite{TASK_SWITCHING_TVLSI} | MPRA/HSE | RISC | Automatic in \\gls{hw} | Automatic in \\gls{hw} | n.a. | \\xmark | n.a. | 1.5~\\tnote{d} | 3~\\tnote{d}\nMao et al.~\\cite{mao_2021} | CLIC | RISC-V | Automatic in \\gls{hw} | n.a. | n.a.~\\tnote{e} | \\xmark | n.a. | 13 | n.a.\nBalas et al.~\\cite{balas_2021} | CLINT | RISC-V | - | - | - | \\cmark | - | 24 | 129\n\\textbf{This work} | \\textbf{CLIC} | \\textbf{RISC-V} | \\textbf{Hybrid}~\\tnote{\\textbf{f}} | \\textbf{Hybrid} | \\texttt{\\textbf{emret}} | \\cmark | \\textbf{256} | \\textbf{6} | \\textbf{114}",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_b",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_1",
+      "claimId": "option_b",
+      "stance": "reject",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "option_b",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "option_b",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "option_b",
+      "stance": "reject",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

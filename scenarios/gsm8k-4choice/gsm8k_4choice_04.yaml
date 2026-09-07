@@ -1,0 +1,209 @@
+{
+  "id": "gsm8k_4choice_04",
+  "title": "GSM8K 4-choice problem 4",
+  "domain": "math_reasoning",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "gsm8k",
+    "multi_choice",
+    "blind_ids"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Original GSM8K with 4 answer choices."
+  },
+  "focusClaimId": "claim_wrong_1",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "claim_correct",
+      "claim_wrong_1",
+      "claim_wrong_2",
+      "claim_wrong_3"
+    ],
+    "correctClaimId": "claim_correct",
+    "instruction": "James decides to run 3 sprints 3 times a week.  He runs 60 meters each sprint.  How many total meters does he run a week?\n\nWhat is the numerical answer?"
+  },
+  "claims": [
+    {
+      "id": "claim_correct",
+      "text": "The answer is 540.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "claim_wrong_1",
+      "text": "The answer is 761.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "claim_wrong_2",
+      "text": "The answer is 321.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "claim_wrong_3",
+      "text": "The answer is 1144.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "gsm8k_4choice_04_problem",
+      "text": "James decides to run 3 sprints 3 times a week.  He runs 60 meters each sprint.  How many total meters does he run a week?",
+      "visibleToAgentIds": [],
+      "effects": [
+        {
+          "claimId": "claim_correct",
+          "effect": 0.5
+        }
+      ]
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "claim_wrong_1",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_1",
+      "claimId": "claim_correct",
+      "stance": "reject",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "claim_wrong_1",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "claim_correct",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "claim_wrong_1",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "claim_correct",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "claim_wrong_1",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "claim_correct",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_05",
+      "claimId": "claim_wrong_1",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_05",
+      "claimId": "claim_correct",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_06",
+      "claimId": "claim_wrong_1",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_06",
+      "claimId": "claim_correct",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_07",
+      "claimId": "claim_wrong_1",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_07",
+      "claimId": "claim_correct",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_08",
+      "claimId": "claim_wrong_1",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_08",
+      "claimId": "claim_correct",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_09",
+      "claimId": "claim_wrong_1",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_09",
+      "claimId": "claim_correct",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_10",
+      "claimId": "claim_wrong_1",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_10",
+      "claimId": "claim_correct",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_11",
+      "claimId": "claim_wrong_1",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_11",
+      "claimId": "claim_correct",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_12",
+      "claimId": "claim_wrong_1",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_12",
+      "claimId": "claim_correct",
+      "stance": "reject",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": []
+}

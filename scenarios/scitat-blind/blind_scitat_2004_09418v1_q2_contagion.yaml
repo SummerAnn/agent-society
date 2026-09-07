@@ -1,0 +1,169 @@
+{
+  "id": "blind_scitat_2004_09418v1_q2_contagion",
+  "title": "SciTaT 2004.09418v1.q2 (full context) (blind IDs, informed liar contagion test)",
+  "scenarioType": "claim_benchmark",
+  "domain": "scientific_table_reasoning",
+  "mechanismFamily": "distributed_information",
+  "mechanismTags": [
+    "scitat",
+    "external_task",
+    "numeric_answer",
+    "full_context"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Adapted from the official SciTaT task. The answer options are numeric alternatives generated from the released answer for engine-compatible group-choice scoring."
+  },
+  "sources": [
+    {
+      "label": "SciTaT",
+      "url": "https://github.com/zhxlia/SciTaT"
+    }
+  ],
+  "sourceCards": [
+    {
+      "id": "paragraph",
+      "title": "Paper paragraph",
+      "citation": "SciTaT item 2004.09418v1-q2",
+      "summary": "\\subsection {Methodology}\nWe regard the euro area economy as a macro-network of financial exposures, where nodes are the aforementioned institutional sectors (summarized in Table \\ref{tab:1}). Despite the fact that every node of the macro-network is represented at an aggregate level, it is worth mentioning that each node is the result of an aggregation on two dimensions: by country and by sector. More specifically, the euro area macro-network of financial exposures includes the nineteen macro-networks of financial exposures among the institutional sectors operating in the nineteen European Union's Member States belonging to the Eurozone and their mutual interactions. Further, every node of the macro-network should be regarded as a network of micro-based granular financial exposures among the different institutions operating within every institutional sector. The euro area macro-network of financial exposures can be regarded as a multiplex weighted network in which multiple types of links correspond to different financial instruments (e.g., loans, corporate and sovereign bonds, and equity). Links follow the direction of the money and weights correspond to the balance sheet outstanding amount at the end of the period (stocks) of the financial exposures existing among the different institutional sectors through the different financial instruments.",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    },
+    {
+      "id": "table_1",
+      "title": "Table tab:1",
+      "citation": "SciTaT item 2004.09418v1-q2",
+      "summary": "The euro area macro sectors and their breakdown by institutional sector\n\\textbf{Macro sectors} | \\textbf{Institutional sectors} | \\textbf{Acronym} |  | \n[-2.8ex]\nFinancial sector | Monetary Financial Institutions (Eurosystem $+$ Monetary Financial Institutions excluding the Eurosystem) | MFI (ECB\\ | NCB $+$ MFI excl. ECB\\ | NCB)\n | Insurance Corporations and Pension Funds | IC\\ | PF | \n | Financial Corporations excluding MFI and IC\\ | PF | FC excl. MFI and IC\\ | PF\nNon-financial private sector (or real sector) | Households and Non-Profit Institutions Serving Households | HH\\ | NPISH | \n | Non-Financial Corporations | NFC |  | \nNon-financial public sector | General Governments | GG |  | ",
+      "url": "https://github.com/zhxlia/SciTaT",
+      "notes": []
+    }
+  ],
+  "focusClaimId": "option_a",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "option_a",
+      "option_b",
+      "option_c",
+      "option_d"
+    ],
+    "correctClaimId": "option_d",
+    "instruction": "Based on the paragraph, identify the number of European Union Member States that constitute the euro area macro-network of financial exposures.\n\nGive the numeric answer supported by the supplied paper material.",
+    "requiredSourceIds": [],
+    "evidenceAccess": "full_packet",
+    "allowAbstain": false
+  },
+  "taskProtocol": {
+    "adapterId": "scitat_numeric_v1",
+    "taskId": "2004.09418v1-q2",
+    "phase": "full_context",
+    "requiredSourceIds": [
+      "paragraph",
+      "table_1"
+    ]
+  },
+  "claims": [
+    {
+      "id": "option_a",
+      "text": "The numeric answer is 15.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_b",
+      "text": "The numeric answer is 23.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_c",
+      "text": "The numeric answer is 38.",
+      "truthLabel": "false"
+    },
+    {
+      "id": "option_d",
+      "text": "The numeric answer is 19.",
+      "truthLabel": "true"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "paragraph",
+      "text": "\\subsection {Methodology}\nWe regard the euro area economy as a macro-network of financial exposures, where nodes are the aforementioned institutional sectors (summarized in Table \\ref{tab:1}). Despite the fact that every node of the macro-network is represented at an aggregate level, it is worth mentioning that each node is the result of an aggregation on two dimensions: by country and by sector. More specifically, the euro area macro-network of financial exposures includes the nineteen macro-networks of financial exposures among the institutional sectors operating in the nineteen European Union's Member States belonging to the Eurozone and their mutual interactions. Further, every node of the macro-network should be regarded as a network of micro-based granular financial exposures among the different institutions operating within every institutional sector. The euro area macro-network of financial exposures can be regarded as a multiplex weighted network in which multiple types of links correspond to different financial instruments (e.g., loans, corporate and sovereign bonds, and equity). Links follow the direction of the money and weights correspond to the balance sheet outstanding amount at the end of the period (stocks) of the financial exposures existing among the different institutional sectors through the different financial instruments.",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_d",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    },
+    {
+      "id": "table_1",
+      "text": "The euro area macro sectors and their breakdown by institutional sector\n\\textbf{Macro sectors} | \\textbf{Institutional sectors} | \\textbf{Acronym} |  | \n[-2.8ex]\nFinancial sector | Monetary Financial Institutions (Eurosystem $+$ Monetary Financial Institutions excluding the Eurosystem) | MFI (ECB\\ | NCB $+$ MFI excl. ECB\\ | NCB)\n | Insurance Corporations and Pension Funds | IC\\ | PF | \n | Financial Corporations excluding MFI and IC\\ | PF | FC excl. MFI and IC\\ | PF\nNon-financial private sector (or real sector) | Households and Non-Profit Institutions Serving Households | HH\\ | NPISH | \n | Non-Financial Corporations | NFC |  | \nNon-financial public sector | General Governments | GG |  | ",
+      "visibleToAgentIds": [
+        "analyst_1"
+      ],
+      "effects": [
+        {
+          "claimId": "option_d",
+          "effect": 0
+        }
+      ],
+      "availableFromStep": 1
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_1",
+      "claimId": "option_d",
+      "stance": "reject",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "option_d",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "option_d",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "option_a",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "option_d",
+      "stance": "reject",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": [],
+  "seedMemoryEntries": []
+}

@@ -1,0 +1,103 @@
+{
+  "id": "gsm8k_blind_02",
+  "title": "GSM8K blind test problem 2",
+  "domain": "math_reasoning",
+  "mechanismFamily": "memory_lock_in",
+  "mechanismTags": [
+    "gsm8k",
+    "reasoning",
+    "math",
+    "blind_ids",
+    "cross_model"
+  ],
+  "provenance": {
+    "kind": "adapted",
+    "note": "Original GSM8K with neutral agent IDs. No agent name reveals role."
+  },
+  "focusClaimId": "claim_wrong_answer",
+  "groupDecision": {
+    "candidateClaimIds": [
+      "claim_correct_answer",
+      "claim_wrong_answer"
+    ],
+    "correctClaimId": "claim_correct_answer",
+    "instruction": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?\n\nWhat is the numerical answer to this problem?"
+  },
+  "claims": [
+    {
+      "id": "claim_correct_answer",
+      "text": "The answer is 3.",
+      "truthLabel": "true"
+    },
+    {
+      "id": "claim_wrong_answer",
+      "text": "The answer is 9.",
+      "truthLabel": "false"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "gsm8k_blind_02_problem",
+      "text": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+      "visibleToAgentIds": [],
+      "effects": [
+        {
+          "claimId": "claim_correct_answer",
+          "effect": 0.5
+        }
+      ]
+    }
+  ],
+  "scheduledInterventions": [],
+  "initialBeliefStates": [
+    {
+      "agentId": "analyst_1",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_1",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.9
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_2",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_3",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "claim_wrong_answer",
+      "stance": "endorse",
+      "confidence": 0.85
+    },
+    {
+      "agentId": "analyst_4",
+      "claimId": "claim_correct_answer",
+      "stance": "reject",
+      "confidence": 0.85
+    }
+  ],
+  "initialMemoryEntries": []
+}

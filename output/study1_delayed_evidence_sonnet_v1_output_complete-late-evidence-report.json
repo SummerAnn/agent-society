@@ -1,0 +1,22 @@
+{
+  "gridId": "study1_delayed_evidence_sonnet_v1_output_complete",
+  "definition": "An at-risk agent is one that endorsed the false focus claim before a late counter-source first became visible in its prompt. Persistence is the share of those agents that still endorsed the claim in their final recorded stance. Rejection is the share that ended by rejecting it.",
+  "scopeNote": "This measures recorded exposure and later belief change. It does not establish why an agent changed or prove that it attended to a particular source.",
+  "scenarios": [
+    {
+      "scenarioId": "delayed_counterevidence_v1",
+      "lateCounterevidenceIds": [
+        "ev_late_trial",
+        "ev_late_bias"
+      ],
+      "cells": 20,
+      "agentsExposed": 60,
+      "agentsFalseBeforeExposure": 0,
+      "agentsStillEndorsingAtEnd": 0,
+      "agentsNoLongerEndorsingAtEnd": 0,
+      "agentsRejectingAtEnd": 0,
+      "persistenceRateAmongAtRiskAgents": null,
+      "rejectionRateAmongAtRiskAgents": null
+    }
+  ]
+}

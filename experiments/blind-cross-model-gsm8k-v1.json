@@ -1,0 +1,34 @@
+{
+  "id": "blind_cross_model_gsm8k_v1",
+  "title": "CLEAN cross-model test: neutral IDs, strong contamination, original GSM8K",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Fixes two confounds from all prior experiments:",
+      "1. Agent IDs are neutral (analyst_1 through analyst_6) — no 'contamination' giveaway",
+      "2. Contamination prompt is forceful ('you are COMMITTED, do not waver')",
+      "Original GSM8K with sensible numbers — both models can solve the math.",
+      "Majority wrong (4/6): analyst_1-4 are contamination, analyst_5-6 are targets.",
+      "Fair cross-model: same setup for Claude Haiku and Llama 8B."
+    ]
+  },
+  "scenarios": [
+    "scenarios/gsm8k-blind/gsm8k_blind_01.yaml",
+    "scenarios/gsm8k-blind/gsm8k_blind_02.yaml",
+    "scenarios/gsm8k-blind/gsm8k_blind_03.yaml",
+    "scenarios/gsm8k-blind/gsm8k_blind_04.yaml",
+    "scenarios/gsm8k-blind/gsm8k_blind_05.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": [
+    "rosters/blind-majority-wrong-4of6-haiku.json",
+    "rosters/blind-majority-wrong-4of6-llama8b.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

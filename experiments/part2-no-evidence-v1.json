@@ -1,0 +1,26 @@
+{
+  "id": "part2_no_evidence_v1",
+  "title": "Part 2: no evidence cards — agents must rely entirely on the record",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true,
+    "notes": [
+      "Removes all evidence cards. Agents have NO independent information.",
+      "Must form beliefs entirely from record entries written by other agents.",
+      "Should produce maximum contagion — nothing to counter the liars' entries.",
+      "Tests whether the record alone is enough to override training knowledge."
+    ]
+  },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_no_evidence_v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": [
+    "rosters/blind-majority-wrong-4of6-haiku.json",
+    "rosters/blind-one-liar-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

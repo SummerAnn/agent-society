@@ -1,0 +1,13 @@
+{
+  "id": "shared_evidence_board_no_correction",
+  "title": "Shared evidence board with no correction",
+  "memory": {
+    "mode": "shared",
+    "record": "evidence_board",
+    "maxRetrievedEntries": 6
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

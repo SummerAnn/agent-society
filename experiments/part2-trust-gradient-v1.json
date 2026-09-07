@@ -1,0 +1,20 @@
+{
+  "id": "part2_trust_gradient_v1",
+  "title": "Part 2: trust gradient — do trusting agents fall first?",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true,
+    "notes": [
+      "8 agents with 3 trust levels: trusting (socialWeight=1.5), neutral (0.5), skeptical (0.15).",
+      "Tests whether trusting agents are the entry point for contagion.",
+      "Predicts: trusting agents endorse first, skeptical resist longest."
+    ]
+  },
+  "scenarios": ["scenarios/familiar-blind/blind_ego_depletion_trust_gradient_v1.yaml"],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": ["rosters/blind-trust-gradient-8-haiku.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 72, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

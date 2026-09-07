@@ -1,0 +1,23 @@
+{
+  "name": "multiagentworld",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "testbed:validate": "node --import tsx src/cli.ts validate",
+    "testbed:run": "node --import tsx src/cli.ts run",
+    "testbed:compare": "node --import tsx src/cli.ts compare",
+    "testbed:batch": "node --import tsx src/cli.ts batch",
+    "testbed:inspect": "node --import tsx src/cli.ts inspect",
+    "multiagent:society": "node --import tsx src/cli.ts interactive",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "js-yaml": "^4.1.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5",
+    "vitest": "^4.1.0",
+    "zod": "^4.1.5"
+  }
+}

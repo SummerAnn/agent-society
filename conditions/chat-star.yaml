@@ -1,0 +1,16 @@
+{
+  "id": "chat_star",
+  "title": "Chat debate (star topology \u2014 contamination hub)",
+  "memory": {
+    "mode": "shared",
+    "maxRetrievedEntries": 6
+  },
+  "interaction": {
+    "mode": "chat",
+    "chatRounds": 3,
+    "topology": "star"
+  },
+  "interventions": {
+    "correctionVisibility": "global"
+  }
+}

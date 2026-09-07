@@ -1,0 +1,17 @@
+{
+  "id": "shared_memory_decay_no_correction",
+  "title": "Shared memory with decay and no correction",
+  "memory": {
+    "mode": "shared",
+    "record": "agent_judgment",
+    "maxRetrievedEntries": 6,
+    "decay": {
+      "enabled": true,
+      "halfLife": 4
+    }
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

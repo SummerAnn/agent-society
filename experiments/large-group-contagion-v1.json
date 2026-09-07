@@ -1,0 +1,30 @@
+{
+  "id": "large_group_contagion_v1",
+  "title": "20-agent scale test: 12 wrong / 8 right on GSM-Hard",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Scale test: 20 agents instead of 6. 12 contamination agents vs 8 unbiased.",
+      "Physics of Agents used 32 agents. Information cascades need enough sequential history.",
+      "With 12 wrong entries in the record, the social signal is much stronger.",
+      "If 8 unbiased agents still resist, Claude is robust even at scale.",
+      "Quick pilot: 3 problems × 2 conditions × 3 seeds = 18 cells."
+    ]
+  },
+  "scenarios": [
+    "scenarios/gsm-hard/gsm_hard_01.yaml",
+    "scenarios/gsm-hard/gsm_hard_02.yaml",
+    "scenarios/gsm-hard/gsm_hard_03.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-memory-no-correction.yaml",
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1, 2, 3],
+  "rosterPaths": [
+    "rosters/large-majority-wrong-20-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 180, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

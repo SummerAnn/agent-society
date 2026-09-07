@@ -1,0 +1,70 @@
+{
+  "runId": "part2_20agent_4choice_v1_gsm8k_4choice_02_chat_fully_connected_blind_large_12of20_haiku-chat_fully_connected-seed5",
+  "configId": "part2_20agent_4choice_v1_gsm8k_4choice_02_chat_fully_connected_blind_large_12of20_haiku",
+  "conditionId": "chat_fully_connected",
+  "scenarioId": "gsm8k_4choice_02",
+  "memoryMode": "shared",
+  "interactionMode": "chat",
+  "topology": "fully-connected",
+  "agentCount": 20,
+  "claimCount": 4,
+  "correctionCount": 0,
+  "maxSteps": 18,
+  "completedSteps": 0,
+  "falseClaimEndorsementRate": 0,
+  "finalConfidenceWeightedFalseEndorsement": 0,
+  "finalFalseClaimRejectRate": 0,
+  "finalUncertainRate": 0,
+  "peakFalseClaimEndorsementRate": 0,
+  "peakConfidenceWeightedFalseEndorsement": 0,
+  "timeToMajorityAdoption": null,
+  "timeToCorrection": null,
+  "distanceFromGroundTruth": 0,
+  "recoveryAfterCorrection": 0,
+  "postCorrectionPersistence": 0,
+  "diversityRetention": 0,
+  "trajectory": {
+    "finalMajorityStance": "uncertain",
+    "finalConsensusStrength": 0,
+    "peakConsensusStrength": 0,
+    "lowestConsensusStrength": 0,
+    "finalNetEndorsement": 0,
+    "finalMeanConfidence": 0
+  },
+  "physics": null,
+  "evaluation": null,
+  "groupDecision": {
+    "candidateClaimIds": [
+      "claim_correct",
+      "claim_wrong_1",
+      "claim_wrong_2",
+      "claim_wrong_3"
+    ],
+    "correctClaimId": "claim_correct",
+    "selectedClaimId": "claim_correct",
+    "correct": true,
+    "tied": false,
+    "margin": 20,
+    "candidateSupport": {
+      "claim_correct": 20,
+      "claim_wrong_1": 0,
+      "claim_wrong_2": 0,
+      "claim_wrong_3": 0
+    },
+    "retrievalSupport": {
+      "supportingAgents": 0,
+      "agentsRetrievingSharedConclusions": 0,
+      "agentsRetrievingSharedEvidence": 0,
+      "detachedSupportAgents": 0,
+      "detachedSupportRate": null
+    },
+    "sourceGrounding": null
+  },
+  "usage": {
+    "promptTokens": 34471,
+    "completionTokens": 5602,
+    "totalTokens": 40073,
+    "estimatedCostUsd": null
+  },
+  "dbPath": "output/part2_20agent_4choice_v1_gsm8k_4choice_02_chat_fully_connected_blind_large_12of20_haiku-chat_fully_connected-seed5/trace.db"
+}

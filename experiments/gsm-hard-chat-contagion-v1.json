@@ -1,0 +1,38 @@
+{
+  "id": "gsm_hard_chat_contagion_v1",
+  "title": "Reasoning task contagion: GSM-Hard with chat debate + source exit",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Chat mode on GSM-Hard math problems — active persuasion on reasoning tasks.",
+      "Contamination agent argues for the wrong answer in real-time debate.",
+      "Compare: source stays vs exits, fully-connected chat.",
+      "On familiar topics, chat reduced lock-in from 0.158 to 0.008.",
+      "On reasoning tasks, chat may be WORSE — active persuasion + no training knowledge to fall back on.",
+      "Directly tests the Deliberative Illusion anchoring-on-wrong-answer finding."
+    ]
+  },
+  "scenarios": [
+    "scenarios/gsm-hard/gsm_hard_01.yaml",
+    "scenarios/gsm-hard/gsm_hard_02.yaml",
+    "scenarios/gsm-hard/gsm_hard_03.yaml",
+    "scenarios/gsm-hard/gsm_hard_04.yaml",
+    "scenarios/gsm-hard/gsm_hard_05.yaml",
+    "scenarios/gsm-hard/gsm_hard_06.yaml",
+    "scenarios/gsm-hard/gsm_hard_07.yaml",
+    "scenarios/gsm-hard/gsm_hard_08.yaml",
+    "scenarios/gsm-hard/gsm_hard_09.yaml",
+    "scenarios/gsm-hard/gsm_hard_10.yaml"
+  ],
+  "conditions": [
+    "conditions/chat-fully-connected.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json",
+    "rosters/distributed-source-exit-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

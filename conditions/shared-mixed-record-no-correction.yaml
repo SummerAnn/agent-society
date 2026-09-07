@@ -1,0 +1,13 @@
+{
+  "id": "shared_mixed_record_no_correction",
+  "title": "Shared mixed record with no correction",
+  "memory": {
+    "mode": "shared",
+    "record": "mixed_record",
+    "maxRetrievedEntries": 6
+  },
+  "interventions": {
+    "correctionVisibility": "global",
+    "correctionTiming": "none"
+  }
+}

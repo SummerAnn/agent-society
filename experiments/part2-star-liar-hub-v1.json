@@ -1,0 +1,14 @@
+{
+  "id": "part2_star_liar_hub_v1",
+  "title": "Part 2: star topology with liar as hub — information control",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true },
+  "scenarios": [
+    "scenarios/familiar-blind/blind_ego_depletion_v1.yaml",
+    "scenarios/familiar-blind/blind_wakefield_mmr_autism_v1.yaml"
+  ],
+  "conditions": ["conditions/chat-star.yaml"],
+  "seeds": [1, 2, 3, 4, 5],
+  "rosterPaths": ["rosters/blind-star-liar-hub-6-haiku.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

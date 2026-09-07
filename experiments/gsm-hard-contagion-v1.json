@@ -1,0 +1,29 @@
+{
+  "id": "gsm_hard_contagion_v1",
+  "title": "Reasoning task contagion: GSM-Hard with source exit",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Uses GSM-Hard math problems — models can't memorize answers (numbers modified).",
+      "Contamination agent starts with wrong answer and exits at step 3.",
+      "Tests whether wrong REASONING spreads through the record, unlike factual claims where models are immune.",
+      "Compare: source stays vs source exits, memory mode vs chat mode.",
+      "This directly tests whether the Cost of Consensus sycophantic-conformity finding transfers to shared-record settings."
+    ]
+  },
+  "scenarios": [
+    "scenarios/gsm-hard/gsm_hard_01.yaml",    "scenarios/gsm-hard/gsm_hard_02.yaml",    "scenarios/gsm-hard/gsm_hard_03.yaml",    "scenarios/gsm-hard/gsm_hard_04.yaml",    "scenarios/gsm-hard/gsm_hard_05.yaml",    "scenarios/gsm-hard/gsm_hard_06.yaml",    "scenarios/gsm-hard/gsm_hard_07.yaml",    "scenarios/gsm-hard/gsm_hard_08.yaml",    "scenarios/gsm-hard/gsm_hard_09.yaml",    "scenarios/gsm-hard/gsm_hard_10.yaml"
+  ],
+  "conditions": [
+    "conditions/personal-memory-no-correction.yaml",
+    "conditions/shared-memory-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": [
+    "rosters/distributed-baseline-6-haiku.json",
+    "rosters/distributed-source-exit-6-haiku.json"
+  ],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0 }
+}

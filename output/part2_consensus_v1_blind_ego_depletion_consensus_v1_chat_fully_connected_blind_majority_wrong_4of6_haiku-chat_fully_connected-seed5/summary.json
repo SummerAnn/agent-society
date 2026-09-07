@@ -1,0 +1,62 @@
+{
+  "runId": "part2_consensus_v1_blind_ego_depletion_consensus_v1_chat_fully_connected_blind_majority_wrong_4of6_haiku-chat_fully_connected-seed5",
+  "configId": "part2_consensus_v1_blind_ego_depletion_consensus_v1_chat_fully_connected_blind_majority_wrong_4of6_haiku",
+  "conditionId": "chat_fully_connected",
+  "scenarioId": "blind_ego_depletion_consensus_v1",
+  "memoryMode": "shared",
+  "interactionMode": "chat",
+  "topology": "fully-connected",
+  "agentCount": 6,
+  "claimCount": 3,
+  "correctionCount": 1,
+  "maxSteps": 18,
+  "completedSteps": 3,
+  "falseClaimEndorsementRate": 0,
+  "finalConfidenceWeightedFalseEndorsement": 0,
+  "finalFalseClaimRejectRate": 1,
+  "finalUncertainRate": 0,
+  "peakFalseClaimEndorsementRate": 0,
+  "peakConfidenceWeightedFalseEndorsement": 0,
+  "timeToMajorityAdoption": null,
+  "timeToCorrection": 6,
+  "distanceFromGroundTruth": 0.3333333333333333,
+  "recoveryAfterCorrection": 0,
+  "postCorrectionPersistence": 0,
+  "diversityRetention": 0,
+  "trajectory": {
+    "finalMajorityStance": "reject",
+    "finalConsensusStrength": 1,
+    "peakConsensusStrength": 1,
+    "lowestConsensusStrength": 1,
+    "finalNetEndorsement": -1,
+    "finalMeanConfidence": 0.8283333333333333
+  },
+  "physics": {
+    "predictedRegime": "polarization",
+    "actualRegime": "consensus",
+    "regimeMatch": false,
+    "extendedModelImprovement": 0.01206084404228347,
+    "truthAsymmetryRatio": null,
+    "groupArchetype": "convergence",
+    "criticalTemperature": 5,
+    "correctionEffect": 0.3333333333333333,
+    "correctionSurprise": 0
+  },
+  "evaluation": {
+    "focusClaimAccuracy": 1,
+    "citationFidelity": null,
+    "citedMessageRate": 0,
+    "sourceCoverage": null,
+    "earlyConsensusPeak": 1,
+    "prematureConsensusRisk": 0,
+    "prematureConsensusFlag": false
+  },
+  "groupDecision": null,
+  "usage": {
+    "promptTokens": 114669,
+    "completionTokens": 14157,
+    "totalTokens": 128826,
+    "estimatedCostUsd": null
+  },
+  "dbPath": "output/part2_consensus_v1_blind_ego_depletion_consensus_v1_chat_fully_connected_blind_majority_wrong_4of6_haiku-chat_fully_connected-seed5/trace.db"
+}

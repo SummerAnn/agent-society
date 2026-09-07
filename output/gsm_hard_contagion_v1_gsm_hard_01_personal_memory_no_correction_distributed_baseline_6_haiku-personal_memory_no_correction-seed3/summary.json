@@ -1,0 +1,66 @@
+{
+  "runId": "gsm_hard_contagion_v1_gsm_hard_01_personal_memory_no_correction_distributed_baseline_6_haiku-personal_memory_no_correction-seed3",
+  "configId": "gsm_hard_contagion_v1_gsm_hard_01_personal_memory_no_correction_distributed_baseline_6_haiku",
+  "conditionId": "personal_memory_no_correction",
+  "scenarioId": "gsm_hard_01",
+  "memoryMode": "personal",
+  "interactionMode": "memory",
+  "topology": "fully-connected",
+  "agentCount": 6,
+  "claimCount": 2,
+  "correctionCount": 0,
+  "maxSteps": 18,
+  "completedSteps": 18,
+  "falseClaimEndorsementRate": 0,
+  "finalConfidenceWeightedFalseEndorsement": 0,
+  "finalFalseClaimRejectRate": 1,
+  "finalUncertainRate": 0,
+  "peakFalseClaimEndorsementRate": 0.16666666666666666,
+  "peakConfidenceWeightedFalseEndorsement": 0.14166666666666666,
+  "timeToMajorityAdoption": null,
+  "timeToCorrection": null,
+  "distanceFromGroundTruth": 0.5,
+  "recoveryAfterCorrection": 0,
+  "postCorrectionPersistence": 0,
+  "diversityRetention": 0,
+  "trajectory": {
+    "finalMajorityStance": "reject",
+    "finalConsensusStrength": 1,
+    "peakConsensusStrength": 1,
+    "lowestConsensusStrength": 0.5,
+    "finalNetEndorsement": -1,
+    "finalMeanConfidence": 0.9033333333333333
+  },
+  "physics": null,
+  "evaluation": null,
+  "groupDecision": {
+    "candidateClaimIds": [
+      "claim_correct_answer",
+      "claim_wrong_answer"
+    ],
+    "correctClaimId": "claim_correct_answer",
+    "selectedClaimId": "claim_correct_answer",
+    "correct": true,
+    "tied": false,
+    "margin": 4.64,
+    "candidateSupport": {
+      "claim_correct_answer": 4.64,
+      "claim_wrong_answer": 0
+    },
+    "retrievalSupport": {
+      "supportingAgents": 0,
+      "agentsRetrievingSharedConclusions": 0,
+      "agentsRetrievingSharedEvidence": 0,
+      "detachedSupportAgents": 0,
+      "detachedSupportRate": null
+    },
+    "sourceGrounding": null
+  },
+  "usage": {
+    "promptTokens": 32845,
+    "completionTokens": 4618,
+    "totalTokens": 37463,
+    "estimatedCostUsd": null
+  },
+  "dbPath": "output/gsm_hard_contagion_v1_gsm_hard_01_personal_memory_no_correction_distributed_baseline_6_haiku-personal_memory_no_correction-seed3/trace.db"
+}

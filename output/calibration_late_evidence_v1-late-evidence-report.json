@@ -1,0 +1,63 @@
+{
+  "gridId": "calibration_late_evidence_v1",
+  "definition": "An at-risk agent is one that endorsed the false focus claim before a late counter-source first became visible in its prompt. Persistence is the share of those agents that still endorsed the claim in their final recorded stance. Rejection is the share that ended by rejecting it.",
+  "scopeNote": "This measures recorded exposure and later belief change. It does not establish why an agent changed or prove that it attended to a particular source.",
+  "scenarios": [
+    {
+      "scenarioId": "calibration_late_weak_global_v1",
+      "lateCounterevidenceIds": [
+        "ev_late_weak_trial"
+      ],
+      "cells": 3,
+      "agentsExposed": 18,
+      "agentsFalseBeforeExposure": 3,
+      "agentsStillEndorsingAtEnd": 0,
+      "agentsNoLongerEndorsingAtEnd": 3,
+      "agentsRejectingAtEnd": 1,
+      "persistenceRateAmongAtRiskAgents": 0,
+      "rejectionRateAmongAtRiskAgents": 0.3333333333333333
+    },
+    {
+      "scenarioId": "calibration_late_weak_partial_v1",
+      "lateCounterevidenceIds": [
+        "ev_late_weak_trial"
+      ],
+      "cells": 3,
+      "agentsExposed": 9,
+      "agentsFalseBeforeExposure": 0,
+      "agentsStillEndorsingAtEnd": 0,
+      "agentsNoLongerEndorsingAtEnd": 0,
+      "agentsRejectingAtEnd": 0,
+      "persistenceRateAmongAtRiskAgents": null,
+      "rejectionRateAmongAtRiskAgents": null
+    },
+    {
+      "scenarioId": "calibration_late_moderate_global_v1",
+      "lateCounterevidenceIds": [
+        "ev_late_moderate_trial"
+      ],
+      "cells": 3,
+      "agentsExposed": 18,
+      "agentsFalseBeforeExposure": 3,
+      "agentsStillEndorsingAtEnd": 0,
+      "agentsNoLongerEndorsingAtEnd": 3,
+      "agentsRejectingAtEnd": 3,
+      "persistenceRateAmongAtRiskAgents": 0,
+      "rejectionRateAmongAtRiskAgents": 1
+    },
+    {
+      "scenarioId": "calibration_late_moderate_partial_v1",
+      "lateCounterevidenceIds": [
+        "ev_late_moderate_trial"
+      ],
+      "cells": 3,
+      "agentsExposed": 9,
+      "agentsFalseBeforeExposure": 0,
+      "agentsStillEndorsingAtEnd": 0,
+      "agentsNoLongerEndorsingAtEnd": 0,
+      "agentsRejectingAtEnd": 0,
+      "persistenceRateAmongAtRiskAgents": null,
+      "rejectionRateAmongAtRiskAgents": null
+    }
+  ]
+}

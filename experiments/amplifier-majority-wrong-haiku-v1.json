@@ -1,0 +1,29 @@
+{
+  "id": "amplifier_majority_wrong_haiku_v1",
+  "title": "Amplifier test: evidence board vs mixed record when majority starts wrong (6 agents)",
+  "benchmarkMeta": {
+    "status": "paper-facing",
+    "locked": true,
+    "notes": [
+      "Same 4 scenarios and 6-agent roster as Study A (study1_memory_rules_v3_output_complete).",
+      "Changed variable: 4 of 6 agents start endorsing the false claim instead of 1.",
+      "Compares evidence board (facts only) with mixed record (facts plus opinions).",
+      "If sharing opinions helped when 1/6 was wrong (Study A), does it hurt when 4/6 are wrong?",
+      "Primary outcomes: final false endorsement, final disagreement, and whether the gradient from Study A flips."
+    ]
+  },
+  "scenarios": [
+    "scenarios/distributed-ego-depletion-majority-wrong-v1.yaml",
+    "scenarios/distributed-wakefield-majority-wrong-v1.yaml",
+    "scenarios/distributed-climate-majority-wrong-v1.yaml",
+    "scenarios/distributed-superconductor-majority-wrong-v1.yaml"
+  ],
+  "conditions": [
+    "conditions/shared-evidence-board-no-correction.yaml",
+    "conditions/shared-mixed-record-no-correction.yaml"
+  ],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": ["rosters/distributed-baseline-6-haiku.json"],
+  "maxSteps": 18,
+  "budget": {"maxModelCalls": 54, "maxOutputTokensPerCall": 256, "temperature": 0}
+}

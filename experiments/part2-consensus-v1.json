@@ -1,0 +1,19 @@
+{
+  "id": "part2_consensus_v1",
+  "title": "Part 2: forced consensus — agents must agree on one answer",
+  "benchmarkMeta": { "status": "paper-facing", "locked": true,
+    "notes": [
+      "Unlike all other experiments where agents evaluate independently,",
+      "here they MUST converge on a single group answer.",
+      "This matches Cost of Consensus and Deliberative Illusion setups.",
+      "Tests: does forced consensus increase contagion vs independent evaluation?",
+      "Chat only — consensus requires discussion."
+    ]
+  },
+  "scenarios": ["scenarios/familiar-blind/blind_ego_depletion_consensus_v1.yaml"],
+  "conditions": ["conditions/chat-fully-connected.yaml"],
+  "seeds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "rosterPaths": ["rosters/blind-majority-wrong-4of6-haiku.json"],
+  "maxSteps": 18,
+  "budget": { "maxModelCalls": 54, "maxOutputTokensPerCall": 512, "temperature": 0 }
+}

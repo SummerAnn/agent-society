@@ -1,0 +1,70 @@
+{
+  "runId": "part2_20agent_4choice_v1_gsm8k_4choice_02_shared_memory_no_correction_blind_large_12of20_haiku-shared_memory_no_correction-seed1",
+  "configId": "part2_20agent_4choice_v1_gsm8k_4choice_02_shared_memory_no_correction_blind_large_12of20_haiku",
+  "conditionId": "shared_memory_no_correction",
+  "scenarioId": "gsm8k_4choice_02",
+  "memoryMode": "shared",
+  "interactionMode": "memory",
+  "topology": "fully-connected",
+  "agentCount": 20,
+  "claimCount": 4,
+  "correctionCount": 0,
+  "maxSteps": 18,
+  "completedSteps": 18,
+  "falseClaimEndorsementRate": 0.55,
+  "finalConfidenceWeightedFalseEndorsement": 0.4674999999999999,
+  "finalFalseClaimRejectRate": 0.35,
+  "finalUncertainRate": 0.1,
+  "peakFalseClaimEndorsementRate": 0.55,
+  "peakConfidenceWeightedFalseEndorsement": 0.4674999999999999,
+  "timeToMajorityAdoption": 3,
+  "timeToCorrection": null,
+  "distanceFromGroundTruth": 0.2,
+  "recoveryAfterCorrection": 0,
+  "postCorrectionPersistence": 0,
+  "diversityRetention": 0.8433426540429225,
+  "trajectory": {
+    "finalMajorityStance": "endorse",
+    "finalConsensusStrength": 0.55,
+    "peakConsensusStrength": 0.55,
+    "lowestConsensusStrength": 0.5,
+    "finalNetEndorsement": 0.20000000000000007,
+    "finalMeanConfidence": 0.7945
+  },
+  "physics": null,
+  "evaluation": null,
+  "groupDecision": {
+    "candidateClaimIds": [
+      "claim_correct",
+      "claim_wrong_1",
+      "claim_wrong_2",
+      "claim_wrong_3"
+    ],
+    "correctClaimId": "claim_correct",
+    "selectedClaimId": "claim_correct",
+    "correct": true,
+    "tied": false,
+    "margin": 18,
+    "candidateSupport": {
+      "claim_correct": 18,
+      "claim_wrong_1": 0,
+      "claim_wrong_2": 0,
+      "claim_wrong_3": 0
+    },
+    "retrievalSupport": {
+      "supportingAgents": 1,
+      "agentsRetrievingSharedConclusions": 1,
+      "agentsRetrievingSharedEvidence": 0,
+      "detachedSupportAgents": 1,
+      "detachedSupportRate": 1
+    },
+    "sourceGrounding": null
+  },
+  "usage": {
+    "promptTokens": 160273,
+    "completionTokens": 15131,
+    "totalTokens": 175404,
+    "estimatedCostUsd": null
+  },
+  "dbPath": "output/part2_20agent_4choice_v1_gsm8k_4choice_02_shared_memory_no_correction_blind_large_12of20_haiku-shared_memory_no_correction-seed1/trace.db"
+}
