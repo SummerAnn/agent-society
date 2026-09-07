@@ -126,29 +126,23 @@ The stance is one of \texttt{endorse}, \texttt{reject}, or \texttt{uncertain}. C
 \subsection{How each task type works}
 
 \begin{table}[htbp]
-\caption{What agents evaluate in each task type. The same input/output format is used for all tasks. What differs is what the claims are about and whether the model can solve the task without peer entries.}
+\caption{What agents evaluate in each task type and what happens in each communication format. The same agents, evidence, and input/output format are used across all conditions. What differs is the claim content, the model's ability to verify it, and how agents communicate.}
 \label{tab:task_examples}
 \begin{center}
-\small
-\begin{tabular}{@{}lp{7.5cm}c@{}}
+\scriptsize
+\begin{tabular}{@{}p{1.6cm}p{1.8cm}p{3.2cm}p{2.4cm}p{2.4cm}p{1cm}@{}}
 \toprule
-\textbf{Task type} & \textbf{What agents see} & \textbf{Solve alone?} \\
+\textbf{Task type} & \textbf{False claim} & \textbf{Evidence and verification} & \textbf{Shared memory} & \textbf{Debate} & \textbf{Alone?} \\
 \midrule
-\multirow{2}{*}{\shortstack[l]{Familiar science\\(6 topics)}}
-& \textbf{False claim:} ``Willpower is a depletable resource'' / ``MMR causes autism'' / etc. &  \multirow{2}{*}{\shortstack{Yes on MMR\\Partial on\\ego depletion}} \\
-& \textbf{Evidence:} Published replication results, retraction notices, meta-analyses. & \\
+Familiar science (ego depletion) & ``Willpower is a depletable resource'' & 23-lab replication found $d = 0.04$ (null effect). Agent has partial training knowledge --- knows replications failed but topic is debated. & Reads peer endorsements, agrees (0.80) & Hears replication failure, rejects (0.85) & Partial \\
 \midrule
-\multirow{2}{*}{\shortstack[l]{Computable math\\(GSM8K, 5 items)}}
-& \textbf{False claim:} ``The answer is \$30.'' & \multirow{2}{*}{Yes} \\
-& \textbf{Evidence:} Arithmetic word problem. Agent can compute $16{-}3{-}4{=}9$, $9{\times}2{=}18$. & \\
+Familiar science (MMR/autism) & ``MMR causes autism'' & Wakefield retracted, 650K-child study found no link. Agent knows this is a famous fraud. & Rejects --- training knowledge too strong & Rejects & Yes \\
 \midrule
-\multirow{2}{*}{\shortstack[l]{Hard math\\(GSM-Hard, 5 items)}}
-& \textbf{False claim:} ``The answer is [wrong number].'' & \multirow{2}{*}{\shortstack{Claude yes\\Llama no}} \\
-& \textbf{Evidence:} Same structure as GSM8K but with extreme numbers (millions). & \\
+Computable math (GSM8K, 5) & ``The answer is \$30'' & Arithmetic word problem. Agent can compute $16{-}3{-}4{=}9$, $9{\times}2{=}18$ and reject \$30. & Rejects --- can verify by computing & Rejects & Yes \\
 \midrule
-\multirow{2}{*}{\shortstack[l]{Novel calculation\\(SciTaT, 18 items)}}
-& \textbf{False claim:} ``The difference is 1.09.'' (Correct: 4.5\%.) & \multirow{2}{*}{No} \\
-& \textbf{Evidence:} Paper paragraph + data table. Neither alone is enough. Model has zero training knowledge about the content. & \\
+Hard math (GSM-Hard, 5) & ``The answer is [wrong number]'' & Same structure but with extreme numbers (millions). Claude can compute; Llama cannot. & Claude rejects, Llama endorses & Claude rejects, Llama endorses & Model-dep. \\
+\midrule
+Novel calc.\ (SciTaT, 18) & ``The difference is 1.09'' (correct: 4.5\%) & Paper paragraph + data table. Must read both and compute $11.6\%{-}7.1\%{=}4.5\%$. Model has zero training knowledge. & Endorses --- no basis to resist (0.80) & Stays uncertain --- no one can argue & No \\
 \bottomrule
 \end{tabular}
 \end{center}
