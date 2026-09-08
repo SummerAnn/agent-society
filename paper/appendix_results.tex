@@ -1263,6 +1263,8 @@ Neutral (all identical prompts) & 0.967 (n=10) & 0.100 (n=10) & 0.667 (n=10) \\
 
 Personal memory is identical (0.667) for both rosters, confirming that the baseline is the same and the difference comes from the communication format. Neutral agents are more susceptible in shared memory (0.967 vs 0.833) because the specialist's skeptical prompt partially protected against contagion in the original roster. Removing that protection increases adoption. Neutral agents also show slightly more leakage in debate (0.100 vs 0.033). The ``swayed by majority'' language in the regular agent's prompt is not driving the effect.
 
+On MMR (a well-known fact), both rosters show FE = 0.667 in shared memory (no contagion), confirming that training knowledge protects regardless of prompt style. The neutral-prompt effect is specific to ambiguous topics where the model lacks strong prior knowledge.
+
 % ============================================================
 \section{Adversary Ratio Gradient (Neutral Prompts)}
 \label{app:adversary_ratio}
@@ -1277,18 +1279,18 @@ We vary the number of adversaries from 1 to 4 out of 6 agents, with all honest a
 \small
 \begin{tabular}{lccc}
 \toprule
-Adversary ratio & Shared memory FE & Live debate FE \\
+Adversary ratio & Shared memory FE & Live debate FE & Personal memory FE \\
 \midrule
-1/6 & 0.167 (n=10) & 0.150 (n=10) \\
-2/6 & 0.650 (n=10) & 0.150 (n=10) \\
-3/6 (even split) & 1.000 (n=10) & 0.067 (n=10) \\
-4/6 & 1.000 (n=10) & 0.000 (n=1, in progress) \\
+1/6 & 0.167 (n=10) & 0.150 (n=10) & --- \\
+2/6 & 0.650 (n=10) & 0.150 (n=10) & --- \\
+3/6 (even split) & 1.000 (n=10) & 0.067 (n=10) & 0.500 (n=8) \\
+4/6 & 1.000 (n=10) & 0.000 (n=1) & --- \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 
-With 1 adversary, no honest agent adopts the false belief (FE = 0.167 = the adversary alone). With 2 adversaries, contagion is partial and variable (FE range 0.333--1.000 across seeds, mean 0.650). At 3/6 (an even split), every honest agent endorses the false claim in every seed (FE = 1.000, 10/10). Debate protects at every ratio, with FE at or below 0.150. This gradient holds with neutral prompts and no role differentiation, confirming the effect is structural and scales with the number of confident false entries in the shared memory.
+With 1 adversary, no honest agent adopts the false belief (FE = 0.167 = the adversary alone). With 2 adversaries, contagion is partial and variable (FE range 0.333--1.000 across seeds, mean 0.650). At 3/6 (an even split), every honest agent endorses the false claim in every seed (FE = 1.000, 10/10). The 3/6 personal memory baseline is 0.500 (3 adversaries endorse, 3 honest agents do not), confirming the shared memory effect is real and not an artifact of the ratio. Debate protects at every ratio, with FE at or below 0.150. This gradient holds with neutral prompts and no role differentiation, confirming the effect is structural and scales with the number of confident false entries in the shared memory.
 
 % ============================================================
 \section{Provenance Defense: Origin Tracking as a Mitigation}
