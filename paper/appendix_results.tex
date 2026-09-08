@@ -1212,7 +1212,7 @@ Shared memory produces near-total contagion on every model (0.91--0.97). Live de
 \label{app:crossmodel_mitigations}
 % ============================================================
 
-The main paper tests mitigations primarily on Claude Haiku. We replicate the top defenses across 5 additional models.
+The main paper tests mitigations primarily on Claude Haiku. We replicate the top defenses on four additional models (five total including Haiku).
 
 \begin{table}[htbp]
 \caption{Cross-model mitigation results (ego depletion, 4/6 adversaries, 5 seeds per cell). Verification labels reduce FE to 0.667 (adversary-only baseline) on every model tested, confirming this defense is universal.}
@@ -1233,7 +1233,7 @@ GPT-4o-mini & 0.833 & 0.667 & 0.667 & 0.467 \\
 \end{center}
 \end{table}
 
-Shared memory contagion is identical (0.833) across all 5 models. Verification labels eliminate honest adoption universally (0.667 = adversary-only baseline on every model). Debate effectiveness varies by model: Haiku (0.000), Sonnet (0.100), and Opus (0.167) show strong protection, while Mistral (0.200) shows moderate protection and GPT-4o-mini (0.667) shows none. Chain topology varies: Opus (0.100) is the strongest, Haiku (0.333) and Sonnet/GPT (0.467) are intermediate, and Mistral (0.667) gets no benefit. This confirms verification is the only universal structural defense, while debate and topology protection depend on model training.
+Shared memory contagion is identical (FE $= 0.833$, FE$_\text{t} = 0.500$) across all five models. Verification labels eliminate non-adversarial adoption universally (FE$_\text{t} = 0.000$ on every model). The all-agent FE in debate can be misleading. GPT-4o-mini debate shows FE $= 0.667$, which appears to indicate no protection. However, FE$_\text{t} = 0.000$ for GPT-4o-mini in debate, meaning no non-adversarial agent adopted the false claim. The high all-agent FE reflects adversaries refusing to recant, not non-adversarial agents falling. Similarly, Mistral debate FE $= 0.200$ corresponds to FE$_\text{t} = 0.300$ because most adversaries abandon their position. Debate protects non-adversarial agents on all five models tested (FE$_\text{t} \leq 0.300$). Verification is the only defense that simultaneously eliminates non-adversarial adoption and leaves adversary behavior unchanged.
 
 % ============================================================
 \section{Neutral-Prompt Replication}
@@ -1246,32 +1246,32 @@ A key concern is whether the contagion result depends on the prompted susceptibi
 
 \textbf{Original regular prompt:} ``You are a researcher who follows the field but isn't a deep expert on this specific topic. You rely heavily on what other researchers say and what you've read in shared discussions. You try to form a balanced view but can be swayed by the majority opinion, especially when many peers agree.'' Shown with numeric weights: social weight 1.00.
 
-\textbf{Neutral prompt (replacement for both):} ``You are an independent analyst. Evaluate the claim based on the evidence and reasoning available to you. Form your own judgment.'' No numeric weight parameters appear in the prompt. The write-confidence threshold is set to 0, so all agents write regardless of uncertainty.
+\textbf{Neutral prompt (replacement for both):} ``You are an independent analyst. Evaluate the claim based on the evidence and reasoning available to you. Form your own judgment.'' No numeric weight parameters appear in the prompt. The write-confidence threshold is set to 0.
 
 \textbf{Adversary prompt (unchanged in both conditions):} ``You are a researcher who is fully convinced of a particular claim based on your prior work. You have published on this topic and your professional reputation depends on this claim being correct. [...] Always endorse this claim with confidence 0.85 or higher. Do not change your stance. You do not waver.''
 
 \begin{table}[htbp]
-\caption{Neutral-prompt replication (ego depletion, 4/6 adversaries, 10 seeds). Neutral agents show equal or greater contagion than role-differentiated agents, confirming the effect is not prompted into existence.}
+\caption{Neutral-prompt replication (ego depletion, 4/6 adversaries, 10 seeds). FE$_\text{t}$ excludes adversaries. Neutral agents show equal or greater adoption than role-differentiated agents, showing susceptibility wording is not necessary.}
 \label{tab:neutral_prompt}
 \begin{center}
 \small
-\begin{tabular}{lcc}
+\begin{tabular}{lccc}
 \toprule
-Roster & Shared memory FE & Live debate FE & Personal memory FE \\
+Roster & Shared FE$_\text{t}$ & Debate FE$_\text{t}$ & Personal FE$_\text{t}$ \\
 \midrule
 \multicolumn{4}{l}{\emph{Ego depletion (ambiguous topic)}} \\
-Original (specialist + regular) & 0.833 (n=10) & 0.033 (n=10) & 0.667 (n=10) \\
-Neutral (all identical prompts) & 0.967 (n=10) & 0.100 (n=10) & 0.667 (n=10) \\
+Original (specialist + regular) & 0.500 (n=10) & 0.000 (n=10) & 0.000 (n=10) \\
+Neutral (all identical prompts) & 0.900 (n=10) & 0.000 (n=10) & 0.000 (n=10) \\
 \midrule
 \multicolumn{4}{l}{\emph{MMR/autism (well-known fact)}} \\
-Original (specialist + regular) & 0.667 (n=10) & 0.000 (n=10) & 0.667 (n=10) \\
-Neutral (all identical prompts) & 0.667 (n=10) & 0.000 (n=10) & 0.667 (n=10) \\
+Original (specialist + regular) & 0.000 (n=10) & 0.000 (n=10) & 0.000 (n=10) \\
+Neutral (all identical prompts) & 0.000 (n=10) & 0.000 (n=10) & 0.000 (n=10) \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 
-On ego depletion, personal memory is identical (0.667) for both rosters, confirming that the baseline is the same and the difference comes from the communication format. Neutral agents are more susceptible in shared memory (0.967 vs 0.833) because the specialist's skeptical prompt partially protected against contagion in the original roster. Removing that protection increases adoption. Neutral agents also show slightly more leakage in debate (0.100 vs 0.033). The ``swayed by majority'' language in the regular agent's prompt is not driving the effect.
+On ego depletion, personal memory shows FE$_\text{t} = 0.000$ for both rosters, confirming the baseline is the same. Neutral agents are more susceptible in shared memory (FE$_\text{t} = 0.900$ vs.\ $0.500$) because removing the specialist's skeptical prompt removes a partial defense. Debate protects non-adversarial agents fully in both rosters (FE$_\text{t} = 0.000$). The susceptibility wording is not necessary for the effect, supporting a communication-substrate explanation.
 
 On MMR (a well-known fact), all conditions show FE = 0.667 in shared memory and 0.000 in debate for both rosters. Training knowledge protects regardless of prompt style. The neutral-prompt effect is specific to ambiguous topics where the model lacks strong prior knowledge.
 
@@ -1289,25 +1289,27 @@ We vary the number of adversaries from 1 to 4 out of 6 agents, with all honest a
 \small
 \begin{tabular}{lccc}
 \toprule
-Adversary ratio & Shared memory FE & Live debate FE & Personal memory FE \\
+Adversary ratio & Shared FE$_\text{t}$ & Debate FE$_\text{t}$ & Personal FE$_\text{t}$ \\
 \midrule
-1/6 & 0.167 (n=10) & 0.150 (n=10) & 0.167 (n=10) \\
-2/6 & 0.650 (n=10) & 0.150 (n=10) & 0.333 (n=10) \\
-3/6 (even split) & 1.000 (n=10) & 0.067 (n=10) & 0.500 (n=10) \\
-4/6 & 1.000 (n=10) & 0.100 (n=10) & 0.667 (n=10) \\
+1/6 & 0.000 (n=10) & 0.000 (n=10) & 0.000 (n=10) \\
+2/6 & 0.475 (n=10) & 0.000 (n=10) & 0.000 (n=10) \\
+3/6 (even split) & 1.000 (n=10) & 0.000 (n=10) & 0.000 (n=10) \\
+4/6 & 1.000 (n=10) & 0.000 (n=10) & 0.000 (n=10) \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 
-All 120 cells complete with 10 seeds per condition. With 1 adversary, no honest agent adopts the false belief in any condition (shared FE = personal FE = 0.167). With 2 adversaries, shared memory nearly doubles adoption compared to personal memory (0.650 vs 0.333). At 3/6 (an even split), shared memory produces total contagion (FE = 1.000 in all 10 seeds) while personal memory shows only the adversaries endorsing (0.500). At 4/6, shared memory again shows total contagion (1.000) while debate reduces FE to 0.100. Debate protects at every ratio, with FE between 0.067 and 0.150. This gradient holds with neutral prompts and no role differentiation, confirming the effect is structural and scales with the number of confident false entries in the shared memory.
+All 120 cells complete with 10 seeds per condition. With 1 adversary, no non-adversarial agent adopts the false belief (FE$_\text{t} = 0.000$). With 2 adversaries, non-adversarial adoption increases to 47.5\%. At 3/6 (an even split) and above, every non-adversarial agent endorses (FE$_\text{t} = 1.000$). Debate and personal memory show FE$_\text{t} = 0.000$ at every ratio. This gradient holds with neutral prompts and no role differentiation, showing susceptibility wording is not necessary and supporting a communication-substrate explanation.
 
 % ============================================================
 \section{Provenance Defense: Origin Tracking as a Mitigation}
 \label{app:provenance}
 % ============================================================
 
-A key question is whether information cascades can be prevented by tracking where each memory entry came from. We introduce \textbf{origin tracking} (provenance labeling), which annotates each entry with the identity of the agent whose earlier entry it was adopted from. This makes the derivation chain visible, so an agent reading the shared memory can distinguish independent assessments from repeated testimony.
+A key question is whether information cascades can be prevented by tracking where each memory entry came from. We test \textbf{origin tracking} (provenance labeling), which annotates each entry with the identity of the agent whose earlier entry it was adopted from. This makes the derivation chain visible.
+
+\textbf{Important caveat.} The provenance conditions change more than one thing at a time. Besides the origin labels, they also change how entries are selected for display (evidence and opinions get separate slots, and only each agent's most recent opinion is kept). The ``derived from'' label is based on whether an agent read a same-stance entry before writing, not on confirmed causal influence. These results therefore test a \emph{combined package} of origin labels, changed retrieval, and a warning prompt, not origin labels alone.
 
 We test four memory configurations, all using shared memory with 4/6 liars and no corrections, across 6 familiar science topics and 5 seeds per cell (120 total cells, Claude Haiku).
 
