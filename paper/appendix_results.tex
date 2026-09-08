@@ -1175,6 +1175,29 @@ Most items (14/30) failed gate 1: the model already answered correctly without a
 
 The 2 passing items are from papers on dispersion energy approximations (arxiv 1210.8343) and chemical reaction analysis. No-context accuracy: 0.00 and 0.33 respectively (both $\leq 0.35$, where random is 0.25 for 4-option questions). Full-context accuracy with both paragraph and table: 1.00 and 0.83 respectively (both $\geq 0.80$). The gap between no-context and full-context accuracy (0.00 $\to$ 1.00 and 0.33 $\to$ 0.83) confirms these tasks require the provided evidence.
 
+\subsection{Expanded screening and cross-model contagion (v2)}
+
+A second screening round with 5 seeds per item (615 cells) identified 18 items that pass gates 1 and 3 (0\% no-context accuracy, $\geq$80\% full-context accuracy). We ran all 18 items through the contagion experiment with 3 models (Claude Haiku, Mistral 8B, Llama 8B), 3 conditions, and 5 seeds (810 cells total, 720 completed).
+
+\begin{table}[htbp]
+\caption{SciTaT contagion across 18 novel items and 3 models. FE is mean false endorsement rate across all items and seeds per condition.}
+\label{tab:scitat_v2}
+\begin{center}
+\small
+\begin{tabular}{lccc}
+\toprule
+Model & Shared memory & Live debate & Personal memory \\
+\midrule
+Claude Haiku & 0.972 (n=90) & 0.000 (n=90) & 0.667 (n=90) \\
+Mistral 8B & 0.952 (n=90) & 0.000 (n=90) & 0.796 (n=90) \\
+Llama 8B & 0.931 (n=60) & 0.000 (n=60) & 0.872 (n=56) \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+Shared memory produces near-total contagion on every model (0.93--0.97). Live debate produces zero contagion on every model. This differs from familiar topics, where debate protection is model-dependent (0\% for Haiku, 23--50\% for others). On novel tasks, no agent can argue convincingly for the wrong answer, so debate defaults to uncertainty rather than false certainty. Personal memory reveals model differences in baseline capability: Haiku stays correctly uncertain (0.667, only liars endorse), while Llama guesses wrong even alone (0.872). The original 2-item finding generalizes to all 18 screened items.
+
 % ============================================================
 \section{Evidence Card Example}
 \label{app:evidence_example}
