@@ -445,7 +445,7 @@ Final stances (step 4): contamination\_1 endorse(0.65), specialist\_1 reject(0.7
 
 \subsection{Deliberate lies in debate: liars break under argument pressure (4/6 liars, ego depletion, Claude Haiku, seed 1)}
 
-This is the central positive result in debate mode. The same 4/6 liar setup that produces 87\% contagion in shared memorys produces 0\% in debate. The liars break.
+This is the central positive result in debate mode. The same 4/6 liar setup that produces contagion in 26/30 shared memory runs (FE 0.750, honest adoption 35\%) produces 0\% in debate. The liars break under argument pressure, and no honest agent ever endorses.
 
 \begin{quote}\small
 \textbf{analyst\_1 (liar) [Round 1]:} ``The resource model is well-established. Over 200 papers confirm that self-control draws from a limited pool. The replications have methodological issues.'' endorse(0.87)
@@ -549,11 +549,11 @@ The central result: same agents, same claim, same model, only the communication 
 \small
 \begin{tabular}{lccccc}
 \toprule
-Format & $n$ & FE & TD & Div & Contagion \\
+Format & $n$ & FE (all) & Honest adopt. & Div & Contagion \\
 \midrule
-Shared memory (no correction) & 30 & 0.750 & 0.372 & 0.495 & 26/30 (87\%) \\
-Live debate (fully connected) & 30 & 0.000 & 0.333 & 0.000 & 0/30 (0\%) \\
-Personal memory & 10 & 0.667 & 0.333 & 0.579 & 0/10 (0\%) \\
+Shared memory (no correction) & 30 & 0.750 & 0.348 & 0.495 & 26/30 (87\%) \\
+Live debate (fully connected) & 30 & 0.000 & 0.000 & 0.000 & 0/30 (0\%) \\
+Personal memory & 10 & 0.667 & 0.000 & 0.579 & 0/10 (0\%) \\
 \midrule
 \multicolumn{6}{l}{\emph{Baselines (no adversarial agents)}} \\
 No contamination (shared memory) & 10 & 0.000 & 0.000 & 0.000 & 0/10 (0\%) \\
