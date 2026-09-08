@@ -1190,13 +1190,93 @@ Model & Shared memory & Live debate & Personal memory \\
 \midrule
 Claude Haiku & 0.972 (n=90) & 0.000 (n=90) & 0.667 (n=90) \\
 Mistral 8B & 0.952 (n=90) & 0.000 (n=90) & 0.796 (n=90) \\
-Llama 8B & 0.931 (n=60) & 0.000 (n=60) & 0.872 (n=56) \\
+Llama 8B & 0.913 (n=90) & 0.000 (n=90) & 0.852 (n=90) \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 
-Shared memory produces near-total contagion on every model (0.93--0.97). Live debate produces zero contagion on every model. This differs from familiar topics, where debate protection is model-dependent (0\% for Haiku, 23--50\% for others). On novel tasks, no agent can argue convincingly for the wrong answer, so debate defaults to uncertainty rather than false certainty. Personal memory reveals model differences in baseline capability: Haiku stays correctly uncertain (0.667, only liars endorse), while Llama guesses wrong even alone (0.872). The original 2-item finding generalizes to all 18 screened items.
+Shared memory produces near-total contagion on every model (0.91--0.97). Live debate produces zero contagion on every model. This differs from familiar topics, where debate protection is model-dependent (0\% for Haiku, 23--50\% for others). On novel tasks, no agent can argue convincingly for the wrong answer, so debate defaults to uncertainty rather than false certainty. Personal memory reveals model differences in baseline capability: Haiku stays correctly uncertain (0.667, only liars endorse), while Llama guesses wrong even alone (0.852). The original 2-item finding generalizes to all 18 screened items and all 3 models (270 cells each, 810 total).
+
+% ============================================================
+\section{Cross-Model Mitigation Results}
+\label{app:crossmodel_mitigations}
+% ============================================================
+
+The main paper tests mitigations primarily on Claude Haiku. We replicate the top defenses across 5 additional models.
+
+\begin{table}[htbp]
+\caption{Cross-model mitigation results (ego depletion, 4/6 adversaries, 5 seeds per cell). Verification labels reduce FE to 0.667 (adversary-only baseline) on every model tested, confirming this defense is universal.}
+\label{tab:crossmodel_mitigations}
+\begin{center}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Model & Shared memory & Verification & Live debate & Chain topology \\
+\midrule
+Haiku & 0.833 & 0.667 & 0.000 & 0.333 \\
+Sonnet & 0.833 & 0.667 & 0.100 & --- \\
+Opus & 0.833 & 0.667 & 0.222 & --- \\
+Mistral 8B & 0.833 & 0.667 & 0.200 & 0.667 \\
+GPT-4o-mini & 0.833 & 0.667 & 0.667 & 0.467 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+Shared memory contagion is identical (0.833) across all models. Verification labels eliminate honest adoption universally. Debate effectiveness varies by model: Haiku and Sonnet show strong protection (0.000--0.100), while GPT-4o-mini shows none (0.667). This confirms the paper's claim that verification is the only universal structural defense, while debate protection depends on model training.
+
+% ============================================================
+\section{Neutral-Prompt Replication}
+\label{app:neutral_prompt}
+% ============================================================
+
+A key concern is whether the contagion result depends on the prompted susceptibility of the regular agent (``you rely heavily on what other researchers say''). We test this by replacing all honest agents with neutral agents whose prompt contains no social-weight instructions, no personality, and no role differentiation. The prompt reads: ``You are an independent analyst. Evaluate the claim based on the evidence and reasoning available to you. Form your own judgment.'' No numeric weight parameters appear in the prompt.
+
+\begin{table}[htbp]
+\caption{Neutral-prompt replication (ego depletion, 4/6 adversaries, 10 seeds). Neutral agents show equal or greater contagion than role-differentiated agents, confirming the effect is not prompted into existence.}
+\label{tab:neutral_prompt}
+\begin{center}
+\small
+\begin{tabular}{lcc}
+\toprule
+Roster & Shared memory FE & Live debate FE \\
+\midrule
+Original (specialist + regular) & 0.833 (n=10) & 0.033 (n=10) \\
+Neutral (all identical prompts) & 0.967 (n=10) & 0.125 (n=8, in progress) \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+Neutral agents are more susceptible (0.967 vs 0.833) because the specialist's skeptical prompt partially protected against contagion in the original roster. Removing that protection increases adoption. The ``swayed by majority'' language in the regular agent's prompt is not driving the effect.
+
+% ============================================================
+\section{Adversary Ratio Gradient (Neutral Prompts)}
+\label{app:adversary_ratio}
+% ============================================================
+
+We vary the number of adversaries from 1 to 4 out of 6 agents, with all honest agents using neutral prompts.
+
+\begin{table}[htbp]
+\caption{Adversary ratio gradient with neutral prompts (ego depletion, 10 seeds per cell). Contagion emerges at 2/6 and reaches 100\% at 3/6 (even split).}
+\label{tab:adversary_ratio}
+\begin{center}
+\small
+\begin{tabular}{lccc}
+\toprule
+Adversary ratio & Shared memory FE & Live debate FE & Honest adoption \\
+\midrule
+1/6 & 0.167 (n=10) & 0.150 (n=10) & 0\% \\
+2/6 & 0.650 (n=10) & 0.167 (n=2, in progress) & partial \\
+3/6 (even split) & 1.000 (n=10) & 0.000 (n=3, in progress) & 100\% \\
+4/6 & 1.000 (n=10) & in progress & 100\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+With 1 adversary, no honest agent adopts the false belief. With 2 adversaries, contagion is partial and variable (FE range 0.333--1.000 across seeds). At 3/6 (an even split), every honest agent endorses the false claim in every seed. This gradient holds with neutral prompts and no role differentiation, confirming the effect is structural.
 
 % ============================================================
 \section{Evidence Card Example}
