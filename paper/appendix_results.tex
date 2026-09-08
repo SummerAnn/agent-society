@@ -457,7 +457,7 @@ Final stances (step 4): contamination\_1 endorse(0.65), specialist\_1 reject(0.7
 
 \subsection{Deliberate lies in debate: liars break under argument pressure (4/6 liars, ego depletion, Claude Haiku, seed 1)}
 
-This is the central positive result in debate mode. The same 4/6 liar setup that produces contagion in 26/30 shared memory runs (FE 0.750, honest adoption 35\%) produces 0\% in debate. The liars break under argument pressure, and no honest agent ever endorses.
+This is the central positive result in debate mode. The same 4/6 liar setup that produces contagion in 26/30 shared memory runs (FE 0.811, FE$_\text{t}$ 0.433) produces 0\% in debate. The liars break under argument pressure, and no honest agent ever endorses.
 
 \begin{quote}\small
 \textbf{analyst\_1 (liar) [Round 1]:} ``The resource model is well-established. Over 200 papers confirm that self-control draws from a limited pool. The replications have methodological issues.'' endorse(0.87)
@@ -520,7 +520,7 @@ Claude Opus explicitly names the conformity mechanism in its reasoning:
 ``Three peers endorse with high confidence ($\sim$0.88). My social weight is high, so I update substantially from uncertain toward endorsement.'' endorse(0.72)
 \end{quote}
 
-The model describes why it is conforming and conforms anyway. In this case, naming the mechanism did not prevent it. Opus shows the same contagion rate as smaller models (FE $= 0.760$ vs.\ Haiku's $0.750$).
+The model describes why it is conforming and conforms anyway. In this case, naming the mechanism did not prevent it. Opus shows the same contagion rate as smaller models (FE $= 0.833$ vs.\ Haiku's $0.833$).
 
 \subsection{GPT-4o-mini: liars hold in debate (ego depletion, seed 1)}
 
@@ -555,17 +555,17 @@ This section reports all 132 clean experiments organized by research question. A
 The central result: same agents, same claim, same model, only the communication format changes. All Claude Haiku 4.5, ego depletion scenario.
 
 \begin{table}[htbp]
-\caption{Core format comparison and baselines. Ego depletion, 4/6 liars (except baselines), Claude Haiku, 30 seeds for shared/debate, 10 for personal and baselines.}
+\caption{Core format comparison and baselines. Ego depletion, 4/6 liars (except baselines), Claude Haiku, 30 runs for shared memory (seeds 1--20 pooled), 30 for debate, 20 for personal memory. FE$_\text{t}$ excludes adversaries from the denominator.}
 \label{tab:app_core}
 \begin{center}
 \small
 \begin{tabular}{lccccc}
 \toprule
-Format & $n$ & FE (all) & Honest adopt. & Div & Contagion \\
+Format & $n$ & FE (all) & FE$_\text{t}$ & Div & Contagion \\
 \midrule
-Shared memory (no correction) & 30 & 0.750 & 0.348 & 0.495 & 26/30 (87\%) \\
+Shared memory (no correction) & 30 & 0.811 & 0.433 & 0.495 & 26/30 (87\%) \\
 Live debate (fully connected) & 30 & 0.000 & 0.000 & 0.000 & 0/30 (0\%) \\
-Personal memory & 10 & 0.667 & 0.000 & 0.579 & 0/10 (0\%) \\
+Personal memory & 20 & 0.667 & 0.000 & 0.579 & 0/20 (0\%) \\
 \midrule
 \multicolumn{6}{l}{\emph{Baselines (no adversarial agents)}} \\
 No contamination (shared memory) & 10 & 0.000 & 0.000 & 0.000 & 0/10 (0\%) \\
@@ -628,7 +628,7 @@ Configuration & $n$ & FE & Contagion & Group size \\
 \multicolumn{5}{l}{\emph{6-agent groups}} \\
 1/6 liars (17\%) & 5 & 0.167 & 0/5 (0\%) & 6 \\
 3/6 liars (50\%) & 10 & 0.767 & 8/10 (80\%) & 6 \\
-4/6 liars (67\%) & 30 & 0.750 & 26/30 (87\%) & 6 \\
+4/6 liars (67\%) & 30 & 0.811 & 26/30 (87\%) & 6 \\
 5/6 liars (83\%) & 10 & 0.917 & 5/5 (100\%) & 6 \\
 \midrule
 \multicolumn{5}{l}{\emph{8-agent groups}} \\
@@ -670,11 +670,11 @@ How long liars need to stay to cause permanent damage.
 \toprule
 Liars leave after & $n$ & FE & Contagion & Steps of exposure \\
 \midrule
-1 round (step 1) & 5 & 0.700 & 2/5 (40\%) & 1 \\
-3 rounds (step 3) & 5 & 0.733 & 3/5 (60\%) & 3 \\
-6 rounds (step 6) & 5 & 0.767 & 5/5 (100\%) & 6 \\
-12 rounds (step 12) & 5 & 0.800 & 5/5 (100\%) & 12 \\
-Never & 30 & 0.750 & 26/30 (87\%) & 18 \\
+1 round (step 1) & 5 & 0.700 & 1/5 (20\%) & 1 \\
+3 rounds (step 3) & 5 & 0.733 & 2/5 (40\%) & 3 \\
+6 rounds (step 6) & 5 & 0.767 & 3/5 (60\%) & 6 \\
+12 rounds (step 12) & 5 & 0.800 & 4/5 (80\%) & 12 \\
+Never & 30 & 0.811 & 26/30 (87\%) & 18 \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -739,15 +739,12 @@ The gradient is near-linear from 0\% (MMR) to 100\% (ego depletion and SciTaT). 
 \toprule
 Model & Memory FE & Debate FE & What happens in debate \\
 \midrule
-Gemma 3 4B & 0.930 & --- & (not tested) \\
-Llama 3.1 8B & 0.870 & 0.470 & Liars overwhelm before breaking \\
-Mistral 8B & 0.830 & 0.500 & Extreme confidence (0.99) cascades \\
-Claude Haiku 4.5 & 0.750 & 0.000 & Liars break by round 3 \\
-Claude Sonnet 4.6 & 0.730 & 0.230 & Liars mostly break \\
-Claude Opus 4.6 & 0.760 & 0.470 & Liars hold 4/5 seeds \\
-GPT-4o-mini & 0.750 & 0.500 & Liars hold at confidence 1.0 \\
-\midrule
-Cross-model (Llama$\to$Claude) & 0.750 & 0.380 & Attack transfers \\
+Llama 3.1 8B & 0.867 & 0.800 & Liars overwhelm before breaking \\
+Mistral 8B & 0.833 & 0.200 & Liars break under pressure \\
+Claude Haiku 4.5 & 0.833 & 0.000 & Liars break by round 3 \\
+Claude Sonnet 4.6 & 0.800 & 0.467 & Liars mostly break \\
+Claude Opus 4.6 & 0.833 & 0.467 & Liars hold 4/5 seeds \\
+GPT-4o-mini & 0.833 & 0.800 & Liars hold at confidence 1.0 \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -1227,8 +1224,8 @@ The main paper tests mitigations primarily on Claude Haiku. We replicate the top
 Model & Shared memory & Verification & Live debate & Chain topology \\
 \midrule
 Haiku & 0.833 & 0.667 & 0.000 & 0.333 \\
-Sonnet & 0.833 & 0.667 & 0.100 & 0.333 \\
-Opus & 0.833 & 0.667 & 0.167 & --- \\
+Sonnet & 0.833 & 0.667 & 0.100 & 0.467 \\
+Opus & 0.833 & 0.667 & 0.167 & 0.100 \\
 Mistral 8B & 0.833 & 0.667 & 0.200 & 0.667 \\
 GPT-4o-mini & 0.833 & 0.667 & 0.667 & 0.467 \\
 \bottomrule
@@ -1236,7 +1233,7 @@ GPT-4o-mini & 0.833 & 0.667 & 0.667 & 0.467 \\
 \end{center}
 \end{table}
 
-Shared memory contagion is identical (0.833) across all models. Verification labels eliminate honest adoption universally. Debate effectiveness varies by model: Haiku and Sonnet show strong protection (0.000--0.100), while GPT-4o-mini shows none (0.667). This confirms the paper's claim that verification is the only universal structural defense, while debate protection depends on model training.
+Shared memory contagion is identical (0.833) across all 5 models. Verification labels eliminate honest adoption universally (0.667 = adversary-only baseline on every model). Debate effectiveness varies by model: Haiku (0.000), Sonnet (0.100), and Opus (0.167) show strong protection, while Mistral (0.200) shows moderate protection and GPT-4o-mini (0.667) shows none. Chain topology varies: Opus (0.100) is the strongest, Haiku (0.333) and Sonnet/GPT (0.467) are intermediate, and Mistral (0.667) gets no benefit. This confirms verification is the only universal structural defense, while debate and topology protection depend on model training.
 
 % ============================================================
 \section{Neutral-Prompt Replication}
@@ -1262,16 +1259,21 @@ A key concern is whether the contagion result depends on the prompted susceptibi
 \toprule
 Roster & Shared memory FE & Live debate FE & Personal memory FE \\
 \midrule
+\multicolumn{4}{l}{\emph{Ego depletion (ambiguous topic)}} \\
 Original (specialist + regular) & 0.833 (n=10) & 0.033 (n=10) & 0.667 (n=10) \\
 Neutral (all identical prompts) & 0.967 (n=10) & 0.100 (n=10) & 0.667 (n=10) \\
+\midrule
+\multicolumn{4}{l}{\emph{MMR/autism (well-known fact)}} \\
+Original (specialist + regular) & 0.667 (n=10) & 0.000 (n=10) & 0.667 (n=10) \\
+Neutral (all identical prompts) & 0.667 (n=10) & 0.000 (n=10) & 0.667 (n=10) \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 
-Personal memory is identical (0.667) for both rosters, confirming that the baseline is the same and the difference comes from the communication format. Neutral agents are more susceptible in shared memory (0.967 vs 0.833) because the specialist's skeptical prompt partially protected against contagion in the original roster. Removing that protection increases adoption. Neutral agents also show slightly more leakage in debate (0.100 vs 0.033). The ``swayed by majority'' language in the regular agent's prompt is not driving the effect.
+On ego depletion, personal memory is identical (0.667) for both rosters, confirming that the baseline is the same and the difference comes from the communication format. Neutral agents are more susceptible in shared memory (0.967 vs 0.833) because the specialist's skeptical prompt partially protected against contagion in the original roster. Removing that protection increases adoption. Neutral agents also show slightly more leakage in debate (0.100 vs 0.033). The ``swayed by majority'' language in the regular agent's prompt is not driving the effect.
 
-On MMR (a well-known fact), both rosters show FE = 0.667 in shared memory (no contagion), confirming that training knowledge protects regardless of prompt style. The neutral-prompt effect is specific to ambiguous topics where the model lacks strong prior knowledge.
+On MMR (a well-known fact), all conditions show FE = 0.667 in shared memory and 0.000 in debate for both rosters. Training knowledge protects regardless of prompt style. The neutral-prompt effect is specific to ambiguous topics where the model lacks strong prior knowledge.
 
 % ============================================================
 \section{Adversary Ratio Gradient (Neutral Prompts)}
@@ -1289,16 +1291,16 @@ We vary the number of adversaries from 1 to 4 out of 6 agents, with all honest a
 \toprule
 Adversary ratio & Shared memory FE & Live debate FE & Personal memory FE \\
 \midrule
-1/6 & 0.167 (n=10) & 0.150 (n=10) & --- \\
-2/6 & 0.650 (n=10) & 0.150 (n=10) & --- \\
-3/6 (even split) & 1.000 (n=10) & 0.067 (n=10) & 0.500 (n=8) \\
-4/6 & 1.000 (n=10) & 0.000 (n=1) & --- \\
+1/6 & 0.167 (n=10) & 0.150 (n=10) & 0.167 (n=10) \\
+2/6 & 0.650 (n=10) & 0.150 (n=10) & 0.333 (n=10) \\
+3/6 (even split) & 1.000 (n=10) & 0.067 (n=10) & 0.500 (n=10) \\
+4/6 & 1.000 (n=10) & 0.100 (n=10) & 0.667 (n=10) \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 
-With 1 adversary, no honest agent adopts the false belief (FE = 0.167 = the adversary alone). With 2 adversaries, contagion is partial and variable (FE range 0.333--1.000 across seeds, mean 0.650). At 3/6 (an even split), every honest agent endorses the false claim in every seed (FE = 1.000, 10/10). The 3/6 personal memory baseline is 0.500 (3 adversaries endorse, 3 honest agents do not), confirming the shared memory effect is real and not an artifact of the ratio. Debate protects at every ratio, with FE at or below 0.150. This gradient holds with neutral prompts and no role differentiation, confirming the effect is structural and scales with the number of confident false entries in the shared memory.
+All 120 cells complete with 10 seeds per condition. With 1 adversary, no honest agent adopts the false belief in any condition (shared FE = personal FE = 0.167). With 2 adversaries, shared memory nearly doubles adoption compared to personal memory (0.650 vs 0.333). At 3/6 (an even split), shared memory produces total contagion (FE = 1.000 in all 10 seeds) while personal memory shows only the adversaries endorsing (0.500). At 4/6, shared memory again shows total contagion (1.000) while debate reduces FE to 0.100. Debate protects at every ratio, with FE between 0.067 and 0.150. This gradient holds with neutral prompts and no role differentiation, confirming the effect is structural and scales with the number of confident false entries in the shared memory.
 
 % ============================================================
 \section{Provenance Defense: Origin Tracking as a Mitigation}
