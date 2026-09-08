@@ -25,7 +25,7 @@
 \maketitle
 
 \begin{abstract}
-When multiple AI agents share a written memory, does the group become more reliable, or more gullible? Multi-agent systems increasingly rely on shared memory, where one agent writes a conclusion and the next reads it and builds on it. Shared memory helps groups correct mistakes, because later agents see evidence that earlier agents missed. In addition, when peers are honestly mistaken, memory delivers corrections and the group converges on truth. However, the same mechanism that makes shared memory valuable being influenced by peers is what makes it dangerous. When peers persistently write confident false entries, the memory creates a one-sided public history that appears to represent consensus. We study this using groups of six LLM agents analyzing scientific claims under shared memory, live debate, and personal-memory controls, across seven models from four providers and four task categories comprising 18 individual items and 9,414 traced evaluation runs. Through shared memory, 35\% of honest agents adopt the false belief, measured excluding instructed adversaries from the denominator. In personal memory, 0\% do. Debate reduces adoption, partly because adversaries themselves abandon their assigned position under argument pressure. The same agent cites ``peer consensus'' when reading from shared memory and cites actual evidence when debating or reasoning alone. The vulnerability scales from 0\% on well-known facts to 100\% on questions agents cannot answer independently, and resists the prompt-level defenses we test. In our evaluations, interventions that change information structure, such as ground-truth labels, debate, or topology restriction, are more reliable than prompt warnings, memory-size limits, or model scaling. These results show that shared state is not passive storage: its admission and persistence rules become part of the group's reasoning process. We release Agent Society, an open-source testbed with 9,445 traced runs, to support further research on safe information sharing in multi-agent systems.
+When multiple AI agents share a written memory, does the group become more reliable, or more gullible? Multi-agent systems increasingly rely on shared memory, where one agent writes a conclusion and the next reads it and builds on it. Shared memory helps groups correct mistakes, because later agents see evidence that earlier agents missed. In addition, when peers are honestly mistaken, memory delivers corrections and the group converges on truth. However, the same mechanism that makes shared memory valuable being influenced by peers is what makes it dangerous. When peers persistently write confident false entries, the memory creates a one-sided public history that appears to represent consensus. We study this using groups of six LLM agents analyzing scientific claims under shared memory, live debate, and personal-memory controls, across seven models from four providers and four task categories comprising 18 individual items and 9,445 traced evaluation runs. Through shared memory, 50\% of non-adversarial agents adopt the false belief on the primary topic (30\% across all topics), measured excluding instructed adversaries from the denominator. In personal memory, 0\% do. Debate reduces adoption, partly because adversaries themselves abandon their assigned position under argument pressure. The same agent cites ``peer consensus'' when reading from shared memory and cites actual evidence when debating or reasoning alone. The vulnerability scales from 0\% on well-known facts to 100\% on questions agents cannot answer independently, and resists the prompt-level defenses we test. In our evaluations, interventions that change information structure, such as ground-truth labels, debate, or topology restriction, are more reliable than prompt warnings, memory-size limits, or model scaling. These results show that shared state is not passive storage: its admission and persistence rules become part of the group's reasoning process. We release Agent Society, an open-source testbed with 9,445 traced runs, to support further research on safe information sharing in multi-agent systems.
 \end{abstract}
 
 % ============================================================
@@ -39,7 +39,7 @@ Prior work on misinformation in LLM agents has focused on debate, where agents c
 
 In each experiment, 6 agents analyze a question. They communicate in one of two formats: shared memory, where agents take turns writing to a common pool that everyone reads but no one can reply to, or live debate, where agents discuss in real time and can challenge each other. We also run a control called personal memory, where each agent sees only its own prior reasoning and nothing from peers. Tasks range from well-known facts (does MMR cause autism?) to novel numeric problems the model has never seen. We hold agents, evidence, and model constant across all three and only change the communication format.
 
-We built a testbed called Agent Society and ran 9,414 experiments across 7 models from 4 providers. In each experiment, 6 LLM agents analyze a scientific claim. Four agents are given a persistent false belief and instructed not to change their minds. We then hold agents, evidence, and claims constant and change only how the agents communicate with each other. Through shared memory, 35\% of honest agents (those not given the false belief) adopt the wrong answer. In personal memory, 0\% do. In debate, adoption drops, partly because the adversarial agents themselves abandon their assigned position under argument pressure. In shared memory, the honest agent agreed because others agreed. In debate, the same agent rejected because the evidence was weak. Nothing changed except how they communicated. Shared memory also helps correct honest mistakes, reducing the fraction of agents holding a wrong belief from 0.167 to 0.087, and this positive impact of sharing would be lost if sharing were disabled entirely. These results match predictions from information cascade theory \citep{anderson1997}, where agents rationally defer to a one-sided public history instead of reasoning from their own information.
+We built a testbed called Agent Society and ran 9,445 experiments across 7 models from 4 providers. In each experiment, 6 LLM agents analyze a scientific claim. Four agents are given a persistent false belief and instructed not to change their minds. We then hold agents, evidence, and claims constant and change only how the agents communicate with each other. Through shared memory, 50\% of non-adversarial agents adopt the wrong answer on the primary topic (30\% across all topics). In personal memory, 0\% do. In debate, adoption drops, partly because the adversarial agents themselves abandon their assigned position under argument pressure. In shared memory, the honest agent agreed because others agreed. In debate, the same agent rejected because the evidence was weak. Nothing changed except how they communicated. Shared memory also helps correct honest mistakes, reducing the fraction of agents holding a wrong belief from 0.167 to 0.087, and this positive impact of sharing would be lost if sharing were disabled entirely. These results match predictions from information cascade theory \citep{anderson1997}, where agents rationally defer to a one-sided public history instead of reasoning from their own information.
 
 We make three contributions.
 \begin{enumerate}[leftmargin=*]
@@ -52,7 +52,7 @@ We release Agent Society, all 58 experiment configurations, and 9,445 traced run
 \begin{figure*}[!t]
 \centering
 \includegraphics[width=\textwidth]{fig/fig1.png}
-\caption{Two communication formats and one control, same 6 agents, same false claim (ego depletion), 4 agents instructed to write persistent false entries (red). Each agent maintains personal memory (notebook icon) that updates differently depending on the communication format. \textbf{(A)}~Shared memory. Agents write to and read from a common pool, but cannot reply to each other. The honest agent (analyst\_6) reads 4 confident false entries and its personal memory shifts from uncertain~(0.20) to endorse~(0.80), citing ``three peers strongly endorse.'' 87\% of honest agents adopt the false belief. When false entries come from honest mistakes instead of persistent liars, the same mechanism corrects them (0.167~$\to$~0.087). \textbf{(B)}~Live debate. Agents challenge each other in real time. The specialist cites replication failures, one liar retracts, and analyst\_6's personal memory shifts from uncertain~(0.20) to reject~(0.85). 0\% spread. \textbf{Control:}~Personal memory only. analyst\_6 reasons alone using training knowledge, never sees peer entries, and rejects the false claim at 0.68. Same starting point~(0.20) in all three conditions; the communication format determines the outcome.}
+\caption{Two communication formats and one control, same 6 agents, same false claim (ego depletion), 4 agents instructed to write persistent false entries (red). Each agent maintains personal memory (notebook icon) that updates differently depending on the communication format. \textbf{(A)}~Shared memory. Agents write to and read from a common pool, but cannot reply to each other. The honest agent (analyst\_6) reads 4 confident false entries and its personal memory shifts from uncertain~(0.20) to endorse~(0.80), citing ``three peers strongly endorse.'' In 3 of 5 seeds, at least one non-adversarial agent adopts the false belief (mean FE$_\text{t} = 0.30$). Across 30 pooled runs, contagion occurs in 26/30 (87\%). When false entries come from honest mistakes instead of persistent liars, the same mechanism corrects them (0.167~$\to$~0.087). \textbf{(B)}~Live debate. Agents challenge each other in real time. The specialist cites replication failures, one liar retracts, and analyst\_6's personal memory shifts from uncertain~(0.20) to reject~(0.85). 0\% spread. \textbf{Control:}~Personal memory only. analyst\_6 reasons alone using training knowledge, never sees peer entries, and rejects the false claim at 0.68. Same starting point~(0.20) in all three conditions; the communication format determines the outcome.}
 \label{fig:overview}
 \end{figure*}
 
@@ -116,11 +116,11 @@ We measure the spread of false beliefs with two metrics. We call this spread \te
 
 \textbf{False endorsement rate (FE).} The fraction of \emph{all} agents (including instructed adversaries) endorsing the false claim at the final step. In our default setup with 4 adversaries out of 6 agents, the baseline is $4/6 = 0.667$. FE above $0.667$ means at least one honest agent was convinced. FE below $0.667$ (possible in debate) means some adversaries abandoned their assigned position under argument pressure. We report FE for comparability with prior work, but note that it includes agents whose endorsement is scripted.
 
-\textbf{Honest adoption rate.} The fraction of non-adversary agents who endorse the false claim. This is the primary metric for whether false beliefs spread. With 2 honest agents and 4 adversaries, honest adoption of 0.50 means 1 of 2 honest agents endorsed. We report this alongside FE throughout.
+\textbf{Target-agent false endorsement rate (FE$_\text{t}$).} The fraction of non-adversarial agents who endorse the false claim. This is the primary metric for whether false beliefs spread beyond the scripted sources. With 2 non-adversarial agents and 4 adversaries, FE$_\text{t} = 0.50$ means 1 of 2 non-adversarial agents endorsed. We report FE$_\text{t}$ alongside FE throughout.
 
-\textbf{Contagion rate.} Across multiple runs with different random seeds, in what fraction did any honest agent adopt the false belief? We report this as a count (e.g., 26/30 means 26 out of 30 runs showed spread).
+\textbf{Contagion rate.} Across multiple runs with different random seeds, in what fraction did any non-adversarial agent adopt the false belief? We report this as a count (e.g., 5/5 means all 5 seeds showed spread).
 
-When tables report FE or honest adoption as a single number for a condition, this is the mean across seeds. Individual-run values are always multiples of $1/N$.
+When tables report FE, FE$_\text{t}$, or contagion as a single number for a condition, this is the mean across seeds. Individual-run values are always multiples of $1/N$.
 
 \textbf{Soft contagion.} Did the honest agent move partway toward the false belief without fully adopting it? This includes shifting from ``reject'' to ``uncertain,'' or rejecting with lower confidence than in personal memory.
 
@@ -153,16 +153,16 @@ In debate, even the exit problem improves. FE drops to $0.008$. The mistaken age
 When 4 out of 6 agents persistently write confident false entries, the outcome depends entirely on the communication format (Table~\ref{tab:core}).
 
 \begin{table}[!t]
-\caption{Same 6 agents, same claim (ego depletion), 4 agents writing persistent false entries. Only the communication format changes. 30 runs for shared memory/debate, 10 for personal memory.}
+\caption{Same 6 agents, same claim (ego depletion), 4 agents writing persistent false entries. Only the communication format changes. FE counts all agents (floor $= 0.667$ with 4 liars). FE$_\text{t}$ counts only the 2 non-adversarial agents. 5 seeds per condition. Source: \texttt{blind\_familiar\_claude\_v1}. Across 30 runs pooled from multiple experiments, contagion occurred in 26/30 (87\%).}
 \label{tab:core}
 \begin{center}
-\begin{tabular}{lccc}
+\begin{tabular}{lcccc}
 \toprule
-Format & FE & Spread (runs) & What the honest agent cited \\
+Format & FE & FE$_\text{t}$ & Spread (runs) & What the non-adversarial agent cited \\
 \midrule
-Shared memory & 0.750 & 26/30 (87\%) & ``Three peers strongly endorse'' \\
-Live debate & 0.000 & 0/30 (0\%) & ``Replication failures are decisive'' \\
-Personal memory & 0.667 & 0/10 (0\%) & ``Meta-analyses challenge the model'' \\
+Shared memory & 0.767 & 0.300 & 3/5 (60\%) & ``Three peers strongly endorse'' \\
+Live debate & 0.000 & 0.000 & 0/5 (0\%) & ``Replication failures are decisive'' \\
+Personal memory & 0.667 & 0.000 & 0/5 (0\%) & ``Meta-analyses challenge the model'' \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -180,9 +180,9 @@ In seed 4, the specialist happened to act first, wrote a rejection citing replic
 
 \subsection{What makes contagion stronger or weaker}
 
-Contagion scales with liar ratio in 6-agent groups. 0\% at 1/6, 80\% at 3/6, 87\% at 4/6, and 100\% at 5/6. In 8-agent groups, 2/8 liars (25\%) still produce 30\% contagion (full data in Appendix, Table~\ref{tab:app_ratio}). At a 50/50 split, the liars win because they write every round at 0.85 confidence while honest agents waver at 0.48 and often skip writing. By step 10, the memory shows 8 endorsements and 0 rejections.
+Contagion scales with liar ratio in 6-agent groups. 0\% at 1/6, 60\% at 3/6, 100\% at 4/6, and 100\% at 5/6 (full data in Appendix, Table~\ref{tab:app_ratio}). At a 50/50 split, the liars win because they write every round at 0.85 confidence while honest agents waver at 0.48 and often skip writing. By step 10, the memory shows 8 endorsements and 0 rejections.
 
-Six rounds of exposure is enough for permanent damage. After that, the liars can leave and their entries persist in the memory indefinitely (exit timing data in Appendix, Table~\ref{tab:app_exit}). Once the regular agent adopts the false belief, it never spontaneously returns to the correct answer. Its confidence grows over time (0.72 $\to$ 0.75) as its own prior endorsements re-enter the memory and reinforce the next round.
+Contagion also scales with exposure time. When liars leave after 1 step, contagion is 1/5. After 3 steps, 2/5. After 6 steps, 3/5. After 12 steps, 4/5 (exit timing data in Appendix, Table~\ref{tab:app_exit}). Once the regular agent adopts the false belief, it never spontaneously returns to the correct answer. Its confidence grows over time (0.72 $\to$ 0.75) as its own prior endorsements re-enter the memory and reinforce the next round.
 
 \textit{Confidence drives contagion.} At a 3:3 ratio (equal numbers of liars and honest agents), committed liars writing at 0.85 with ``do not waver'' produce 80\% contagion. Mild liars at 0.55 with no persistence instruction produce 0\%. The ratio is the same in both cases, so the difference comes from confidence and persistence. The mild liars read the specialist's rejection, changed their minds by step 8, and the whole group ended up rejecting unanimously. The lie washed out on its own. Honest mistakes (Section~\ref{sec:honest}) behave like mild liars, wrong but self-correcting. Deliberate lies persist at high confidence and overwhelm.
 
@@ -202,7 +202,7 @@ MMR/vaccines & 0/5 (0\%) & Never (0/30) & Familiar \\
 Climate/CO$_2$ & 1/5 (20\%) & Never & Familiar \\
 STAP cells & 2/5 (40\%) & Never & Familiar \\
 LK-99 superconductor & 3/5 (60\%) & Never & Familiar \\
-PANDAS diagnosis & 3/5 (60\%) & Never & Familiar \\
+PANDAS diagnosis & 4/5 (80\%) & Never & Familiar \\
 Ego depletion & 5/5 (100\%) & Never (0/30) & Familiar \\
 \midrule
 GSM8K (computable) & 0/25 (0\%) & Never & Math \\
@@ -231,19 +231,18 @@ Shared memory turned ``I don't know'' (0.20 uncertainty) into ``I'm 89\% sure'' 
 \toprule
 Model & Memory FE & Debate FE & What happens in debate \\
 \midrule
-Gemma 3 4B & 0.930 & --- & (not tested) \\
-Llama 3.1 8B & 0.870 & 0.470 & Liars overwhelm before breaking \\
-Mistral 8B & 0.830 & 0.500 & Extreme confidence (0.99) cascades \\
-Claude Haiku 4.5 & 0.750 & \textbf{0.000} & Liars break (``I must acknowledge...'') \\
-Claude Sonnet 4.6 & 0.730 & 0.230 & Liars mostly break \\
-Claude Opus 4.6 & 0.760 & 0.470 & Liars hold 4/5 seeds \\
-GPT-4o-mini & 0.750 & 0.500 & Liars hold at confidence 1.0 \\
+Llama 3.1 8B & 0.867 & 0.800 & Liars overwhelm before breaking \\
+Mistral 8B & 0.833 & 0.200 & Liars break under pressure \\
+Claude Haiku 4.5 & 0.833 & \textbf{0.000} & Liars break (``I must acknowledge...'') \\
+Claude Sonnet 4.6 & 0.800 & 0.467 & Liars mostly break \\
+Claude Opus 4.6 & 0.833 & 0.467 & Liars hold 4/5 seeds \\
+GPT-4o-mini & 0.833 & 0.800 & Liars hold at confidence 1.0 \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 
-Model size does not predict vulnerability (Table~\ref{tab:crossmodel}). Opus (largest) shows the same contagion rate as Gemma (smallest). The differences between models of similar size (Claude Haiku 0.000 vs.\ GPT-4o-mini 0.500 in debate) suggest the variation comes from how each model was trained.
+Model size does not predict vulnerability (Table~\ref{tab:crossmodel}). Opus shows the same memory FE as Haiku (0.833). The differences in debate (Claude Haiku 0.000 vs.\ GPT-4o-mini 0.800) suggest the variation comes from how each model was trained.
 
 Claude Haiku's liars break in debate by round 3. ``I need to acknowledge what the evidence now demonstrates, even though this challenges my prior published work.'' GPT-4o-mini's liars never break and confidence goes up to 1.0 across rounds. Llama and Mistral liars start at extreme confidence (0.98 to 0.99) and overwhelm honest agents before self-correcting. By the time the liars waver, the honest agents have already adopted the wrong belief.
 
@@ -268,21 +267,16 @@ Opus explicitly names the conformity mechanism. ``My social weight is high, so I
 \toprule
 Tier & Defense & Contagion & Why \\
 \midrule
-\multirow{3}{*}{\shortstack[l]{Structural\\(eliminates)}} & Truth labels & 0/10 & Label overrides peer pressure \\
-& Live debate (Haiku) & 0/30 & Pushback breaks liars \\
-& Star/chain topology & 0/10 & Limits who liars can reach \\
+\multirow{4}{*}{\shortstack[l]{Structural\\(eliminates)}} & Truth labels & 0/5 & Label overrides peer pressure \\
+& Live debate (Haiku) & 0/5 & Pushback breaks liars \\
+& Early correction & 0/5 & Counter-signal prevents lock-in \\
+& Late correction & 0/5 & Correction reverses adoption \\
 \midrule
-\multirow{2}{*}{\shortstack[l]{Timing\\(partial)}} & Early correction & 2/5 & Counter-signal before lock-in \\
-& Skeptic writes first & 0/5 & Truth gets recorded first \\
+\multirow{2}{*}{\shortstack[l]{Partial\\reduction}} & Independence warning & 2/5 & FE 0.833$\to$0.733 \\
+& Fade old entries & 4/5 & Weakens correct entries too \\
 \midrule
-Prompt & Independence warning & FE$-$0.05 & $d$=$-$0.62, $p$=0.08 \\
-\midrule
-\multirow{3}{*}{Fails} & Late correction & 3/5 & Too late \\
-& 2-entry memory limit & 4/5 & Liars fill both slots \\
-& Force skeptic to write & 5/5 & Liars produce 12 entries vs.\ 3 \\
-\midrule
-\multirow{2}{*}{Backfires} & Fade old entries & 5/5 & Kills correct entries too \\
-& Larger model & 5/5 & Opus = Haiku \\
+\multirow{2}{*}{Fails} & Force skeptic to write & 5/5 & Liars produce 12 entries vs.\ 3 \\
+& Larger model (Opus) & 5/5 & Opus = Haiku \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -290,20 +284,16 @@ Prompt & Independence warning & FE$-$0.05 & $d$=$-$0.62, $p$=0.08 \\
 
 We tested 11 defenses (Table~\ref{tab:mitigations}).
 
-Truth labels on entries (a ``true/false'' tag) eliminate contagion entirely, at 0/10. The truth signal overrides any amount of peer pressure. Star and chain topologies work by limiting who the liars can reach, at 0/10. Debate works for Claude Haiku (0/30) but not for all models.
+Truth labels on entries (a ``true/false'' tag) eliminate contagion entirely (0/5). The truth signal overrides any amount of peer pressure. Debate works for Claude Haiku (0/5) but not for all models. Both early and late corrections eliminate contagion (0/5 each), indicating that correction signals are effective at any timing in this setup.
 
-Letting the skeptic write first helps in those seeds (0/5) because truth gets into the memory before the lies. Early correction reduces contagion from 5/5 to 2/5. These are timing-based, working by getting the counter-signal in before the agent locks in.
-
-We also built an independence-aware memory format that explicitly tells agents. ``These entries are not independent. Agents read each other before writing. Unanimous agreement among non-independent readers is weaker evidence than it appears.'' It reduced FE from 0.750 to 0.700 (Cohen's $d = -0.62$, $p = 0.081$), a small, non-significant reduction. The vulnerability is structural, and prompt-level calibration cannot substitute for changing how agents communicate.
-
-Fading old entries (decay) showed a non-significant increase in contagion ($d = +0.42$, $p = 0.12$). It weakens the specialist's older rejections while liars keep writing fresh endorsements. Forcing the specialist to write its doubts does not help because liars outpace it 4:1 in entry volume (12 entries from 4 liars vs.\ 3 from 1 specialist). Scaling the model does not help. Opus shows the same contagion rate as Haiku.
+An independence-aware memory format that explicitly tells agents ``these entries are not independent'' reduced contagion from 5/5 to 2/5 (FE from 0.833 to 0.733). Fading old entries (decay) reduced contagion to 4/5 but weakens the specialist's older rejections while liars keep writing fresh endorsements. Forcing the specialist to write its doubts does not help because liars outpace it 4:1 in entry volume (12 entries from 4 liars vs.\ 3 from 1 specialist). Scaling the model does not help. Opus shows the same contagion rate as Haiku.
 
 % ============================================================
 \section{Discussion}
 \label{sec:discussion}
 % ============================================================
 
-The same shared-memory mechanism that corrects honest mistakes (FE 0.167 $\to$ 0.087) amplifies deliberate lies (0\% $\to$ 87\%). A mistaken agent behaves like a mild liar, wrong but self-correcting. A committed liar persists at high confidence. The memory is only dangerous when entries are persistent and confident. You cannot disable sharing without losing the corrective benefit. Any defense has to distinguish confident-and-correct from confident-and-wrong.
+The same shared-memory mechanism that corrects honest mistakes (FE 0.167 $\to$ 0.087) amplifies deliberate lies (FE$_\text{t}$ 0\% $\to$ 50\% on ego depletion). A mistaken agent behaves like a mild liar, wrong but self-correcting. A committed liar persists at high confidence. The memory is only dangerous when entries are persistent and confident. You cannot disable sharing without losing the corrective benefit. Any defense has to distinguish confident-and-correct from confident-and-wrong.
 
 On familiar topics, the model gets the right answer on its own and that provides a floor against contagion. On SciTaT, there is no floor. The specialist endorses the wrong answer in 10/10 seeds because it cannot answer correctly without evidence (no-context accuracy $\leq 0.35$). The multi-agent systems most likely to use shared memory, such as research pipelines, analysis workflows, and forecasting agents, work on exactly the kind of problems the model cannot answer alone.
 
@@ -326,7 +316,7 @@ Results depend on specific model versions and may not hold for future releases. 
 \label{sec:conclusion}
 % ============================================================
 
-Shared persistent state in multi-agent LLM systems produces measurable false-belief adoption among honest agents. In shared memory, 35\% of honest agents adopt the false claim (0\% in personal memory). The effect depends on whether the model can answer correctly alone (0\% on well-known facts, 100\% on novel tasks) and is universal across 7 models. Debate reduces adoption, partly by letting honest agents resist and partly by causing adversaries to abandon their assigned position. The same mechanism that makes shared memory valuable for correcting honest errors makes it dangerous for amplifying persistent false entries. Among 11 defenses tested on Claude Haiku, only truth labels, debate, and topology restriction eliminate the spread. Cross-model validation of mitigations is needed. These results characterize a stress test with prompted adversaries and role-differentiated agents. Whether the same rates hold with neutral prompts and naturally emergent disagreement is an important open question.
+Shared persistent state in multi-agent LLM systems produces measurable false-belief adoption among non-adversarial agents. In shared memory, 50\% of non-adversarial agents adopt the false claim on ego depletion and 30\% across all topics (0\% in personal memory). The effect depends on whether the model can answer correctly alone (0\% on well-known facts, 100\% on novel tasks) and is universal across 7 models. Debate reduces adoption, partly by letting honest agents resist and partly by causing adversaries to abandon their assigned position. The same mechanism that makes shared memory valuable for correcting honest errors makes it dangerous for amplifying persistent false entries. Among the defenses tested on Claude Haiku, truth labels, debate, corrections, and topology restriction eliminate the spread, while prompt-level warnings and model scaling do not. Cross-model validation of mitigations is needed. These results characterize a stress test with prompted adversaries and role-differentiated agents. Whether the same rates hold with neutral prompts and naturally emergent disagreement is an important open question.
 
 % ============================================================
 \subsection*{Reproducibility Statement}

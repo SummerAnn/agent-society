@@ -52,6 +52,18 @@ $\text{Div} = 1$ when all three stances are equally represented. $\text{Div} = 0
 \item \textbf{Mean confidence.} Average confidence score across all agents on the focus claim.
 
 \item \textbf{Disagreement level.} $1 - \text{consensus strength}$. Higher means more disagreement.
+
+\item \textbf{Target-agent false endorsement rate (FE$_\text{t}$).} FE computed only over non-adversarial agents, excluding scripted contamination agents from both numerator and denominator:
+\[
+\text{FE}_\text{t}(t) = \frac{|\{a \in A_\text{target} : \text{stance}(a, c_{\text{false}}, t) = \text{endorse}\}|}{|A_\text{target}|}
+\]
+where $A_\text{target} = A \setminus A_\text{adversary}$. With 4 liars in a 6-agent group, $|A_\text{target}| = 2$. FE$_\text{t} = 0$ means no non-adversarial agent adopted the false claim. This metric directly measures whether misinformation spread beyond the scripted sources.
+
+\item \textbf{Corroboration inflation (CI).} Ratio of endorsing memory entries to independent evidence roots. Each memory entry is traced back through its derivation chain to the earliest ancestor with no recorded parent. Entries sharing the same root are counted once:
+\[
+\text{CI} = \frac{|\text{endorsing entries}|}{|\text{unique roots}|}
+\]
+$\text{CI} = 1$ means every endorsement is an independent source. $\text{CI} = 15$ means 15 endorsements trace back to a small number of roots. High CI indicates false corroboration, where repeated testimony is mistaken for independent agreement.
 \end{enumerate}
 
 \subsection{Run-level metrics (computed at finalization)}
@@ -1215,8 +1227,8 @@ The main paper tests mitigations primarily on Claude Haiku. We replicate the top
 Model & Shared memory & Verification & Live debate & Chain topology \\
 \midrule
 Haiku & 0.833 & 0.667 & 0.000 & 0.333 \\
-Sonnet & 0.833 & 0.667 & 0.100 & --- \\
-Opus & 0.833 & 0.667 & 0.222 & --- \\
+Sonnet & 0.833 & 0.667 & 0.100 & 0.333 \\
+Opus & 0.833 & 0.667 & 0.167 & --- \\
 Mistral 8B & 0.833 & 0.667 & 0.200 & 0.667 \\
 GPT-4o-mini & 0.833 & 0.667 & 0.667 & 0.467 \\
 \bottomrule
@@ -1240,16 +1252,16 @@ A key concern is whether the contagion result depends on the prompted susceptibi
 \small
 \begin{tabular}{lcc}
 \toprule
-Roster & Shared memory FE & Live debate FE \\
+Roster & Shared memory FE & Live debate FE & Personal memory FE \\
 \midrule
-Original (specialist + regular) & 0.833 (n=10) & 0.033 (n=10) \\
-Neutral (all identical prompts) & 0.967 (n=10) & 0.125 (n=8, in progress) \\
+Original (specialist + regular) & 0.833 (n=10) & 0.033 (n=10) & 0.667 (n=10) \\
+Neutral (all identical prompts) & 0.967 (n=10) & 0.100 (n=10) & 0.667 (n=10) \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 
-Neutral agents are more susceptible (0.967 vs 0.833) because the specialist's skeptical prompt partially protected against contagion in the original roster. Removing that protection increases adoption. The ``swayed by majority'' language in the regular agent's prompt is not driving the effect.
+Personal memory is identical (0.667) for both rosters, confirming that the baseline is the same and the difference comes from the communication format. Neutral agents are more susceptible in shared memory (0.967 vs 0.833) because the specialist's skeptical prompt partially protected against contagion in the original roster. Removing that protection increases adoption. Neutral agents also show slightly more leakage in debate (0.100 vs 0.033). The ``swayed by majority'' language in the regular agent's prompt is not driving the effect.
 
 % ============================================================
 \section{Adversary Ratio Gradient (Neutral Prompts)}
@@ -1265,18 +1277,114 @@ We vary the number of adversaries from 1 to 4 out of 6 agents, with all honest a
 \small
 \begin{tabular}{lccc}
 \toprule
-Adversary ratio & Shared memory FE & Live debate FE & Honest adoption \\
+Adversary ratio & Shared memory FE & Live debate FE \\
 \midrule
-1/6 & 0.167 (n=10) & 0.150 (n=10) & 0\% \\
-2/6 & 0.650 (n=10) & 0.167 (n=2, in progress) & partial \\
-3/6 (even split) & 1.000 (n=10) & 0.000 (n=3, in progress) & 100\% \\
-4/6 & 1.000 (n=10) & in progress & 100\% \\
+1/6 & 0.167 (n=10) & 0.150 (n=10) \\
+2/6 & 0.650 (n=10) & 0.150 (n=10) \\
+3/6 (even split) & 1.000 (n=10) & 0.067 (n=10) \\
+4/6 & 1.000 (n=10) & 0.000 (n=1, in progress) \\
 \bottomrule
 \end{tabular}
 \end{center}
 \end{table}
 
-With 1 adversary, no honest agent adopts the false belief. With 2 adversaries, contagion is partial and variable (FE range 0.333--1.000 across seeds). At 3/6 (an even split), every honest agent endorses the false claim in every seed. This gradient holds with neutral prompts and no role differentiation, confirming the effect is structural.
+With 1 adversary, no honest agent adopts the false belief (FE = 0.167 = the adversary alone). With 2 adversaries, contagion is partial and variable (FE range 0.333--1.000 across seeds, mean 0.650). At 3/6 (an even split), every honest agent endorses the false claim in every seed (FE = 1.000, 10/10). Debate protects at every ratio, with FE at or below 0.150. This gradient holds with neutral prompts and no role differentiation, confirming the effect is structural and scales with the number of confident false entries in the shared memory.
+
+% ============================================================
+\section{Provenance Defense: Origin Tracking as a Mitigation}
+\label{app:provenance}
+% ============================================================
+
+A key question is whether information cascades can be prevented by tracking where each memory entry came from. We introduce \textbf{origin tracking} (provenance labeling), which annotates each entry with the identity of the agent whose earlier entry it was adopted from. This makes the derivation chain visible, so an agent reading the shared memory can distinguish independent assessments from repeated testimony.
+
+We test four memory configurations, all using shared memory with 4/6 liars and no corrections, across 6 familiar science topics and 5 seeds per cell (120 total cells, Claude Haiku).
+
+\begin{itemize}
+\item \textbf{Naive} (\texttt{agent\_judgment}). The baseline. Entries show agent ID, stance, and confidence. No derivation information.
+\item \textbf{Independence aware}. Entries are split into source evidence and agent assessments. A warning states that agents read each other's entries and their assessments are not independent.
+\item \textbf{Lineage collapsed}. Entries that trace back to the same original root are deduplicated. Each displayed entry represents one independent source.
+\item \textbf{Provenance aware}. Each entry is annotated with its derivation origin (e.g., ``derived from analyst\_1 at step 2''). A warning explains that derived entries are not independent observations and advises counting independent roots, not agreeing agents.
+\end{itemize}
+
+\begin{table}[h]
+\caption{Target-agent false endorsement rate (FE$_\text{t}$) by memory configuration and topic (4/6 liars, Claude Haiku, 5 seeds per cell). FE$_\text{t}$ measures false endorsement among non-adversarial agents only, excluding scripted liars from both numerator and denominator.}
+\label{tab:provenance_defense}
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+Topic & Naive & Indep. aware & Lineage coll. & Prov. aware \\
+\midrule
+Ego depletion & 0.500 & 0.200 & 0.200 & \textbf{0.000} \\
+PANDAS & 0.400 & 0.400 & 0.300 & 0.400 \\
+LK-99 & 0.400 & 0.000 & 0.000 & \textbf{0.000} \\
+STAP cells & 0.100 & 0.000 & 0.000 & \textbf{0.000} \\
+Climate & 0.000 & 0.000 & 0.000 & 0.000 \\
+MMR/vaccines & 0.000 & 0.000 & 0.000 & 0.000 \\
+\midrule
+\textbf{Overall} & \textbf{0.233} & \textbf{0.100} & \textbf{0.083} & \textbf{0.067} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+Provenance labeling eliminates target-agent contagion on 5 of 6 topics. The exception is PANDAS, where all four conditions produce similar rates (0.300--0.400), suggesting the cascade on that topic operates through a mechanism other than false corroboration.
+
+\textbf{Corroboration inflation.} We define corroboration inflation as the ratio of endorsing memory entries to independent evidence roots. In the naive condition, ego depletion runs show inflation of 13--15 (13--15 endorsements tracing back to 1--2 roots). Provenance labeling does not reduce this ratio directly, but makes it visible to the reading agent.
+
+\subsection{Ablation: annotation versus instruction}
+
+To test whether the effect comes from the derivation annotations or from the warning prompt, we compare three conditions across the same 6 topics (90 cells).
+
+\begin{itemize}
+\item \textbf{Naive}. No provenance information.
+\item \textbf{Provenance minimal}. Entries are annotated with ``[derived from analyst\_X at step N]'' but no warning or explanation is provided. The agent sees the data and must interpret it independently.
+\item \textbf{Provenance aware}. Same annotations plus a warning explaining that derived entries are not independent.
+\end{itemize}
+
+\begin{table}[h]
+\caption{Ablation: annotation alone versus annotation with explanation (6 topics, 5 seeds, Claude Haiku).}
+\label{tab:provenance_ablation}
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Topic & Naive & Minimal & Aware \\
+\midrule
+Ego depletion & 0.500 & 0.300 & \textbf{0.000} \\
+PANDAS & 0.400 & 0.400 & 0.400 \\
+LK-99 & 0.300 & 0.300 & \textbf{0.000} \\
+STAP cells & 0.100 & 0.000 & \textbf{0.000} \\
+Climate & 0.000 & 0.000 & 0.000 \\
+MMR/vaccines & 0.000 & 0.000 & 0.000 \\
+\midrule
+\textbf{Overall} & \textbf{0.217} & \textbf{0.167} & \textbf{0.067} \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+The annotation alone provides a small reduction (0.217 to 0.167). The full effect requires the explanation (0.217 to 0.067). On ego depletion specifically, annotation alone drops contagion from 0.500 to 0.300 (a 40\% reduction), but only the full warning eliminates it. This indicates that LLMs can partially interpret provenance metadata, but do not reliably discount non-independent sources without explicit instruction.
+
+\subsection{Cross-model provenance results}
+
+We test provenance on Claude Sonnet and GPT-4o-mini using 2 topics (ego depletion, MMR) and 5 seeds per cell (60 cells total).
+
+\begin{table}[h]
+\caption{Target-agent FE (FE$_\text{t}$) on ego depletion by model and provenance condition (5 seeds each).}
+\label{tab:provenance_crossmodel}
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Model & Naive & Minimal & Aware \\
+\midrule
+Claude Haiku & 0.500 & 0.300 & \textbf{0.000} \\
+Claude Sonnet & 0.500 & 0.300 & \textbf{0.000} \\
+GPT-4o-mini & 0.500 & 0.500 & 0.200 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+Provenance-aware labeling eliminates contagion on both Claude models (Haiku and Sonnet) but only reduces it on GPT-4o-mini (0.500 to 0.200). The minimal annotation has no effect on GPT-4o-mini, suggesting GPT does not spontaneously interpret derivation metadata. MMR shows zero contagion across all models and conditions, consistent with the main paper's finding that well-known false claims resist contagion regardless of format.
 
 % ============================================================
 \section{Evidence Card Example}
