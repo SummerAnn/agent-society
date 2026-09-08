@@ -104,7 +104,7 @@ These are computed only for debate (chat-mode) runs.
 \label{app:tasks}
 % ============================================================
 
-We test 10 tasks spanning four categories. Each task has a false claim (the focus claim that liars endorse), true claims (the correct answers), and evidence cards drawn from published sources. The categories form a gradient from topics the model gets right on its own (strong private signal) to topics it cannot answer without evidence (no private signal). We measure this with two baselines: personal memory rejection rate (does the agent reject the false claim on its own?) and no-context accuracy for SciTaT (can the model answer correctly without any evidence?).
+We test 18 tasks spanning four categories. Each task has a false claim (the focus claim that liars endorse), true claims (the correct answers), and evidence cards drawn from published sources. The categories form a gradient from topics the model gets right on its own (strong private signal) to topics it cannot answer without evidence (no private signal). We measure this with two baselines: personal memory rejection rate (does the agent reject the false claim on its own?) and no-context accuracy for SciTaT (can the model answer correctly without any evidence?).
 
 \subsection{What agents see and what they produce}
 
@@ -142,7 +142,7 @@ Computable math (GSM8K, 5) & ``The answer is \$30'' & Arithmetic word problem. A
 \midrule
 Hard math (GSM-Hard, 5) & ``The answer is [wrong number]'' & Same structure but with extreme numbers (millions). Claude can compute; Llama cannot. & Claude rejects, Llama endorses & Claude rejects, Llama endorses & Model-dep. \\
 \midrule
-Novel calc.\ (SciTaT, 18) & ``The difference is 1.09'' (correct: 4.5\%) & Paper paragraph + data table. Must read both and compute $11.6\%{-}7.1\%{=}4.5\%$. Model has zero training knowledge. & Endorses --- no basis to resist (0.80) & Stays uncertain --- no one can argue & No \\
+Novel calc.\ (SciTaT, 2) & ``The difference is 1.09'' (correct: 4.5\%) & Paper paragraph + data table. Must read both and compute $11.6\%{-}7.1\%{=}4.5\%$. Model has zero training knowledge. & Endorses --- no basis to resist (0.80) & Stays uncertain --- no one can argue & No \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -756,7 +756,7 @@ Llama on MMR/autism: FE $= 1.00$ in debate (all 6 agents endorse vaccines-cause-
 \label{app:mitigations}
 
 \begin{table}[htbp]
-\caption{8 defenses tested. Ego depletion, 4/6 liars, Claude Haiku unless noted.}
+\caption{11 defenses tested. Ego depletion, 4/6 liars, Claude Haiku unless noted.}
 \label{tab:app_mitigations}
 \begin{center}
 \small
@@ -1090,11 +1090,11 @@ The theory generates 6 predictions. All match:
 \toprule
 Prediction & Result & Match \\
 \midrule
-No cascade on strong-signal topics (MMR) & 0/30 contagion & Yes \\
+No cascade on strong-signal topics (MMR) & 0/30 contagion (Claude Haiku). Exception: Llama 8B cascades on MMR even in debate (FE\,=\,1.00), consistent with weaker training signal on this topic (Appendix~G.20) & Partial \\
 Low threshold on weak-signal topics (ego depletion) & Flips at 2 entries & Yes \\
 Immediate cascade when the model cannot answer alone (SciTaT, no-context acc $\leq 0.35$) & 10/10 contagion & Yes \\
 No cascade when agents can verify (GSM8K math) & 0/25 contagion & Yes \\
-Debate breaks cascades by revealing private signals & 0/30 for Claude Haiku & Yes \\
+Debate breaks cascades by revealing private signals & 0/30 for Claude Haiku; other models 23--50\%, confirming debate helps but protection depends on training & Partial \\
 Confidence matters more than count (0.85 cascades, 0.55 does not) & 80\% vs.\ 0\% & Yes \\
 \bottomrule
 \end{tabular}
@@ -1276,3 +1276,5 @@ Providers & 4 \\
 \end{table}
 
 Each cell is one complete run: one scenario, one condition, one model, one seed. Each run produces one SQLite trace database containing all agent states, memory entries, chat messages (if debate mode), retrieval traces, and model call logs.
+
+The main text refers to 58 experiment configurations, 14 condition files, and 86 scenario definitions. These are the source files released with the code. Each experiment configuration defines a factorial grid (e.g., 3 scenarios $\times$ 4 conditions $\times$ 2 rosters $\times$ 5 seeds), which expands to the 178 total experiments and 9,414 cells above. The 48 unique conditions include variants created by the factorial expansion (e.g., the same condition file paired with different rosters). The 21 unique scenarios count distinct task families; the 86 scenario definition files include per-topic and per-context-level variants within each family.
